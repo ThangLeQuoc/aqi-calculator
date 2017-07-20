@@ -17,8 +17,17 @@ public class AQICalculator {
 	private PollutantConcentration targetPollutantConcentration;
 	private NowcastCalculator nowcastCalculator;
 	private PollutantConcentrationTruncator truncator;
+	
+	private static AQICalculator uniqueAQICalculatorInstance;
+	
+	 public static AQICalculator getAQICalculatorInstance(){
+		if(uniqueAQICalculatorInstance == null){
+		    uniqueAQICalculatorInstance = new AQICalculator();
+		}
+		return uniqueAQICalculatorInstance;
+	    }
 
-	public AQICalculator() throws Exception, IOException {
+	 private AQICalculator()    {
 		/*
 		 * Constructor, AQI Calculator will generate the following thing
 		 * PollutantBreakpointGenerator: Generator to get the breakpoints table
@@ -27,11 +36,19 @@ public class AQICalculator {
 		 * for PM10, PM2.5, Ozone
 		 */
 
-		this.breakpointGenerator = new PollutantsBreakpointGenerator();
+		try {
+		    this.breakpointGenerator = new PollutantsBreakpointGenerator();
+		} catch (JsonProcessingException e) {
+		    // TODO Auto-generated catch block
+		    e.printStackTrace();
+		} catch (IOException e) {
+		    // TODO Auto-generated catch block
+		    e.printStackTrace();
+		}
 		this.pollutantsBreakpoint = breakpointGenerator.getPollutantsBreakpoint();
 		this.nowcastCalculator = new NowcastCalculator();
 		this.truncator = new PollutantConcentrationTruncator();
-	}
+	    }
 
 	/*
 	 * Method: Return AQI for selected Pollutant
