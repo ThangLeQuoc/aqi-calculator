@@ -2,20 +2,44 @@ package com.thanglequoc.aqicalculator;
 
 import com.thanglequoc.aqicalculator.PollutantCode;
 
+/**
+ * The Class NowcastCalculator.
+ */
 public class NowcastCalculator {
+	
+	/** The pollutant code. */
 	private String pollutantCode;
+	
+	/** The data. */
 	private double[] data;
 
+	/** The truncator. */
 	private PollutantConcentrationTruncator truncator;
+	
+	/** The pm10. */
 	private static String PM10 = PollutantCode.PM10.getLiteral();
+	
+	/** The pm25. */
 	private static String PM25 = PollutantCode.PM25.getLiteral();
+	
+	/** The o3. */
 	private static String O3 = PollutantCode.O3.getLiteral();
 
 	
+	/**
+	 * Instantiates a new nowcast calculator.
+	 */
 	public NowcastCalculator() {
 		this.truncator = new PollutantConcentrationTruncator();
 	}
 
+	/**
+	 * Gets the nowcast concentration.
+	 *
+	 * @param pollutantCode the pollutant code
+	 * @param data the data
+	 * @return the nowcast concentration
+	 */
 	public double getNowcastConcentration(String pollutantCode, double[] data) {
 		if (!isValidNowcastData(data))
 			return -1;
@@ -52,6 +76,12 @@ public class NowcastCalculator {
 		return 0;
 	}
 
+	/**
+	 * Checks if is valid nowcast data.
+	 *
+	 * @param data the data
+	 * @return true, if is valid nowcast data
+	 */
 	private boolean isValidNowcastData(double[] data) {
 		int missingData = 0;
 		for (int i = 0; i < 3; i++) {
@@ -64,6 +94,13 @@ public class NowcastCalculator {
 		return true;
 	}
 
+	/**
+	 * Gets the weight factor.
+	 *
+	 * @param pollutantCode the pollutant code
+	 * @param data the data
+	 * @return the weight factor
+	 */
 	private double getWeightFactor(String pollutantCode, double[] data) {
 		double maxConcentration = Double.MIN_VALUE;
 		double minConcentration = Double.MAX_VALUE;
