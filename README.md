@@ -10,6 +10,16 @@
 - Calculate AQI from raw concentration
 - Support Nowcast Concentration
 
+### Support the following pollutants
+
+| Pollutant  | Scientific name| Unit of Measurement |Input Code Usage |Nowcast Support
+| ---- |:-------------:|:-------------:|:-------------:|:-------------:|
+| PM10      |  10 μm Particle Pollutant  | μg/m3| PM10 |  :heavy_check_mark:
+| PM2.5      |  2.5 μm Particle Pollutant  | μg/m3| PM2.5 |  :heavy_check_mark:
+| O3     |  Ozone  | ppb| O3 |  :heavy_check_mark:
+| CO     |  Carbon Monoxide  | ppb| CO |  :x:
+| SO2     |  Sulfur Dioxide  | ppb| SO2 |  :x:
+| NO2     |  Nitrogen Dioxide  | ppb| NO2 |  :x:
 ## Installation
 Grab the target jar in `target-jar` folder and add the jar to your project
 
@@ -52,7 +62,7 @@ If the hour doesn't have data, replace missing data in the hour with **-1**
 | 4      | 58 ppb|
 | 3      | 64 ppb|
 
-Persume that you want to calculate Nowcast AQI for PM10 at **14**, the data array should be
+Presume that you want to calculate Nowcast AQI for PM10 at **14**, the data array should be
 
 ~~~~
 double[] data = { 64, 63, -1, 77, 65, -1, 70, 71, -1, 57, 58, 64 };`
