@@ -6,20 +6,26 @@
 </h1>
 
 # Maven AQI Calculator
+
+### Foreword
+All methods, constraints use in this project follows **US EPA AQI Calculation Method** (which includes breakpoint table and calculation formulas) . Since each country issues different AQI calculation methods, using this package might be inappropriate, consider your usage.
+
+This project is intended to community target for free use. The author is not associated with USA government, nor United States Environmental Protection Agency (a.k.a **US EPA**)
+
 ## Highlights
 - Calculate AQI from raw concentration
 - Support Nowcast Concentration
 
 ### Support the following pollutants
 
-| Pollutant  | Scientific name| Unit of Measurement |Input Code Usage |Nowcast Support
-| ---- |:-------------:|:-------------:|:-------------:|:-------------:|
-| PM10      |  10 μm Particle Pollutant  | μg/m3| PM10 |  :heavy_check_mark:
-| PM2.5      |  2.5 μm Particle Pollutant  | μg/m3| PM2.5 |  :heavy_check_mark:
-| O3     |  Ozone  | ppb| O3 |  :heavy_check_mark:
-| CO     |  Carbon Monoxide  | ppb| CO |  :x:
-| SO2     |  Sulfur Dioxide  | ppb| SO2 |  :x:
-| NO2     |  Nitrogen Dioxide  | ppb| NO2 |  :x:
+| Pollutant  | Scientific name| Unit of Measurement |Input Code Usage |Regular Calculation Support |Nowcast Support
+| ---- |:-------------:|:-------------:|:-------------:|:-------------:|-------------:|
+| PM10      |  10 μm Particle Pollutant  | μg/m3| PM10 | :heavy_check_mark:| :heavy_check_mark:|
+| PM2.5      |  2.5 μm Particle Pollutant  | μg/m3| PM2.5 |  :heavy_check_mark:| :heavy_check_mark:
+| O3     |  Ozone  | ppb| O3 | :heavy_check_mark:| :heavy_check_mark:
+| CO     |  Carbon Monoxide  | ppb| CO | :heavy_check_mark:| :x:
+| SO2     |  Sulfur Dioxide  | ppb| SO2 | :heavy_check_mark:| :x:
+| NO2     |  Nitrogen Dioxide  | ppb| NO2 | :heavy_check_mark:| :x:
 ## Installation
 Grab the target jar in `target-jar` folder and add the jar to your project
 
