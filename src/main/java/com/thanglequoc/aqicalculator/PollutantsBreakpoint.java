@@ -4,15 +4,18 @@ import java.util.ArrayList;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class PollutantsBreakpoint.
+ * PollutantsBreakpoint, which represent the whole AQI breakpoint table
+ * <p>
+ * It contain a list of smaller <tt>PollutantBreakpoint</tt>, each <tt>PollutantBreakpoint</tt> in this list represent <b>breakpoint</b> of a pollutant code
+ * @author ThangLeQuoc
  */
 public class PollutantsBreakpoint {
 	
-	/** The breakpoint list. */
+	/** The breakpoint list, represent the AQI breakpoint table */
 	ArrayList<PollutantBreakpoint> breakpointList;
 
 	/**
-	 * Instantiates a new pollutants breakpoint.
+	 * Instantiates a new pollutants breakpoint .
 	 */
 	public PollutantsBreakpoint() {
 		breakpointList = new ArrayList<PollutantBreakpoint>();
@@ -23,7 +26,7 @@ public class PollutantsBreakpoint {
 	 *
 	 * @return the breakpoint list
 	 */
-	public ArrayList<PollutantBreakpoint> getBreakpointList() {
+	ArrayList<PollutantBreakpoint> getBreakpointList() {
 		return breakpointList;
 	}
 
@@ -32,26 +35,26 @@ public class PollutantsBreakpoint {
 	 *
 	 * @param breakpointList the new breakpoint list
 	 */
-	public void setBreakpointList(ArrayList<PollutantBreakpoint> breakpointList) {
+	void setBreakpointList(ArrayList<PollutantBreakpoint> breakpointList) {
 		this.breakpointList = breakpointList;
 	}
 
 	/**
-	 * Adds the pollutant breakpoint.
+	 * Adds the pollutant breakpoint to the table list.
 	 *
 	 * @param pollutantBreakpoint the pollutant breakpoint
 	 */
-	public void addPollutantBreakpoint(PollutantBreakpoint pollutantBreakpoint) {
+	void addPollutantBreakpoint(PollutantBreakpoint pollutantBreakpoint) {
 		this.breakpointList.add(pollutantBreakpoint);
 	}
 
 	/**
-	 * Gets the pollutant breakpoint by code.
+	 * Gets the pollutant breakpoint by pollutant code.
 	 *
-	 * @param pollutantCode the pollutant code
+	 * @param pollutantCode the pollutant code (ex <i>PM10, PM2.5, O3, SO2, NO2, CO</i>)
 	 * @return the pollutant breakpoint by code
 	 */
-	public PollutantBreakpoint getPollutantBreakpointByCode(String pollutantCode) {
+	PollutantBreakpoint getPollutantBreakpointByCode(String pollutantCode) {
 		for (PollutantBreakpoint pollutantBreakpoint : breakpointList) {
 			if (pollutantBreakpoint.getCode().equals(pollutantCode)) {
 				return pollutantBreakpoint;

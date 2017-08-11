@@ -1,50 +1,54 @@
 package com.thanglequoc.aqicalculator;
 
+
 // TODO: Auto-generated Javadoc
 /**
- * The Class PollutantIndex.
+ * Represent <i>upper bound index</i> (<b>I-high</b>) and <i>lower bound index</i> (<b>I-low</b>) of a corresponding range in <tt>PollutantBreakpoint</tt> of a pollutant 
+ * 
+ * @author ThangLeQuoc
  */
 public class PollutantIndex {
 	
-	/** The min index. */
+	/** The upper bound index. */
 	private int minIndex;
+
 	
-	/** The max index. */
+	/** The lower bound index. */
 	private int maxIndex;
 	
 	/**
-	 * Gets the min index.
+	 * Gets the lower bound index.
 	 *
-	 * @return the min index
+	 * @return the lower bound index
 	 */
-	public int getMinIndex() {
+	int getMinIndex() {
 		return minIndex;
 	}
 	
 	/**
-	 * Sets the min index.
+	 * Sets the lower bound index.
 	 *
-	 * @param minIndex the new min index
+	 * @param minIndex the new lower bound index
 	 */
-	public void setMinIndex(int minIndex) {
+	void setMinIndex(int minIndex) {
 		this.minIndex = minIndex;
 	}
 	
 	/**
-	 * Gets the max index.
+	 * Gets the upper bound index.
 	 *
-	 * @return the max index
+	 * @return the upper bound index
 	 */
-	public int getMaxIndex() {
+	int getMaxIndex() {
 		return maxIndex;
 	}
 	
 	/**
-	 * Sets the max index.
+	 * Sets the upper bound index.
 	 *
-	 * @param maxIndex the new max index
+	 * @param maxIndex the new upper bound index
 	 */
-	public void setMaxIndex(int maxIndex) {
+	void setMaxIndex(int maxIndex) {
 		this.maxIndex = maxIndex;
 	}
 }

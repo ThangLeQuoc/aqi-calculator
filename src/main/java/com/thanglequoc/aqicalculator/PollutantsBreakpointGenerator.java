@@ -7,7 +7,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class PollutantsBreakpointGenerator.
  */
@@ -25,7 +24,7 @@ public class PollutantsBreakpointGenerator {
 	 * @throws JsonProcessingException the json processing exception
 	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
-	public PollutantsBreakpointGenerator() throws JsonProcessingException, IOException{
+	 PollutantsBreakpointGenerator() throws JsonProcessingException, IOException{
 		pollutantBreakpointParser = new PollutantBreakpointParser();
 		pollutantsBreakpoint = new PollutantsBreakpoint();
 
@@ -41,8 +40,6 @@ public class PollutantsBreakpointGenerator {
 				this.pollutantsBreakpoint.addPollutantBreakpoint(pollutantBreakpoint);
 			}
 		}
-		
-		
 	}
 
 	/**
@@ -50,7 +47,7 @@ public class PollutantsBreakpointGenerator {
 	 *
 	 * @return the pollutants breakpoint
 	 */
-	public PollutantsBreakpoint getPollutantsBreakpoint() {
+	 PollutantsBreakpoint getPollutantsBreakpoint() {
 		return pollutantsBreakpoint;
 	}
 
@@ -59,7 +56,7 @@ public class PollutantsBreakpointGenerator {
 	 *
 	 * @param pollutantsBreakpoint the new pollutants breakpoint
 	 */
-	public void setPollutantsBreakpoint(PollutantsBreakpoint pollutantsBreakpoint) {
+	 void setPollutantsBreakpoint(PollutantsBreakpoint pollutantsBreakpoint) {
 		this.pollutantsBreakpoint = pollutantsBreakpoint;
 	}
 

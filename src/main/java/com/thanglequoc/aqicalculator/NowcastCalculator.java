@@ -3,16 +3,13 @@ package com.thanglequoc.aqicalculator;
 import com.thanglequoc.aqicalculator.PollutantCode;
 
 /**
- * The Class NowcastCalculator.
+*  A small size calculator use to calculate <b>Nowcast Concentration</b> from an array set of concentration. The nowcast concentration will be send back to <tt>AQICalculator</tt> object to calculate the AQI, which will then represent
+*  Nowcast AQI 
+*  
+ * @author ThangLeQuoc
  */
 public class NowcastCalculator {
 	
-	/** The pollutant code. */
-	private String pollutantCode;
-	
-	/** The data. */
-	private double[] data;
-
 	/** The truncator. */
 	private PollutantConcentrationTruncator truncator;
 	
