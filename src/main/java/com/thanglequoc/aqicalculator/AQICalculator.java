@@ -83,11 +83,12 @@ public class AQICalculator {
 	    }
 
 	/**
-	 * Gets the AQ ifor pollutant.
+	 * @deprecated 
+	 * Gets the AQIResult for pollutant.
 	 *
 	 * @param pollutantCode the pollutant code
 	 * @param avgConcentration the avg concentration
-	 * @return the AQ ifor pollutant
+	 * @return the AQI for pollutant
 	 */
 	/*
 	 * Method: Return AQI for selected Pollutant
@@ -97,9 +98,9 @@ public class AQICalculator {
 	 * 
 	 * @ avgConcentration: Average Concentration
 	 **/
+ 	
+ 	@Deprecated
 	public int getAQIforPollutant(String pollutantCode, double avgConcentration) {
-		// Get the breakpoint on pollutant code (ex: PM2.5 breakpoint, Ozone
-		// breakpoint)
 		pollutantBreakpoint = this.pollutantsBreakpoint.getPollutantBreakpointByCode(pollutantCode);
 
 		if (avgConcentration < 0) {
@@ -122,8 +123,11 @@ public class AQICalculator {
 			// round it to the nearest integer, and return
 			return (int) Math.round(result);
 		}
-
 	}
+ 	
+ 	public AQIResult getAQI(String pollutantCode, double avgConcentration){
+ 	    return null;
+ 	}
 
 	/**
 	 * Gets the nowcast AQI.
