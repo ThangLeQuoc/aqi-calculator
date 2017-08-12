@@ -7,12 +7,24 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * The Class PollutantsBreakpointGenerator.
+ */
 public class PollutantsBreakpointGenerator {
+	
+	/** The pollutants breakpoint. */
 	private PollutantsBreakpoint pollutantsBreakpoint;
+	
+	/** The pollutant breakpoint parser. */
 	private PollutantBreakpointParser pollutantBreakpointParser;
-	private static String breakpointFilePath = "./src/main/resources/AQIresource/aqi-breakpoint.json";
 
-	public PollutantsBreakpointGenerator() throws JsonProcessingException, IOException{
+	/**
+	 * Instantiates a new pollutants breakpoint generator.
+	 *
+	 * @throws JsonProcessingException the json processing exception
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
+	 PollutantsBreakpointGenerator() throws JsonProcessingException, IOException{
 		pollutantBreakpointParser = new PollutantBreakpointParser();
 		pollutantsBreakpoint = new PollutantsBreakpoint();
 
@@ -28,15 +40,23 @@ public class PollutantsBreakpointGenerator {
 				this.pollutantsBreakpoint.addPollutantBreakpoint(pollutantBreakpoint);
 			}
 		}
-		
-		
 	}
 
-	public PollutantsBreakpoint getPollutantsBreakpoint() {
+	/**
+	 * Gets the pollutants breakpoint.
+	 *
+	 * @return the pollutants breakpoint
+	 */
+	 PollutantsBreakpoint getPollutantsBreakpoint() {
 		return pollutantsBreakpoint;
 	}
 
-	public void setPollutantsBreakpoint(PollutantsBreakpoint pollutantsBreakpoint) {
+	/**
+	 * Sets the pollutants breakpoint.
+	 *
+	 * @param pollutantsBreakpoint the new pollutants breakpoint
+	 */
+	 void setPollutantsBreakpoint(PollutantsBreakpoint pollutantsBreakpoint) {
 		this.pollutantsBreakpoint = pollutantsBreakpoint;
 	}
 

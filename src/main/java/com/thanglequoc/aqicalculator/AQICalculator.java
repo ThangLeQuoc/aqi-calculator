@@ -9,25 +9,57 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URI;
+import java.util.List;
+
+
+/**
+ *  A calculator use to calculate AQI from pollutant concentration, support both <b>regular AQI</b> calculation and <b>Nowcast AQI</b> calculation. This object is intended to be a singleton object to avoid perfomance issue.
+ *  <p>
+ *  To use the <i>AQICalculator</i>object, get its instance by calling <tt>getAQICalculatorInstance() </tt> method directly
+ * @author ThangLeQuoc
+ *
+ */
 
 public class AQICalculator {
+	
+	/** The breakpoint generator. */
 	private PollutantsBreakpointGenerator breakpointGenerator;
+	/** The pollutants breakpoint. */
 	private PollutantsBreakpoint pollutantsBreakpoint;
+	
+	/** The pollutant breakpoint. */
 	private PollutantBreakpoint pollutantBreakpoint;
+	
+	/** The target pollutant concentration. */
 	private PollutantConcentration targetPollutantConcentration;
+	
+	/** The nowcast calculator. */
 	private NowcastCalculator nowcastCalculator;
+	
+	/** The truncator. */
 	private PollutantConcentrationTruncator truncator;
 	
+	/** The unique AQI calculator instance. */
 	private static AQICalculator uniqueAQICalculatorInstance;
 	
-	 public static AQICalculator getAQICalculatorInstance(){
+	
+	
+	 /**
+ 	 * Gets the AQI calculator instance.
+ 	 *
+ 	 * @return the AQI calculator instance
+ 	 */
+ 	public static AQICalculator getAQICalculatorInstance(){
 		if(uniqueAQICalculatorInstance == null){
 		    uniqueAQICalculatorInstance = new AQICalculator();
 		}
 		return uniqueAQICalculatorInstance;
 	    }
 
-	 private AQICalculator()    {
+	 /**
+ 	 * Instantiates a new AQI calculator.
+ 	 */
+ 	private AQICalculator()    {
 		/*
 		 * Constructor, AQI Calculator will generate the following thing
 		 * PollutantBreakpointGenerator: Generator to get the breakpoints table
@@ -50,6 +82,13 @@ public class AQICalculator {
 		this.truncator = new PollutantConcentrationTruncator();
 	    }
 
+	/**
+	 * Gets the AQ ifor pollutant.
+	 *
+	 * @param pollutantCode the pollutant code
+	 * @param avgConcentration the avg concentration
+	 * @return the AQ ifor pollutant
+	 */
 	/*
 	 * Method: Return AQI for selected Pollutant
 	 * 
@@ -86,6 +125,13 @@ public class AQICalculator {
 
 	}
 
+	/**
+	 * Gets the nowcast AQI.
+	 *
+	 * @param pollutantCode the pollutant code
+	 * @param data the data
+	 * @return the nowcast AQI
+	 */
 	public int getNowcastAQI(String pollutantCode, double[] data) {
 		// Get the breakpoint on pollutant code (ex: SO2, NO2
 		// breakpoint)
