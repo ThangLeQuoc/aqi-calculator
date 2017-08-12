@@ -15,7 +15,7 @@ import java.util.List;
 /**
  *  A calculator use to calculate AQI from pollutant concentration, support both <b>regular AQI</b> calculation and <b>Nowcast AQI</b> calculation. This object is intended to be a singleton object to avoid perfomance issue.
  *  <p>
- *  To use the <i>AQICalculator</i>object, get its instance by calling <tt>getAQICalculatorInstance() </tt> method directly
+ *  To use the <i>AQICalculator</i> object, get its instance by calling <tt>getAQICalculatorInstance() </tt> method directly
  * @author ThangLeQuoc
  *
  */
