@@ -18,7 +18,7 @@ public class PollutantBreakpoint {
 	private String period;
 	
 	/** The pollutant concentration list. */
-	private ArrayList<PollutantConcentration> pollutantConcentrationList;
+	private ArrayList<PollutantConcentration> concentrations;
 
 	/**
 	 * Gets the code.
@@ -80,7 +80,7 @@ public class PollutantBreakpoint {
 	 * @return the pollutant concentration list
 	 */
 	public ArrayList<PollutantConcentration> getPollutantConcentrationList() {
-		return pollutantConcentrationList;
+		return concentrations;
 	}
 
 	/**
@@ -89,7 +89,7 @@ public class PollutantBreakpoint {
 	 * @param pollutantConcentrationList the new pollutant concentration list
 	 */
 	public void setPollutantConcentrationList(ArrayList<PollutantConcentration> pollutantConcentrationList) {
-		this.pollutantConcentrationList = pollutantConcentrationList;
+		this.concentrations = pollutantConcentrationList;
 	}
 	
 	
@@ -101,7 +101,7 @@ public class PollutantBreakpoint {
 	 */
 	//Get Low level concentration and High level concentration with avg input concentration.
 	public PollutantConcentration getConcentrationRangeWithAvgConcentration(double concentration){
-		for(PollutantConcentration pollutantConcentration: pollutantConcentrationList){
+		for(PollutantConcentration pollutantConcentration: concentrations){
 			if(concentration >= pollutantConcentration.getMinConcentration() && concentration <= pollutantConcentration.getMaxConcentration()){
 				return pollutantConcentration;
 			}

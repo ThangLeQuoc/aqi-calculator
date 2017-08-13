@@ -7,13 +7,13 @@ package com.thanglequoc.aqicalculator;
 public class PollutantConcentration {
 	
 	/** The min concentration. */
-	private double minConcentration;
+	private double min;
 	
 	/** The max concentration. */
-	private double maxConcentration;
+	private double max;
 	
 	/** The index. */
-	private PollutantIndex index;
+	private Index index;
 	
 	
 	
@@ -23,7 +23,7 @@ public class PollutantConcentration {
 	 * @return the min concentration
 	 */
 	public double getMinConcentration() {
-		return minConcentration;
+		return min;
 	}
 	
 	/**
@@ -32,7 +32,7 @@ public class PollutantConcentration {
 	 * @param minConcentration the new min concentration
 	 */
 	public void setMinConcentration(double minConcentration) {
-		this.minConcentration = minConcentration;
+		this.min = minConcentration;
 	}
 	
 	/**
@@ -41,7 +41,7 @@ public class PollutantConcentration {
 	 * @return the max concentration
 	 */
 	public double getMaxConcentration() {
-		return maxConcentration;
+		return max;
 	}
 	
 	/**
@@ -50,7 +50,7 @@ public class PollutantConcentration {
 	 * @param maxConcentration the new max concentration
 	 */
 	public void setMaxConcentration(double maxConcentration) {
-		this.maxConcentration = maxConcentration;
+		this.max = maxConcentration;
 	}
 	
 	/**
@@ -58,7 +58,7 @@ public class PollutantConcentration {
 	 *
 	 * @return the index
 	 */
-	public PollutantIndex getIndex() {
+	public Index getIndex() {
 		return index;
 	}
 	
@@ -67,7 +67,7 @@ public class PollutantConcentration {
 	 *
 	 * @param index the new index
 	 */
-	public void setIndex(PollutantIndex index) {
+	public void setIndex(Index index) {
 		this.index = index;
 	}
 }
