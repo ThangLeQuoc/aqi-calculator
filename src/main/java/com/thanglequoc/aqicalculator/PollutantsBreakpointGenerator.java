@@ -31,15 +31,16 @@ public class PollutantsBreakpointGenerator {
 		ObjectMapper mapper = new ObjectMapper();
 
 		ClassLoader classLoader = PollutantsBreakpointGenerator.class.getClassLoader();
-
+		
 		try (InputStream inputStream = classLoader.getResourceAsStream("AQIresource/aqi-breakpoint.json")) {
 			JsonNode root = mapper.readTree(inputStream);
 
 			for(JsonNode pollutantNode: root){
-				PollutantBreakpoint pollutantBreakpoint = pollutantBreakpointParser.parseNode(pollutantNode);
+				//PollutantBreakpoint pollutantBreakpoint = mapper.treeToValue(pollutantNode, PollutantBreakpoint.class);
+			    	PollutantBreakpoint pollutantBreakpoint = pollutantBreakpointParser.parseNode(pollutantNode);
 				this.pollutantsBreakpoint.addPollutantBreakpoint(pollutantBreakpoint);
 			}
-		}
+		} 
 	}
 
 	/**

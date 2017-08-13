@@ -10,11 +10,11 @@ package com.thanglequoc.aqicalculator;
 public class Index {
 	
 	/** The upper bound index. */
-	private int minIndex;
+	private int min;
 
 	
 	/** The lower bound index. */
-	private int maxIndex;
+	private int max;
 	
 	/**
 	 * Gets the lower bound index.
@@ -22,7 +22,7 @@ public class Index {
 	 * @return the lower bound index
 	 */
 	int getMinIndex() {
-		return minIndex;
+		return min;
 	}
 	
 	/**
@@ -31,7 +31,7 @@ public class Index {
 	 * @param minIndex the new lower bound index
 	 */
 	void setMinIndex(int minIndex) {
-		this.minIndex = minIndex;
+		this.min = minIndex;
 	}
 	
 	/**
@@ -40,7 +40,7 @@ public class Index {
 	 * @return the upper bound index
 	 */
 	int getMaxIndex() {
-		return maxIndex;
+		return max;
 	}
 	
 	/**
@@ -49,6 +49,6 @@ public class Index {
 	 * @param maxIndex the new upper bound index
 	 */
 	void setMaxIndex(int maxIndex) {
-		this.maxIndex = maxIndex;
+		this.max = maxIndex;
 	}
 }
