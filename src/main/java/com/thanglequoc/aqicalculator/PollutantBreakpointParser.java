@@ -56,7 +56,7 @@ public class PollutantBreakpointParser {
 			int minIndex = indexObj.path("min").asInt();
 			int maxIndex = indexObj.path("max").asInt();
 			
-			PollutantIndex index = new PollutantIndex();
+			Index index = new Index();
 			index.setMinIndex(minIndex);
 			index.setMaxIndex(maxIndex);
 			/**---- **/

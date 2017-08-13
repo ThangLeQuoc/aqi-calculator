@@ -7,7 +7,7 @@ package com.thanglequoc.aqicalculator;
  * 
  * @author ThangLeQuoc
  */
-public class PollutantIndex {
+public class Index {
 	
 	/** The upper bound index. */
 	private int minIndex;

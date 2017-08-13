@@ -5,41 +5,41 @@
       "max": 50
     },
     "category": "Good",
-    "message": "None"
+    "guidance": "None"
   }, {
     "index": {
       "min": 51,
       "max": 100
     },
     "category": "Moderate",
-    "message": "Unusually sensitive people should consider reducing prolonged or heavy outdoor exertion"
+    "guidance": "Unusually sensitive people should consider reducing prolonged or heavy outdoor exertion"
   }, {
     "index": {
       "min": 101,
       "max": 150
     },
     "category": "Unhealthy for Sensitive Groups",
-    "message": "Active children and adults, and people with respiratory disease, such as asthma, should limit prolonged outdoor exertion"
+    "guidance": "Active children and adults, and people with respiratory disease, such as asthma, should limit prolonged outdoor exertion"
   }, {
     "index": {
       "min": 151,
       "max": 200
     },
     "category": "Unhealthy",
-    "message": "Active children and adults, and people with respiratory disease, such as asthma, should avoid prolonged outdoor exertion; everyone else, especially children, should limit prolonged outdoor exertion"
+    "guidance": "Active children and adults, and people with respiratory disease, such as asthma, should avoid prolonged outdoor exertion; everyone else, especially children, should limit prolonged outdoor exertion"
   }, {
     "index": {
       "min": 201,
       "max": 300
     },
     "category": "Very Unhealthy",
-    "message": "Active children and adults, and people with respiratory disease, such as asthma, should avoid all outdoor exertion; everyone else, especially children, should limit outdoor exertion"
+    "guidance": "Active children and adults, and people with respiratory disease, such as asthma, should avoid all outdoor exertion; everyone else, especially children, should limit outdoor exertion"
   }, {
     "index": {
       "min": 301,
       "max": 500
     },
     "category": "Hazardous",
-    "message": "Everyone should avoid all outdoor exertion"
+    "guidance": "Everyone should avoid all outdoor exertion"
   }]
 }

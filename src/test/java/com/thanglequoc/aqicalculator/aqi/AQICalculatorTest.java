@@ -11,9 +11,6 @@ import org.junit.runner.RunWith;
 import com.thanglequoc.aqicalculator.AQICalculator;
 import com.thanglequoc.aqicalculator.PollutantCode;
 
-
-
-
 public class AQICalculatorTest {
 
     	//@InjectMocks

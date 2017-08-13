@@ -13,7 +13,7 @@ public class PollutantConcentration {
 	private double maxConcentration;
 	
 	/** The index. */
-	private PollutantIndex index;
+	private Index index;
 	
 	
 	
@@ -58,7 +58,7 @@ public class PollutantConcentration {
 	 *
 	 * @return the index
 	 */
-	public PollutantIndex getIndex() {
+	public Index getIndex() {
 		return index;
 	}
 	
@@ -67,7 +67,7 @@ public class PollutantConcentration {
 	 *
 	 * @param index the new index
 	 */
-	public void setIndex(PollutantIndex index) {
+	public void setIndex(Index index) {
 		this.index = index;
 	}
 }

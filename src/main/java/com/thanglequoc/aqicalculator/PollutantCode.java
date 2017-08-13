@@ -12,12 +12,6 @@ public enum PollutantCode {
 	/** The pm10. */
 	PM10("PM10"),
 	
-	/** The temp. */
-	TEMP("TEMP"),
-	
-	/** The hum. */
-	HUM("HUM"),
-	
 	/** The o3. */
 	O3("O3"),
 	
