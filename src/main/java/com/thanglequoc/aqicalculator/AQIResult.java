@@ -14,22 +14,22 @@ public class AQIResult {
      */
     private int aqi;
     private String category;
-    private String message;
-    private String healthAffectStatement;
+    private String generalMessage;
+    private String healthEffectsStatement;
     private String guidanceStatement;
 
     /**
      * @param aqi
      * @param category
-     * @param message
-     * @param healthAffectStatement
+     * @param generalMessage
+     * @param healthEffectsStatement
      * @param guidanceStatement
      */
-    AQIResult(int aqi, String category, String message, String healthAffectStatement, String guidanceStatement) {
+    AQIResult(int aqi, String category,  String generalMessage, String healthEffectStatement, String guidanceStatement) {
 	this.aqi = aqi;
 	this.category = category;
-	this.message = message;
-	this.healthAffectStatement = healthAffectStatement;
+	this.generalMessage = generalMessage;
+	this.healthEffectsStatement = healthEffectStatement;
 	this.guidanceStatement = guidanceStatement;
     }
 
@@ -42,35 +42,29 @@ public class AQIResult {
     /**
      * @return the aqi
      */
-    int getAqi() {
+    public int getAqi() {
         return aqi;
     }
 
     /**
      * @return the category
      */
-    String getCategory() {
+    public String getCategory() {
         return category;
     }
 
-    /**
-     * @return the message
-     */
-    String getMessage() {
-        return message;
-    }
 
     /**
-     * @return the healthAffectStatement
+     * @return the healthEffectsStatement
      */
-    String getHealthAffectStatement() {
-        return healthAffectStatement;
+    public String getHealthEffectsStatement() {
+        return healthEffectsStatement;
     }
 
     /**
      * @return the guidanceStatement
      */
-    String getGuidanceStatement() {
+    public String getGuidanceStatement() {
         return guidanceStatement;
     }
 
@@ -88,18 +82,12 @@ public class AQIResult {
         this.category = category;
     }
 
-    /**
-     * @param message the message to set
-     */
-    void setMessage(String message) {
-        this.message = message;
-    }
 
     /**
-     * @param healthAffectStatement the healthAffectStatement to set
+     * @param healthEffectStatement the healthEffectStatement to set
      */
-    void setHealthAffectStatement(String healthAffectStatement) {
-        this.healthAffectStatement = healthAffectStatement;
+    void setHealthEffectsStatement(String healthEffectsStatement) {
+        this.healthEffectsStatement = healthEffectsStatement;
     }
 
     /**
@@ -108,6 +96,22 @@ public class AQIResult {
     void setGuidanceStatement(String guidanceStatement) {
         this.guidanceStatement = guidanceStatement;
     }
+
+    /**
+     * @return the generalMessage
+     */
+    String getGeneralMessage() {
+        return generalMessage;
+    }
+
+    /**
+     * @param generalMessage the generalMessage to set
+     */
+    void setGeneralMessage(String generalMessage) {
+        this.generalMessage = generalMessage;
+    }
+    
+    
     
     
 

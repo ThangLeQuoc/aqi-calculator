@@ -13,9 +13,7 @@ import com.thanglequoc.aqicalculator.PollutantCode;
 
 public class AQICalculatorTest {
 
-    	//@InjectMocks
 	AQICalculator calculator;
-
     	
     	private String pollutantCode;
 
