@@ -27,10 +27,10 @@ public class AQICalculator {
 
     /** The breakpoint generator. */
     private PollutantsBreakpointGenerator breakpointGenerator;
-    
-    /** The AQI message generator  */
+
+    /** The AQI message generator */
     private AQIMessageGenerator messageGenerator;
-    
+
     /** The pollutants breakpoint. */
     private PollutantsBreakpoint pollutantsBreakpoint;
 
@@ -76,11 +76,11 @@ public class AQICalculator {
 	try {
 	    this.breakpointGenerator = new PollutantsBreakpointGenerator();
 	    this.messageGenerator = new AQIMessageGenerator();
-	    
+
 	} catch (Exception e) {
-	 
+
 	    e.printStackTrace();
-	} 
+	}
 	this.pollutantsBreakpoint = breakpointGenerator.getPollutantsBreakpoint();
 	this.nowcastCalculator = new NowcastCalculator();
 	this.truncator = new PollutantConcentrationTruncator();
@@ -129,7 +129,7 @@ public class AQICalculator {
 	    return (int) Math.round(result);
 	}
     }
-    
+
     private int calculateAQI(String pollutantCode, double avgConcentration) {
 	pollutantBreakpoint = this.pollutantsBreakpoint.getPollutantBreakpointByCode(pollutantCode);
 
@@ -161,7 +161,8 @@ public class AQICalculator {
 	double truncatedConcentration = this.truncator.getTruncatedPollutantConcentrationOnPollutantCode(pollutantCode,
 		avgConcentration);
 	// find the target Concentration with it corresponding Index level
-	targetPollutantConcentration = pollutantBreakpoint.getConcentrationRangeWithAvgConcentration(truncatedConcentration);
+	targetPollutantConcentration = pollutantBreakpoint
+		.getConcentrationRangeWithAvgConcentration(truncatedConcentration);
 
 	int i_high = targetPollutantConcentration.getIndex().getMaxIndex();
 	int i_low = targetPollutantConcentration.getIndex().getMinIndex();
@@ -173,15 +174,16 @@ public class AQICalculator {
 
 	/* Air Quality Index */
 	int aqi = calculateAQI(pollutantCode, avgConcentration);
-	
+
 	GeneralAQIMessage generalMessage = messageGenerator.getGeneralAQIMessageObjectOnAQILevel(aqi);
-	SpecificAQILevelMessage specificAQILevelMessage = messageGenerator.getSpecifcAQILevelMessageOnAQILevelOfPollutant(pollutantCode, aqi);
-	
+	SpecificAQILevelMessage specificAQILevelMessage = messageGenerator
+		.getSpecifcAQILevelMessageOnAQILevelOfPollutant(pollutantCode, aqi);
+
 	String category = generalMessage.getCategory();
 	String generalAQIMessage = generalMessage.getMessage();
 	String healthEffectsStatement = specificAQILevelMessage.getHealthEffectsStatements();
 	String guidanceStatement = specificAQILevelMessage.getGuidance();
-	
+
 	return new AQIResult(aqi, category, generalAQIMessage, healthEffectsStatement, guidanceStatement);
     }
 
@@ -194,7 +196,7 @@ public class AQICalculator {
      *            the data
      * @return the nowcast AQI
      */
-    public int getNowcastAQI(String pollutantCode, double[] data) {
+    public AQIResult getNowcastAQI(String pollutantCode, double[] data) {
 	// Get the breakpoint on pollutant code (ex: SO2, NO2
 	// breakpoint)
 	pollutantBreakpoint = this.pollutantsBreakpoint.getPollutantBreakpointByCode(pollutantCode);
@@ -203,7 +205,7 @@ public class AQICalculator {
 
 	// check if the nowcast has a valid data , if not, return aqi = -1
 	if (nowcastConcentration < 0) {
-	    return -1;
+	    return null;
 	} else {
 	    // find the target Concentration with it corresponding Index level
 	    targetPollutantConcentration = pollutantBreakpoint
@@ -214,11 +216,20 @@ public class AQICalculator {
 	    double c_low = targetPollutantConcentration.getMinConcentration();
 	    double c_high = targetPollutantConcentration.getMaxConcentration();
 
-	    // perform the calculation formula
 	    double result = (i_high - i_low) / (c_high - c_low) * (nowcastConcentration - c_low) + i_low;
 
-	    // round it to the nearest integer, and return
-	    return (int) Math.round(result);
+	    int aqi = (int) Math.round(result);
+
+	    GeneralAQIMessage generalMessage = messageGenerator.getGeneralAQIMessageObjectOnAQILevel(aqi);
+	    SpecificAQILevelMessage specificAQILevelMessage = messageGenerator
+		    .getSpecifcAQILevelMessageOnAQILevelOfPollutant(pollutantCode, aqi);
+
+	    String category = generalMessage.getCategory();
+	    String generalAQIMessage = generalMessage.getMessage();
+	    String healthEffectsStatement = specificAQILevelMessage.getHealthEffectsStatements();
+	    String guidanceStatement = specificAQILevelMessage.getGuidance();
+
+	    return new AQIResult(aqi, category, generalAQIMessage, healthEffectsStatement, guidanceStatement);
 	}
 
     }

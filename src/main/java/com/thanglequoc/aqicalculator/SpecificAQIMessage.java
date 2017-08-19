@@ -31,18 +31,6 @@ public class SpecificAQIMessage {
         return levelMessages;
     }
 
-    /**
-     * @param pollutantCode the pollutantCode to set
-     */
-    void setPollutantCode(String pollutantCode) {
-        this.pollutantCode = pollutantCode;
-    }
 
-    /**
-     * @param levelMessages the levelMessages to set
-     */
-    void setLevelMessages(ArrayList<SpecificAQILevelMessage> levelMessages) {
-        this.levelMessages = levelMessages;
-    }
 
 }

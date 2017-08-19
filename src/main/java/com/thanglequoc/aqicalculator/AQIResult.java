@@ -34,12 +34,6 @@ public class AQIResult {
     }
 
     /**
-     * Default Constructor
-     */
-    AQIResult() {
-    }
-
-    /**
      * @return the aqi
      */
     public int getAqi() {
@@ -69,50 +63,9 @@ public class AQIResult {
     }
 
     /**
-     * @param aqi the aqi to set
-     */
-    void setAqi(int aqi) {
-        this.aqi = aqi;
-    }
-
-    /**
-     * @param category the category to set
-     */
-    void setCategory(String category) {
-        this.category = category;
-    }
-
-
-    /**
-     * @param healthEffectStatement the healthEffectStatement to set
-     */
-    void setHealthEffectsStatement(String healthEffectsStatement) {
-        this.healthEffectsStatement = healthEffectsStatement;
-    }
-
-    /**
-     * @param guidanceStatement the guidanceStatement to set
-     */
-    void setGuidanceStatement(String guidanceStatement) {
-        this.guidanceStatement = guidanceStatement;
-    }
-
-    /**
      * @return the generalMessage
      */
-    String getGeneralMessage() {
+    public String getGeneralMessage() {
         return generalMessage;
     }
-
-    /**
-     * @param generalMessage the generalMessage to set
-     */
-    void setGeneralMessage(String generalMessage) {
-        this.generalMessage = generalMessage;
-    }
-    
-    
-    
-    
-
 }
