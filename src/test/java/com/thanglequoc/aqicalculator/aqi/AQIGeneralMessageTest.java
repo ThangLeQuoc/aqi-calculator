@@ -17,4 +17,7 @@ public class AQIGeneralMessageTest {
 	calculator = AQICalculator.getAQICalculatorInstance();
     }
     
+    
+    
+    
 }
