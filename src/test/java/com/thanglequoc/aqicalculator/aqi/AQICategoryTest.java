@@ -1,4 +1,4 @@
-package com.thanglequoc.aqicalculator.categorylevel;
+package com.thanglequoc.aqicalculator.aqi;
 
 import static org.junit.Assert.assertEquals;
 

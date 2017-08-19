@@ -1,4 +1,4 @@
-package com.thanglequoc.aqicalculator.categorylevel;
+package com.thanglequoc.aqicalculator.aqi;
 
 public enum AQILevel {
     
