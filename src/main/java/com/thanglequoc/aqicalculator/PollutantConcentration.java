@@ -1,28 +1,73 @@
 package com.thanglequoc.aqicalculator;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class PollutantConcentration.
+ */
 public class PollutantConcentration {
-	private double minConcentration;
-	private double maxConcentration;
-	private PollutantIndex index;
+	
+	/** The min concentration. */
+	private double min;
+	
+	/** The max concentration. */
+	private double max;
+	
+	/** The index. */
+	private Index index;
 	
 	
 	
+	/**
+	 * Gets the min concentration.
+	 *
+	 * @return the min concentration
+	 */
 	public double getMinConcentration() {
-		return minConcentration;
+		return min;
 	}
+	
+	/**
+	 * Sets the min concentration.
+	 *
+	 * @param minConcentration the new min concentration
+	 */
 	public void setMinConcentration(double minConcentration) {
-		this.minConcentration = minConcentration;
+		this.min = minConcentration;
 	}
+	
+	/**
+	 * Gets the max concentration.
+	 *
+	 * @return the max concentration
+	 */
 	public double getMaxConcentration() {
-		return maxConcentration;
+		return max;
 	}
+	
+	/**
+	 * Sets the max concentration.
+	 *
+	 * @param maxConcentration the new max concentration
+	 */
 	public void setMaxConcentration(double maxConcentration) {
-		this.maxConcentration = maxConcentration;
+		this.max = maxConcentration;
 	}
-	public PollutantIndex getIndex() {
+	
+	/**
+	 * Gets the index.
+	 *
+	 * @return the index
+	 */
+	public Index getIndex() {
 		return index;
 	}
-	public void setIndex(PollutantIndex index) {
+	
+	/**
+	 * Sets the index.
+	 *
+	 * @param index the new index
+	 */
+	public void setIndex(Index index) {
 		this.index = index;
 	}
 }

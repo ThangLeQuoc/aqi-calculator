@@ -4,13 +4,28 @@ import java.util.ArrayList;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class PollutantBreakpointParser.
+ */
 public class PollutantBreakpointParser {
+	
+	/** The pollutant breakpoint. */
 	private PollutantBreakpoint pollutantBreakpoint;
 
+	/**
+	 * Instantiates a new pollutant breakpoint parser.
+	 */
 	public PollutantBreakpointParser() {
 		
 	}
 
+	/**
+	 * Parses the node.
+	 *
+	 * @param node the node
+	 * @return the pollutant breakpoint
+	 */
 	public PollutantBreakpoint parseNode(JsonNode node) {
 		this.pollutantBreakpoint = new PollutantBreakpoint();
 		/**
@@ -41,7 +56,7 @@ public class PollutantBreakpointParser {
 			int minIndex = indexObj.path("min").asInt();
 			int maxIndex = indexObj.path("max").asInt();
 			
-			PollutantIndex index = new PollutantIndex();
+			Index index = new Index();
 			index.setMinIndex(minIndex);
 			index.setMaxIndex(maxIndex);
 			/**---- **/
