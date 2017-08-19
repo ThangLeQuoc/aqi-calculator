@@ -14,29 +14,37 @@ This project is intended to community target for free use. The author is not ass
 
 ## Highlights
 - Calculate AQI from raw concentration
+- The result from calculation includes Air Quality Index, AQI Category, General Message, Specific Health Effects Statements for the pollutant and the corresponding guidance message.
 - Support Nowcast Concentration
 
 ### Support the following pollutants
 
-| Pollutant  | Scientific name| Unit of Measurement |Input Code Usage |Regular Calculation Support |Nowcast Support
-| ---- |:-------------:|:-------------:|:-------------:|:-------------:|-------------:|
-| PM10      |  10 μm Particle Pollutant  | μg/m3| PM10 | :heavy_check_mark:| :heavy_check_mark:|
-| PM2.5      |  2.5 μm Particle Pollutant  | μg/m3| PM2.5 |  :heavy_check_mark:| :heavy_check_mark:
-| O3     |  Ozone  | ppb| O3 | :heavy_check_mark:| :heavy_check_mark:
-| CO     |  Carbon Monoxide  | ppb| CO | :heavy_check_mark:|:x:
-| SO2     |  Sulfur Dioxide  | ppb| SO2 | :heavy_check_mark:| :x:
-| NO2     |  Nitrogen Dioxide  | ppb| NO2 | :heavy_check_mark:| :x:
+| Pollutant  | Scientific name| Unit of Measurement |Input Code Usage |Regular Calculation Support |Nowcast Support | Health Effects Statements | Guidance Message|
+| ---- |:-------------:|:-------------:|:-------------:|:-------------:|-------------:|-------------:|-------------:|
+| PM10      |  10 μm Particle Pollutant  | μg/m3| PM10 | :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
+| PM2.5      |  2.5 μm Particle Pollutant  | μg/m3| PM2.5 |  :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
+| O3     |  Ozone  | ppb| O3 | :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
+| CO     |  Carbon Monoxide  | ppb| CO | :heavy_check_mark:|:x:|:heavy_check_mark:|:heavy_check_mark:|
+| SO2     |  Sulfur Dioxide  | ppb| SO2 | :heavy_check_mark:| :x:|:heavy_check_mark:|:heavy_check_mark:|
+| NO2     |  Nitrogen Dioxide  | ppb| NO2 | :heavy_check_mark:| :x:|:heavy_check_mark:|:heavy_check_mark:|
 ## Installation
-Grab the target jar in `target-jar` folder and add the jar to your project
+Grab the target jar in `target-jar` folder and add the jar to your project.
 
+It will soon be release as a dependency on Maven Repository. I'm working my way on it.
 ## Quick Usage
 
 #### For Regular AQI Calculation
+
+##### Using old method (it only give you plain AQI, and nothing more):
+<span style="color:red">**@Obsoleted:**</span> `getAQIforPollutant` is obsoleted and will be removed in the near future. Consider using `AQIResult` object insteads
 ```
 AQICalculator calculator = AQICalculator.getAQICalculatorInstance();
 calculator.getAQIforPollutant("PM10", 134.12);
 ```
 >90
+
+##### Using AQIResult Object (new replacement, AQI now comes in more detail :muscle: ):
+
 
 #### For Nowcast AQI Calculation
 
