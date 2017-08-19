@@ -47,31 +47,5 @@ public class SpecificAQILevelMessage {
      */
     String getGuidance() {
         return guidance;
-    }
-    /**
-     * @param index the index to set
-     */
-    void setIndex(Index index) {
-        this.index = index;
-    }
-    /**
-     * @param category the category to set
-     */
-    void setCategory(String category) {
-        this.category = category;
-    }
-    /**
-     * @param healthEffectsStatements the healthEffectsStatements to set
-     */
-    void setHealthEffectsStatements(String healthEffectsStatements) {
-        this.healthEffectsStatements = healthEffectsStatements;
-    }
-    /**
-     * @param guidance the guidance to set
-     */
-    void setGuidance(String guidance) {
-        this.guidance = guidance;
-    }
-    
-    
+    }   
 }

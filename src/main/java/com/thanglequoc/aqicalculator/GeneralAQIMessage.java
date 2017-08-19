@@ -11,11 +11,7 @@ public class GeneralAQIMessage {
     private String category;
     private String message;
     
-    GeneralAQIMessage() {
-	// TODO Auto-generated constructor stub
-    }
 
-    
     /**
      * @param index
      * @param category
@@ -52,34 +48,4 @@ public class GeneralAQIMessage {
     }
 
 
-    /**
-     * @param index the index to set
-     */
-    void setIndex(Index index) {
-        this.index = index;
-    }
-
-
-    /**
-     * @param category the category to set
-     */
-    void setCategory(String category) {
-        this.category = category;
-    }
-
-
-    /**
-     * @param message the message to set
-     */
-    void setMessage(String message) {
-        this.message = message;
-    }
-    
-    
-    
-   
-    
-    
-    
-    
 }
