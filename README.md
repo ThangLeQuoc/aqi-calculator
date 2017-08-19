@@ -44,6 +44,36 @@ calculator.getAQIforPollutant("PM10", 134.12);
 >90
 
 ##### Using AQIResult Object (new replacement, AQI now comes in more detail :muscle: ):
+```
+AQICalculator calculator = AQICalculator.getAQICalculatorInstance();
+AQIResult result = calculator.getAQI("PM10", 99);
+```
+
+Now `AQIResult` store all the related information that you might need, query them by the following methods
+* Get the Air Quality Index (AQI)
+
+```result.getAqi();```
+>73
+
+* Get the AQI Category
+
+```result.getCategory();```
+>Moderate
+
+* Get the general message of the AQI Category
+
+`result.getGeneralMessage();`
+
+>Unusually sensitive people should consider reducing prolonged or heavy outdoor exertion
+* Get the health effects statement for the pollutant with that level
+
+`result.getHealthEffectsStatement();`
+>Respiratory symptoms possible in unusually sensitive individuals; possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults
+
+* Get the guidance message for the pollutant with that level
+
+`result.getGuidanceStatement();` 
+>Unusually sensitive people should consider reducing prolonged or heavy exertion
 
 
 #### For Nowcast AQI Calculation
@@ -53,7 +83,9 @@ calculator.getAQIforPollutant("PM10", 134.12);
 AQICalculator calculator = AQICalculator.getAQICalculatorInstance();
 
 double[] data = { 64, 63, 72, 77, 65, 61, 70, 71, 64, 57, 58, 64 };`
-calculator.getNowcastAQI("PM10", data);
+AQIResult result = calculator.getNowcastAQI("PM10", data);
+
+result.getAqi();
 ~~~~
 >57
 
@@ -80,7 +112,8 @@ Presume that you want to calculate Nowcast AQI for PM10 at **14**, the data arra
 
 ~~~~
 double[] data = { 64, 63, -1, 77, 65, -1, 70, 71, -1, 57, 58, 64 };`
-calculator.getNowcastAQI("PM10", data);
+AQIResult result = calculator.getNowcastAQI("PM10", data);
+result.getAqi();
 ~~~~
 >56
 
