@@ -14,29 +14,67 @@ This project is intended to community target for free use. The author is not ass
 
 ## Highlights
 - Calculate AQI from raw concentration
+- The result from calculation includes Air Quality Index, AQI Category, General Message, Specific Health Effects Statements for the pollutant and the corresponding guidance message.
 - Support Nowcast Concentration
 
 ### Support the following pollutants
 
-| Pollutant  | Scientific name| Unit of Measurement |Input Code Usage |Regular Calculation Support |Nowcast Support
-| ---- |:-------------:|:-------------:|:-------------:|:-------------:|-------------:|
-| PM10      |  10 μm Particle Pollutant  | μg/m3| PM10 | :heavy_check_mark:| :heavy_check_mark:|
-| PM2.5      |  2.5 μm Particle Pollutant  | μg/m3| PM2.5 |  :heavy_check_mark:| :heavy_check_mark:
-| O3     |  Ozone  | ppb| O3 | :heavy_check_mark:| :heavy_check_mark:
-| CO     |  Carbon Monoxide  | ppb| CO | :heavy_check_mark:|:x:
-| SO2     |  Sulfur Dioxide  | ppb| SO2 | :heavy_check_mark:| :x:
-| NO2     |  Nitrogen Dioxide  | ppb| NO2 | :heavy_check_mark:| :x:
+| Pollutant  | Scientific name| Unit of Measurement |Input Code Usage |Regular Calculation Support |Nowcast Support | Health Effects Statements | Guidance Message|
+| ---- |:-------------:|:-------------:|:-------------:|:-------------:|-------------:|-------------:|-------------:|
+| PM10      |  10 μm Particle Pollutant  | μg/m3| PM10 | :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
+| PM2.5      |  2.5 μm Particle Pollutant  | μg/m3| PM2.5 |  :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
+| O3     |  Ozone  | ppb| O3 | :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
+| CO     |  Carbon Monoxide  | ppb| CO | :heavy_check_mark:|:x:|:heavy_check_mark:|:heavy_check_mark:|
+| SO2     |  Sulfur Dioxide  | ppb| SO2 | :heavy_check_mark:| :x:|:heavy_check_mark:|:heavy_check_mark:|
+| NO2     |  Nitrogen Dioxide  | ppb| NO2 | :heavy_check_mark:| :x:|:heavy_check_mark:|:heavy_check_mark:|
 ## Installation
-Grab the target jar in `target-jar` folder and add the jar to your project
+Grab the target jar in `target-jar` folder and add the jar to your project.
 
+It will soon be release as a dependency on Maven Repository. I'm working my way on it.
 ## Quick Usage
 
 #### For Regular AQI Calculation
+
+##### Using old method (it only give you plain AQI, and nothing more):
+<span style="color:red">**@Obsoleted:**</span> `getAQIforPollutant` is obsoleted and will be removed in the near future. Consider using `AQIResult` object insteads
 ```
 AQICalculator calculator = AQICalculator.getAQICalculatorInstance();
 calculator.getAQIforPollutant("PM10", 134.12);
 ```
 >90
+
+##### Using AQIResult Object (new replacement, AQI now comes in more detail :muscle: ):
+```
+AQICalculator calculator = AQICalculator.getAQICalculatorInstance();
+AQIResult result = calculator.getAQI("PM10", 99);
+```
+
+Now `AQIResult` store all the related information that you might need, query them by the following methods
+* Get the Air Quality Index (AQI)
+
+```result.getAqi();```
+>73
+
+* Get the AQI Category
+
+```result.getCategory();```
+>Moderate
+
+* Get the general message of the AQI Category
+
+`result.getGeneralMessage();`
+
+>Unusually sensitive people should consider reducing prolonged or heavy outdoor exertion
+* Get the health effects statement for the pollutant with that level
+
+`result.getHealthEffectsStatement();`
+>Respiratory symptoms possible in unusually sensitive individuals; possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults
+
+* Get the guidance message for the pollutant with that level
+
+`result.getGuidanceStatement();` 
+>Unusually sensitive people should consider reducing prolonged or heavy exertion
+
 
 #### For Nowcast AQI Calculation
 
@@ -45,7 +83,9 @@ calculator.getAQIforPollutant("PM10", 134.12);
 AQICalculator calculator = AQICalculator.getAQICalculatorInstance();
 
 double[] data = { 64, 63, 72, 77, 65, 61, 70, 71, 64, 57, 58, 64 };`
-calculator.getNowcastAQI("PM10", data);
+AQIResult result = calculator.getNowcastAQI("PM10", data);
+
+result.getAqi();
 ~~~~
 >57
 
@@ -72,7 +112,8 @@ Presume that you want to calculate Nowcast AQI for PM10 at **14**, the data arra
 
 ~~~~
 double[] data = { 64, 63, -1, 77, 65, -1, 70, 71, -1, 57, 58, 64 };`
-calculator.getNowcastAQI("PM10", data);
+AQIResult result = calculator.getNowcastAQI("PM10", data);
+result.getAqi();
 ~~~~
 >56
 
