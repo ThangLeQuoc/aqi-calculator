@@ -254,6 +254,201 @@ public class AQICategoryTest {
 	assertEquals(expectedCategory, actualCategory);
     }
     
+    /**
+     * ----- Begin test for Unhealthy Category level
+     * ---------------------------------------------------------------------
+     */
+    
+    @Test
+    public void should_ReturnUnhealthyAQILevel_When_AQIPM10Is151() {
+	pollutantCode = PollutantCode.PM10.getLiteral();
+
+	double avgConcentration = 255;
+	AQIResult result = calculator.getAQI(pollutantCode, avgConcentration);
+
+	String expectedCategory = AQILevel.UNHEALTHY.getLiteral();
+	String actualCategory = result.getCategory();
+	assertEquals(expectedCategory, actualCategory);
+    }
+    
+    @Test
+    public void should_ReturnUnhealthyAQILevel_When_AQIPM25Is168() {
+	pollutantCode = PollutantCode.PM25.getLiteral();
+
+	double avgConcentration = 88.4;
+	AQIResult result = calculator.getAQI(pollutantCode, avgConcentration);
+
+	String expectedCategory = AQILevel.UNHEALTHY.getLiteral();
+	String actualCategory = result.getCategory();
+	assertEquals(expectedCategory, actualCategory);
+    }
+    
+    @Test
+    public void should_ReturnUnhealthyAQILevel_When_AQIO3Is161() {
+	pollutantCode = PollutantCode.O3.getLiteral();
+
+	double avgConcentration = 89;
+	AQIResult result = calculator.getAQI(pollutantCode, avgConcentration);
+
+	String expectedCategory = AQILevel.UNHEALTHY.getLiteral();
+	String actualCategory = result.getCategory();
+	assertEquals(expectedCategory, actualCategory);
+    }
+    
+    @Test
+    public void should_ReturnUnhealthyAQILevel_When_AQICOIs178() {
+	pollutantCode = PollutantCode.CO.getLiteral();
+
+	double avgConcentration = 14000;
+	AQIResult result = calculator.getAQI(pollutantCode, avgConcentration);
+
+	String expectedCategory = AQILevel.UNHEALTHY.getLiteral();
+	String actualCategory = result.getCategory();
+	assertEquals(expectedCategory, actualCategory);
+    }
+    
+    @Test
+    public void should_ReturnUnhealthyAQILevel_When_AQISO2Is185() {
+	pollutantCode = PollutantCode.SO2.getLiteral();
+
+	double avgConcentration = 267;
+	AQIResult result = calculator.getAQI(pollutantCode, avgConcentration);
+
+	String expectedCategory = AQILevel.UNHEALTHY.getLiteral();
+	String actualCategory = result.getCategory();
+	assertEquals(expectedCategory, actualCategory);
+    }
+    
+    @Test
+    public void should_ReturnUnhealthyAQILevel_When_AQINO2Is198() {
+	pollutantCode = PollutantCode.NO2.getLiteral();
+
+	double avgConcentration = 637;
+	AQIResult result = calculator.getAQI(pollutantCode, avgConcentration);
+
+	String expectedCategory = AQILevel.UNHEALTHY.getLiteral();
+	String actualCategory = result.getCategory();
+	assertEquals(expectedCategory, actualCategory);
+    }
+    
+    /**
+     * ----- Begin test for Very Unhealthy Category level
+     * ---------------------------------------------------------------------
+     */
+    
+    @Test
+    public void should_ReturnVeryUnhealthyAQILevel_When_AQIPM10Is233() {
+	pollutantCode = PollutantCode.PM10.getLiteral();
+
+	double avgConcentration = 377;
+	AQIResult result = calculator.getAQI(pollutantCode, avgConcentration);
+
+	String expectedCategory = AQILevel.VERY_UNHEALTHY.getLiteral();
+	String actualCategory = result.getCategory();
+	assertEquals(expectedCategory, actualCategory);
+    }
+    
+    @Test
+    public void should_ReturnVeryUnhealthyAQILevel_When_AQIPM25Is248() {
+	pollutantCode = PollutantCode.PM25.getLiteral();
+
+	double avgConcentration = 197.9;
+	AQIResult result = calculator.getAQI(pollutantCode, avgConcentration);
+
+	String expectedCategory = AQILevel.VERY_UNHEALTHY.getLiteral();
+	String actualCategory = result.getCategory();
+	assertEquals(expectedCategory, actualCategory);
+    }
+    
+    @Test
+    public void should_ReturnVeryUnhealthyAQILevel_When_AQIO3Is263() {
+	pollutantCode = PollutantCode.O3.getLiteral();
+
+	double avgConcentration = 164;
+	AQIResult result = calculator.getAQI(pollutantCode, avgConcentration);
+
+	String expectedCategory = AQILevel.VERY_UNHEALTHY.getLiteral();
+	String actualCategory = result.getCategory();
+	assertEquals(expectedCategory, actualCategory);
+    }
+    
+    @Test
+    public void should_ReturnVeryUnhealthyAQILevel_When_AQICOIs279() {
+	pollutantCode = PollutantCode.CO.getLiteral();
+
+	double avgConcentration = 27200;
+	AQIResult result = calculator.getAQI(pollutantCode, avgConcentration);
+
+	String expectedCategory = AQILevel.VERY_UNHEALTHY.getLiteral();
+	String actualCategory = result.getCategory();
+	assertEquals(expectedCategory, actualCategory);
+    }
+    
+    @Test
+    public void should_ReturnVeryUnhealthyAQILevel_When_AQINO2Is299() {
+	pollutantCode = PollutantCode.NO2.getLiteral();
+
+	double avgConcentration = 1238;
+	AQIResult result = calculator.getAQI(pollutantCode, avgConcentration);
+
+	String expectedCategory = AQILevel.VERY_UNHEALTHY.getLiteral();
+	String actualCategory = result.getCategory();
+	assertEquals(expectedCategory, actualCategory);
+    }
+    
+    /**
+     * ----- Begin test for Hazardous Category level
+     * ---------------------------------------------------------------------
+     */
+    
+    @Test
+    public void should_ReturnHazardousAQILevel_When_AQIPM10Is358() {
+	pollutantCode = PollutantCode.PM10.getLiteral();
+
+	double avgConcentration = 470;
+	AQIResult result = calculator.getAQI(pollutantCode, avgConcentration);
+
+	String expectedCategory = AQILevel.HAZARDOUS.getLiteral();
+	String actualCategory = result.getCategory();
+	assertEquals(expectedCategory, actualCategory);
+    }
+    
+    @Test
+    public void should_ReturnHazardousAQILevel_When_AQIPM25Is399() {
+	pollutantCode = PollutantCode.PM25.getLiteral();
+
+	double avgConcentration = 349.3;
+	AQIResult result = calculator.getAQI(pollutantCode, avgConcentration);
+
+	String expectedCategory = AQILevel.HAZARDOUS.getLiteral();
+	String actualCategory = result.getCategory();
+	assertEquals(expectedCategory, actualCategory);
+    }
+    
+    @Test
+    public void should_ReturnHazardousAQILevel_When_AQICOIs431() {
+	pollutantCode = PollutantCode.CO.getLiteral();
+
+	double avgConcentration = 43500;
+	AQIResult result = calculator.getAQI(pollutantCode, avgConcentration);
+
+	String expectedCategory = AQILevel.HAZARDOUS.getLiteral();
+	String actualCategory = result.getCategory();
+	assertEquals(expectedCategory, actualCategory);
+    }
+    
+    @Test
+    public void should_ReturnHazardousAQILevel_When_AQINO2Is500() {
+	pollutantCode = PollutantCode.NO2.getLiteral();
+
+	double avgConcentration = 2044;
+	AQIResult result = calculator.getAQI(pollutantCode, avgConcentration);
+
+	String expectedCategory = AQILevel.HAZARDOUS.getLiteral();
+	String actualCategory = result.getCategory();
+	assertEquals(expectedCategory, actualCategory);
+    }
+
     
 
 }
