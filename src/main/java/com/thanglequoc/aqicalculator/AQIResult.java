@@ -2,16 +2,14 @@ package com.thanglequoc.aqicalculator;
 
 /**
  * An object which store all necessary AQI result information, include
- * the<b>index</b> value, <b>category</b>, <b>guidance message</b>,
+ * the<b>index</b> value, <b>category</b>, <b>health effects statements</b> and <b>guidance message</b>,
  * 
  * @author ThangLeQuoc
  * 
  */
 public class AQIResult {
 
-    /**
-     * <i>Air Quality Index</i>
-     */
+    /** <i>Air Quality Index</i>. */
     private int aqi;
     private String category;
     private String generalMessage;
