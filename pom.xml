@@ -3,9 +3,32 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.thanglequoc</groupId>
 	<artifactId>aqi-calculator</artifactId>
-	<version>1.2.0</version>
+	<version>1.2.1</version>
 	<name>AQI Calculator</name>
-	<description>Sample AQI Calculator</description>
+	<description>AQI Calculator give the detail result from AQI calculation. It also support Nowcast</description>
+	<url>https://github.com/ThangLeQuoc/aqi-calculator</url>
+
+	<developers>
+		<developer>
+			<name>Thang Le Quoc</name>
+			<email>silverhair.guy@gmail.com</email>
+		</developer>
+	</developers>
+
+
+	<licenses>
+		<license>
+			<name>The Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<scm>
+		<connection>scm:git:git://github.com/ThangLeQuoc/aqi-calculator.git</connection>
+		<developerConnection>scm:git:ssh://github.com:ThangLeQuoc/aqi-calculator.git</developerConnection>
+		<url>https://github.com/ThangLeQuoc/aqi-calculator/tree/master</url>
+	</scm>
+
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
