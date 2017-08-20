@@ -1,6 +1,5 @@
 package com.thanglequoc.aqicalculator;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class PollutantConcentration.
  */

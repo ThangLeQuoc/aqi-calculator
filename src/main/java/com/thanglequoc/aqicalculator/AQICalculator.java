@@ -11,6 +11,7 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.util.List;
 
+// TODO: Auto-generated Javadoc
 /**
  * A calculator use to calculate AQI from pollutant concentration, support both
  * <b>regular AQI</b> calculation and <b>Nowcast AQI</b> calculation. This
@@ -28,7 +29,7 @@ public class AQICalculator {
     /** The breakpoint generator. */
     private PollutantsBreakpointGenerator breakpointGenerator;
 
-    /** The AQI message generator */
+    /**  The AQI message generator. */
     private AQIMessageGenerator messageGenerator;
 
     /** The pollutants breakpoint. */
@@ -87,13 +88,12 @@ public class AQICalculator {
     }
 
     /**
-     * @deprecated Gets the AQIResult for pollutant.
+     * Gets the AQ ifor pollutant.
      *
-     * @param pollutantCode
-     *            the pollutant code
-     * @param avgConcentration
-     *            the avg concentration
+     * @param pollutantCode            the pollutant code
+     * @param avgConcentration            the avg concentration
      * @return the AQI for pollutant
+     * @deprecated Use <b>getAQI</b> for AQIResult instead
      */
     /*
      * Method: Return AQI for selected Pollutant
@@ -107,7 +107,6 @@ public class AQICalculator {
     @Deprecated
     public int getAQIforPollutant(String pollutantCode, double avgConcentration) {
 	pollutantBreakpoint = this.pollutantsBreakpoint.getPollutantBreakpointByCode(pollutantCode);
-
 	if (avgConcentration < 0) {
 	    return -1;
 	} else {
@@ -130,6 +129,13 @@ public class AQICalculator {
 	}
     }
 
+    /**
+     * Calculate AQI.
+     *
+     * @param pollutantCode the pollutant code
+     * @param avgConcentration the avg concentration
+     * @return the int
+     */
     private int calculateAQI(String pollutantCode, double avgConcentration) {
 	pollutantBreakpoint = this.pollutantsBreakpoint.getPollutantBreakpointByCode(pollutantCode);
 
@@ -155,6 +161,13 @@ public class AQICalculator {
 	}
     }
 
+    /**
+     * Gets the aqi.
+     *
+     * @param pollutantCode the pollutant code
+     * @param avgConcentration the avg concentration
+     * @return the aqi
+     */
     public AQIResult getAQI(String pollutantCode, double avgConcentration) {
 	pollutantBreakpoint = this.pollutantsBreakpoint.getPollutantBreakpointByCode(pollutantCode);
 
@@ -187,13 +200,12 @@ public class AQICalculator {
 	return new AQIResult(aqi, category, generalAQIMessage, healthEffectsStatement, guidanceStatement);
     }
 
+
     /**
-     * Gets the nowcast AQI.
+     * Gets the nowcast AQIResult object
      *
-     * @param pollutantCode
-     *            the pollutant code
-     * @param data
-     *            the data
+     * @param pollutantCode the pollutant code
+     * @param data the data
      * @return the nowcast AQI
      */
     public AQIResult getNowcastAQI(String pollutantCode, double[] data) {

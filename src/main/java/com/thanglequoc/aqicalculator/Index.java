@@ -1,6 +1,5 @@
 package com.thanglequoc.aqicalculator;
 
-// TODO: Auto-generated Javadoc
 /**
  * Represent <i>upper bound index</i> (<b>I-high</b>) and <i>lower bound
  * index</i> (<b>I-low</b>) of a corresponding range in

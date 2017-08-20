@@ -2,9 +2,8 @@ package com.thanglequoc.aqicalculator;
 
 import java.util.ArrayList;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class PollutantBreakpoint.
+ * PollutantBreakpoint.
  */
 public class PollutantBreakpoint {
 	

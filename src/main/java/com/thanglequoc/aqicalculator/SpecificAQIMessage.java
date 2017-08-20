@@ -1,8 +1,11 @@
 package com.thanglequoc.aqicalculator;
 
-import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Object that hold a list of <b>SpecificAQILevelMessage</b> for a pollutant
+ * @author ThangLeQuoc
+ * */
 public class SpecificAQIMessage {
     private String pollutantCode;
     private List<SpecificAQILevelMessage> levelMessages;

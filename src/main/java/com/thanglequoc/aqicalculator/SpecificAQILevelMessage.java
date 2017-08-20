@@ -1,5 +1,10 @@
 package com.thanglequoc.aqicalculator;
 
+/**
+ * Object to store information for a specifc pollutant code at diferrent AQI level
+ * 
+ * @author ThangLeQuoc
+ * */
 public class SpecificAQILevelMessage {
     Index index;
     String category;

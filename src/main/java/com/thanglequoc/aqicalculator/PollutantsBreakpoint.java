@@ -2,7 +2,6 @@ package com.thanglequoc.aqicalculator;
 
 import java.util.ArrayList;
 
-// TODO: Auto-generated Javadoc
 /**
  * PollutantsBreakpoint, which represent the whole AQI breakpoint table
  * <p>
