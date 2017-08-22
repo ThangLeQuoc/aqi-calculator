@@ -28,9 +28,18 @@ This project is intended to community target for free use. The author is not ass
 | SO2     |  Sulfur Dioxide  | ppb| SO2 | :heavy_check_mark:| :x:|:heavy_check_mark:|:heavy_check_mark:|
 | NO2     |  Nitrogen Dioxide  | ppb| NO2 | :heavy_check_mark:| :x:|:heavy_check_mark:|:heavy_check_mark:|
 ## Installation
+### Using Maven Dependency
+```
+<dependency>
+    <groupId>com.github.thanglequoc</groupId>
+    <artifactId>aqi-calculator</artifactId>
+    <version>1.2.1</version>
+</dependency>
+```
+Or for other stuff like Gradle, SBT, Ivy,.. you may find it on [Maven Central Repository](https://mvnrepository.com/artifact/com.github.thanglequoc/aqi-calculator/1.2.1)
+### Using Plug-n-play jar file:
 Grab the target jar in `target-jar` folder and add the jar to your project.
 
-It will soon be release as a dependency on Maven Repository. I'm working my way on it.
 ## Quick Usage
 
 #### For Regular AQI Calculation
