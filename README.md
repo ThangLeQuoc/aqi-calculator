@@ -1,6 +1,6 @@
 <h1 align="center">
 	<br>
-	<img width="320" src="https://cleanaircarolina.org/wp-content/uploads/2017/01/aqi_ex1.jpg" alt="aqi">
+	<img width="320" src="http://aqicn.org/aqicn/view/experiments/images/aqi-transparent.png">
 	<br>
   <br>
 </h1>
