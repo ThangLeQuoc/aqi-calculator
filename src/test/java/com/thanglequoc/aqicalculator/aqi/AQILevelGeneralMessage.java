@@ -1,6 +1,7 @@
 package com.thanglequoc.aqicalculator.aqi;
 
 public enum AQILevelGeneralMessage {
+    INVALID("Invalid pollutant concentration range for calculation"),
     GOOD("None"),
     MODERATE("Unusually sensitive people should consider reducing prolonged or heavy outdoor exertion"),
     UNHEALTHY_FOR_SENSITIVE_GROUPS("Active children and adults, and people with respiratory disease, such as asthma, should limit prolonged outdoor exertion"),

@@ -815,6 +815,22 @@ public class AQIMessageTest {
 	assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
 	assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
     }
+    
+    /**
+     * ----- Begin test for Invalid Concentration Range
+     * ---------------------------------------------------------------------
+     */
+    
+    @Test
+    public void should_ReturnInvalidMessage_When_ConcentrationRangeExceeded(){
+	String pollutantCode = PollutantCode.PM10.getLiteral();
+	
+	String expectedCategory = AQILevel.HAZARDOUS.getLiteral();
+	String expectedGeneralMessage = AQILevelGeneralMessage.HAZARDOUS.getGeneralGuidanceMessage();
+	String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForNO2.HAZARDOUS.getGuidance();
+	String expectedHealthEffectsStatements = AQILevelSpecificMessageForNO2.HAZARDOUS.getHealthEffectsStatements();
+	
+    }
 
     
 
