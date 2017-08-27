@@ -1,17 +1,5 @@
 package com.thanglequoc.aqicalculator;
 
-import org.json.*;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import java.io.*;
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.util.List;
-
-// TODO: Auto-generated Javadoc
 /**
  * A calculator use to calculate AQI from pollutant concentration, support both
  * <b>regular AQI</b> calculation and <b>Nowcast AQI</b> calculation. This
