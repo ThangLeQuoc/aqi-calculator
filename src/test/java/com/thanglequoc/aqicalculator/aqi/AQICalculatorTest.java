@@ -49,7 +49,6 @@ public class AQICalculatorTest {
 		assertEquals(expectedAQI, result.getAqi());
 	}
 
-	@Ignore
 	@Test
 	public void should_ReturnPM10NoAQI_When_InputInvalidConcentration() {
 		this.pollutantCode = PollutantCode.PM10.getLiteral();
@@ -89,7 +88,6 @@ public class AQICalculatorTest {
 
 	}
 	
-	@Ignore
 	@Test
 	public void shoud_ReturnPM10NoNowcastAQI_When_InputInvalidListOfMissingConcentration() {
 		this.pollutantCode = PollutantCode.PM10.getLiteral();
@@ -109,6 +107,17 @@ public class AQICalculatorTest {
 		expectedAQI = -1;
 		result = this.calculator.getNowcastAQI(pollutantCode, data2);
 		assertEquals(expectedAQI, result.getAqi());
+	}
+	
+	@Test
+	public void should_ReturnPM10EmptyAQIResult_When_ConcentrationIsOutOfRange(){
+	    this.pollutantCode = PollutantCode.PM10.getLiteral();
+	    
+	    double concentration = 700;
+	    int expectedAQI = -1;
+	    AQIResult result = calculator.getAQI(pollutantCode, concentration);
+	    
+	    assertEquals(expectedAQI, result.getAqi() );
 	}
 
 	/**
@@ -135,7 +144,6 @@ public class AQICalculatorTest {
 		assertEquals(expectedAQI, result.getAqi());
 	}
 	
-	@Ignore
 	@Test
 	public void should_ReturnPM25NoAQI_When_InputInvalidConcentration(){
 		this.pollutantCode = PollutantCode.PM25.getLiteral();
@@ -176,7 +184,6 @@ public class AQICalculatorTest {
 		assertEquals(expectedAQI, result.getAqi());
 	}
 	
-	@Ignore
 	@Test
 	public void shoud_ReturnPM25NoNowcastAQI_When_InputInvalidListOfMissingConcentration(){
 		this.pollutantCode = PollutantCode.PM25.getLiteral();
@@ -189,6 +196,17 @@ public class AQICalculatorTest {
 		expectedAQI = -1;
 		result = this.calculator.getNowcastAQI(pollutantCode, data2);
 		assertEquals(expectedAQI, result.getAqi());
+	}
+	
+	@Test
+	public void should_ReturnPM25EmptyAQIResult_When_ConcentrationIsOutOfRange(){
+	    this.pollutantCode = PollutantCode.PM25.getLiteral();
+	    
+	    double concentration = 700;
+	    int expectedAQI = -1;
+	    AQIResult result = calculator.getAQI(pollutantCode, concentration);
+	    
+	    assertEquals(expectedAQI, result.getAqi() );
 	}
 	
 	/***
@@ -216,7 +234,6 @@ public class AQICalculatorTest {
 		assertEquals(expectedAQI, result.getAqi());
 	}
 	
-	@Ignore
 	@Test
 	public void should_ReturnOzoneNoAQI_When_InputInvalidConcentration(){
 		this.pollutantCode = PollutantCode.O3.getLiteral();
@@ -262,7 +279,6 @@ public class AQICalculatorTest {
 		
 	}
 	
-	@Ignore
 	@Test
 	public void shoud_ReturnOzoneNoNowcastAQI_When_InputInvalidListOfMissingConcentration(){
 		this.pollutantCode = PollutantCode.O3.getLiteral();
@@ -275,6 +291,17 @@ public class AQICalculatorTest {
 		expectedAQI = -1;
 		result = this.calculator.getNowcastAQI(pollutantCode, data2);
 		assertEquals(expectedAQI, result.getAqi());
+	}
+	
+	@Test
+	public void should_ReturnOzoneEmptyAQIResult_When_ConcentrationIsOutOfRange(){
+	    this.pollutantCode = PollutantCode.O3.getLiteral();
+	    
+	    double concentration = 700;
+	    int expectedAQI = -1;
+	    AQIResult result = calculator.getAQI(pollutantCode, concentration);
+	    
+	    assertEquals(expectedAQI, result.getAqi() );
 	}
 
 	
@@ -295,7 +322,6 @@ public class AQICalculatorTest {
 		assertEquals(expectedAQI, result.getAqi());
 	}
 	
-	@Ignore
 	@Test
 	public void should_ReturnCONoAQI_When_InputInvalidConcentration(){
 		this.pollutantCode = PollutantCode.CO.getLiteral();
@@ -303,6 +329,17 @@ public class AQICalculatorTest {
 		int expectedAQI = -1;
 		AQIResult result= this.calculator.getAQI(pollutantCode, concentration);
 		assertEquals(expectedAQI, result.getAqi());
+	}
+	
+	@Test
+	public void should_ReturnCOEmptyAQIResult_When_ConcentrationIsOutOfRange(){
+	    this.pollutantCode = PollutantCode.CO.getLiteral();
+	    
+	    double concentration = 70000;
+	    int expectedAQI = -1;
+	    AQIResult result = calculator.getAQI(pollutantCode, concentration);
+	    
+	    assertEquals(expectedAQI, result.getAqi() );
 	}
 	
 	
@@ -324,7 +361,7 @@ public class AQICalculatorTest {
 		assertEquals(expectedAQI, result.getAqi());
 	}
 	
-	@Ignore
+
 	@Test
 	public void should_ReturnNO2NoAQI_When_InputInvalidConcentration(){
 		this.pollutantCode = PollutantCode.NO2.getLiteral();
@@ -332,6 +369,17 @@ public class AQICalculatorTest {
 		int expectedAQI = -1;
 		AQIResult result= this.calculator.getAQI(pollutantCode, concentration);
 		assertEquals(expectedAQI, result.getAqi());
+	}
+	
+	@Test
+	public void should_ReturnNO2EmptyAQIResult_When_ConcentrationIsOutOfRange(){
+	    this.pollutantCode = PollutantCode.NO2.getLiteral();
+	    
+	    double concentration = 4000;
+	    int expectedAQI = -1;
+	    AQIResult result = calculator.getAQI(pollutantCode, concentration);
+	    
+	    assertEquals(expectedAQI, result.getAqi() );
 	}
 
 
@@ -353,13 +401,23 @@ public class AQICalculatorTest {
 		assertEquals(expectedAQI, result.getAqi());
 	}
 	
-	@Ignore
 	@Test
-	public void should_ReturnSO2NoAQI_When_InputInvalidConcentration(){
+	public void should_ReturnSO2EmtyAQI_When_InputInvalidConcentration(){
 		this.pollutantCode = PollutantCode.SO2.getLiteral();
 		double concentration = -1;
 		int expectedAQI = -1;
-		int actualAQI = this.calculator.getAQIforPollutant(pollutantCode, concentration);
-		assertEquals(expectedAQI, actualAQI);
+		AQIResult result = this.calculator.getAQI(pollutantCode, concentration);
+		assertEquals(expectedAQI, result.getAqi());
+	}
+	
+	@Test
+	public void should_ReturnSO2EmptyAQIResult_When_ConcentrationIsOutOfRange(){
+	    this.pollutantCode = PollutantCode.SO2.getLiteral();
+	    
+	    double concentration = 2000;
+	    int expectedAQI = -1;
+	    AQIResult result = calculator.getAQI(pollutantCode, concentration);
+	    
+	    assertEquals(expectedAQI, result.getAqi() );
 	}
 }

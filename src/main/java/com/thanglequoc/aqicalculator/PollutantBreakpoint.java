@@ -1,6 +1,7 @@
 package com.thanglequoc.aqicalculator;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 /**
  * PollutantBreakpoint.
@@ -99,12 +100,12 @@ public class PollutantBreakpoint {
 	 * @return the concentration range with avg concentration
 	 */
 	//Get Low level concentration and High level concentration with avg input concentration.
-	public PollutantConcentration getConcentrationRangeWithAvgConcentration(double concentration){
+	public Optional<PollutantConcentration> getConcentrationRangeWithAvgConcentration(double concentration){
 		for(PollutantConcentration pollutantConcentration: concentrations){
 			if(concentration >= pollutantConcentration.getMinConcentration() && concentration <= pollutantConcentration.getMaxConcentration()){
-				return pollutantConcentration;
+				return Optional.of(pollutantConcentration); 
 			}
 		}
-		return null;
+		return Optional.empty();
 	}
 }
