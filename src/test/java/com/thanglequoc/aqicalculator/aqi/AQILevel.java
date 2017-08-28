@@ -2,6 +2,8 @@ package com.thanglequoc.aqicalculator.aqi;
 
 public enum AQILevel {
     
+    INVALID("Uncategorized"),
+    
     GOOD("Good"),
     
     MODERATE("Moderate"),
