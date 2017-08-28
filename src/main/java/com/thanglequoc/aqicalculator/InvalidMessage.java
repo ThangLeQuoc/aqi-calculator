@@ -16,7 +16,7 @@ public enum InvalidMessage {
     /**
      * @return the literal
      */
-    String getLiteral() {
+    public String getLiteral() {
         return literal;
     }
 }

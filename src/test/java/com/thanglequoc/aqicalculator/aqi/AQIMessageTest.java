@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import com.thanglequoc.aqicalculator.AQICalculator;
 import com.thanglequoc.aqicalculator.AQIResult;
+import com.thanglequoc.aqicalculator.InvalidMessage;
 import com.thanglequoc.aqicalculator.PollutantCode;
 
 public class AQIMessageTest {
@@ -825,11 +826,42 @@ public class AQIMessageTest {
     public void should_ReturnInvalidMessage_When_ConcentrationRangeExceeded(){
 	String pollutantCode = PollutantCode.PM10.getLiteral();
 	
-	String expectedCategory = AQILevel.HAZARDOUS.getLiteral();
-	String expectedGeneralMessage = AQILevelGeneralMessage.HAZARDOUS.getGeneralGuidanceMessage();
-	String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForNO2.HAZARDOUS.getGuidance();
-	String expectedHealthEffectsStatements = AQILevelSpecificMessageForNO2.HAZARDOUS.getHealthEffectsStatements();
+	String expectedCategory = AQILevel.INVALID.getLiteral();
+	String expectedGeneralMessage = AQILevelGeneralMessage.INVALID.getGeneralGuidanceMessage();
+	String expectedSpecificGuidanceMessage = InvalidMessage.INVALID_GUIDANCE_MESSAGE.getLiteral();
+	String expectedHealthEffectsStatements = InvalidMessage.INVALID_HEALTH_EFFECTS_STATEMENTS_MESSAGE.getLiteral();
 	
+	AQIResult result = calculator.getAQI(pollutantCode, -10);
+	category = result.getCategory();
+	generalMessage = result.getGeneralMessage();
+	specificGuidanceMessage = result.getGuidanceStatement();
+	healthEffectsStatements = result.getHealthEffectsStatement();
+	
+	assertEquals(expectedCategory, category);
+	assertEquals(expectedGeneralMessage, generalMessage);
+	assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
+	assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
+    }
+    
+    @Test
+    public void should_ReturnInvalidMessage_When_ConcentrationRangeIsNegative(){
+	String pollutantCode = PollutantCode.PM25.getLiteral();
+	
+	String expectedCategory = AQILevel.INVALID.getLiteral();
+	String expectedGeneralMessage = AQILevelGeneralMessage.INVALID.getGeneralGuidanceMessage();
+	String expectedSpecificGuidanceMessage = InvalidMessage.INVALID_GUIDANCE_MESSAGE.getLiteral();
+	String expectedHealthEffectsStatements = InvalidMessage.INVALID_HEALTH_EFFECTS_STATEMENTS_MESSAGE.getLiteral();
+	
+	AQIResult result = calculator.getAQI(pollutantCode, -1000000);
+	category = result.getCategory();
+	generalMessage = result.getGeneralMessage();
+	specificGuidanceMessage = result.getGuidanceStatement();
+	healthEffectsStatements = result.getHealthEffectsStatement();
+	
+	assertEquals(expectedCategory, category);
+	assertEquals(expectedGeneralMessage, generalMessage);
+	assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
+	assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
     }
 
     
