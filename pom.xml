@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.thanglequoc</groupId>
 	<artifactId>aqi-calculator</artifactId>
-	<version>1.2.1</version>
+	<version>1.2.2</version>
 	<name>AQI Calculator</name>
 	<description>AQI Calculator give the detail result from AQI calculation. It also support Nowcast</description>
 	<url>https://github.com/ThangLeQuoc/aqi-calculator</url>
