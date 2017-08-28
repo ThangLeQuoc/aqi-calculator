@@ -9,3 +9,6 @@ buildNumber.properties
 .mvn/timing.properties
 
 \.vscode/settings\.json
+.classpath
+.settings
+.project
