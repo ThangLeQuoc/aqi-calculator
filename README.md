@@ -30,10 +30,11 @@ This project is intended to community target for free use. The author is not ass
 ## Installation
 ### Using Maven Dependency
 ```
+<!-- https://mvnrepository.com/artifact/com.github.thanglequoc/aqi-calculator -->
 <dependency>
     <groupId>com.github.thanglequoc</groupId>
     <artifactId>aqi-calculator</artifactId>
-    <version>1.2.1</version>
+    <version>1.2.2</version>
 </dependency>
 ```
 Or for other stuff like Gradle, SBT, Ivy,.. you may find it on [Maven Central Repository](https://mvnrepository.com/artifact/com.github.thanglequoc/aqi-calculator/1.2.1)
