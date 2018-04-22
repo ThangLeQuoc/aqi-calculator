@@ -5,48 +5,38 @@ import java.util.List;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
-/**
- * The Class GeneralAQIMessageParser.
- */
-public class AQIMessageParser {
+class AQIMessageParser {
 
-    /**
-     * Parses the general message node.
-     *
-     * @param generalMsgNode the general msg node
-     * @return the general AQI message
-     */
     GeneralAQIMessage parseGeneralMessageNode(JsonNode generalMsgNode) {
-	String category = generalMsgNode.path("category").asText();
-	String guidance = generalMsgNode.path("guidance").asText();
 	
-	int minIndex = generalMsgNode.path("index").path("min").asInt();
-	int maxIndex = generalMsgNode.path("index").path("max").asInt();
-	Index index =new Index(minIndex, maxIndex);
-	
-	GeneralAQIMessage generalAQIMessage = new GeneralAQIMessage(index, category, guidance);
-	return generalAQIMessage;
+	String category = generalMsgNode.path(AQIResourcePathConstants.CATEGORY).asText();
+	String guidance = generalMsgNode.path(AQIResourcePathConstants.GUIDANCE).asText();
+	Index index = parseIndexNode(generalMsgNode);	
+	return new GeneralAQIMessage(index, category, guidance);
     }
     
-    SpecificAQIMessage parseSpecificAQIMessageNode(JsonNode specificMsgNode){
-	String pollutantCode = specificMsgNode.path("code").asText();
-	List<SpecificAQILevelMessage> specificAQILevelMessages = new ArrayList<SpecificAQILevelMessage>();
+    SpecificAQIMessage parseSpecificAQIMessageNode(JsonNode specificMsgNode) {
 	
-	JsonNode specificAQLLevelMessagesNode = specificMsgNode.path("aqiLevel");
-	for(JsonNode aqiLevelMessageNode: specificAQLLevelMessagesNode){
-	    String category = aqiLevelMessageNode.path("category").asText();
-	    String healthEffectsStatements = aqiLevelMessageNode.path("healthEffectsStatements").asText();
-	    String guidance = aqiLevelMessageNode.path("guidance").asText();
-	    
-	    int minIndex = aqiLevelMessageNode.path("index").path("min").asInt();
-	    int maxIndex = aqiLevelMessageNode.path("index").path("max").asInt();
-	    Index index = new Index(minIndex, maxIndex);
-	    
+	List<SpecificAQILevelMessage> specificAQILevelMessages = new ArrayList<>();
+	String pollutantCode = specificMsgNode.path(AQIResourcePathConstants.CODE).asText();
+	
+	JsonNode specificLevelMessagesNode = specificMsgNode.path(AQIResourcePathConstants.AQI_LEVEL);
+	for (JsonNode aqiLevelMessageNode: specificLevelMessagesNode) {
+	    String category = aqiLevelMessageNode.path(AQIResourcePathConstants.CATEGORY).asText();
+	    String healthEffectsStatements = aqiLevelMessageNode.path(AQIResourcePathConstants.HEALTH_EFFECTS_STATEMENT).asText();
+	    String guidance = aqiLevelMessageNode.path(AQIResourcePathConstants.GUIDANCE).asText();
+	    Index index = parseIndexNode(aqiLevelMessageNode);
 	    SpecificAQILevelMessage levelMessage = new SpecificAQILevelMessage(index, category, healthEffectsStatements, guidance);
 	    specificAQILevelMessages.add(levelMessage);
 	}
 	
 	return new SpecificAQIMessage(pollutantCode, specificAQILevelMessages);
+    }
+    
+    private Index parseIndexNode(JsonNode node) {
+	int minIndex = node.path(AQIResourcePathConstants.INDEX).path(AQIResourcePathConstants.MIN).asInt();
+	int maxIndex = node.path(AQIResourcePathConstants.INDEX).path(AQIResourcePathConstants.MAX).asInt();
+	return new Index(minIndex, maxIndex);
     }
 
 }
