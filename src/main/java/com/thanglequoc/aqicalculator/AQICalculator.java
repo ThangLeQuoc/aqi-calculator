@@ -62,7 +62,6 @@ public class AQICalculator {
 	    this.messageGenerator = new AQIMessageGenerator();
 
 	} catch (Exception e) {
-
 	    e.printStackTrace();
 	}
 	this.pollutantsBreakpoint = breakpointGenerator.getPollutantsBreakpoint();
