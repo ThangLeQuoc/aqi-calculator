@@ -1,6 +1,6 @@
 package com.thanglequoc.aqicalculator;
 
-import com.thanglequoc.aqicalculator.PollutantCode;
+import com.thanglequoc.aqicalculator.Pollutant;
 
 /**
  * A small size calculator use to calculate <b>Nowcast Concentration</b> from an
@@ -12,20 +12,16 @@ import com.thanglequoc.aqicalculator.PollutantCode;
  */
 class NowcastCalculator {
 
-    private static String PM10 = PollutantCode.PM10.getLiteral();
-    private static String PM25 = PollutantCode.PM25.getLiteral();
-    private static String O3 = PollutantCode.O3.getLiteral();
-
-    double getNowcastConcentration(String pollutantCode, double[] data) {
+    double getNowcastConcentration(Pollutant pollutant, double[] data) {
 	PollutantConcentrationTruncator truncator = new PollutantConcentrationTruncator();
-	if (!isValidNowcastData(data))
+	if (!PollutantHelper.isPollutantValidForNowcastAQICalculation(pollutant) || !isValidNowcastData(data))
 	    return -1;
 
 	double totalConcentrationWithWeight = 0;
-	double weight = getWeightFactor(pollutantCode, data);
+	double weight = getWeightFactor(pollutant, data);
 	double totalWeight = 0;
-
-	if (pollutantCode.equals(PM10) || pollutantCode.equals(PM25)) {
+	// TODO: refactor this, code duplication
+	if (Pollutant.PM10.equals(pollutant) || Pollutant.PM25.equals(pollutant)) {
 	    for (int i = 0; i < 11; i++) {
 		if (data[i] < 0)
 		    continue;
@@ -36,10 +32,11 @@ class NowcastCalculator {
 
 	    }
 
-	    return truncator.getTruncatedPollutantConcentrationOnPollutantCode(pollutantCode,
+	    return truncator.getTruncatedPollutantConcentrationBaseOnPollutant(pollutant,
 		    totalConcentrationWithWeight / totalWeight);
 
-	} else if (pollutantCode.equals(O3)) {
+	}
+	if (Pollutant.O3.equals(pollutant)) {
 	    for (int i = 0; i < 7; i++) {
 		if (data[i] < 0)
 		    continue;
@@ -48,7 +45,7 @@ class NowcastCalculator {
 		    totalWeight += Math.pow(weight, i);
 		}
 	    }
-	    return truncator.getTruncatedPollutantConcentrationOnPollutantCode(pollutantCode,
+	    return truncator.getTruncatedPollutantConcentrationBaseOnPollutant(pollutant,
 		    totalConcentrationWithWeight / totalWeight);
 	}
 
@@ -65,7 +62,7 @@ class NowcastCalculator {
 	return (missingData >= 2) ? false : true;
     }
 
-    private double getWeightFactor(String pollutantCode, double[] data) {
+    private double getWeightFactor(Pollutant pollutant, double[] data) {
 	double maxConcentration = Double.MIN_VALUE;
 	double minConcentration = Double.MAX_VALUE;
 	for (double i : data) {
@@ -82,8 +79,8 @@ class NowcastCalculator {
 
 	}
 
-	if (pollutantCode.equals(O3)) {
-	    /* No minimum weight factor */
+	if (Pollutant.O3.equals(pollutant)) {
+	    /* No minimum weight factor for Ozone */
 	    double range = maxConcentration - minConcentration;
 	    double weightFactor = 1 - range / maxConcentration;
 	    return weightFactor;

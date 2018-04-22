@@ -8,11 +8,11 @@ import com.fasterxml.jackson.databind.JsonNode;
 class PollutantBreakpointParser {
 
     PollutantBreakpoint parseNode(JsonNode node) {
-	
 	String code = node.path(AQICalculatorConstants.CODE).asText();
+	Pollutant pollutant = Pollutant.parseFromString(code);
 	String unit = node.path(AQICalculatorConstants.UNIT).asText();
 	String period = node.path(AQICalculatorConstants.PERIOD).asText();
-	PollutantBreakpoint pollutantBreakpoint = new PollutantBreakpoint(code, unit, period);
+	PollutantBreakpoint pollutantBreakpoint = new PollutantBreakpoint(pollutant, unit, period);
 
 	List<PollutantConcentration> concentrationList = new ArrayList<>();
 

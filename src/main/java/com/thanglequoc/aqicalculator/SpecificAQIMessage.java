@@ -9,16 +9,16 @@ import java.util.List;
  */
 class SpecificAQIMessage {
 
-    private String pollutantCode;
+    private Pollutant pollutant;
     private List<SpecificAQILevelMessage> levelMessages;
 
-    SpecificAQIMessage(String pollutantCode, List<SpecificAQILevelMessage> levelMessages) {
-	this.pollutantCode = pollutantCode;
+    SpecificAQIMessage(Pollutant pollutant, List<SpecificAQILevelMessage> levelMessages) {
+	this.pollutant = pollutant;
 	this.levelMessages = levelMessages;
     }
 
-    String getPollutantCode() {
-	return pollutantCode;
+    Pollutant getPollutant() {
+	return pollutant;
     }
 
     List<SpecificAQILevelMessage> getLevelMessages() {

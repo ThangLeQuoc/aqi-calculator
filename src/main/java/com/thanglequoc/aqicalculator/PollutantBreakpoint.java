@@ -5,20 +5,20 @@ import java.util.Optional;
 
 class PollutantBreakpoint {
 
-    private String code;
+    private Pollutant pollutant;
     private String unit;
     private String period;
 
     private List<PollutantConcentration> concentrations;
 
-    PollutantBreakpoint(String code, String unit, String period) {
-	this.code = code;
+    PollutantBreakpoint(Pollutant code, String unit, String period) {
+	this.pollutant = code;
 	this.unit = unit;
 	this.period = period;
     }
 
-    String getCode() {
-	return code;
+    Pollutant getPollutant() {
+	return pollutant;
     }
 
     String getUnit() {

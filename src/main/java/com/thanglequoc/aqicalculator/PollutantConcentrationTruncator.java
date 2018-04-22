@@ -1,6 +1,6 @@
 package com.thanglequoc.aqicalculator;
 
-import com.thanglequoc.aqicalculator.PollutantCode;
+import com.thanglequoc.aqicalculator.Pollutant;
 
 /**
  * PollutantConcentrationTruncator which will support the truncation for
@@ -12,14 +12,7 @@ import com.thanglequoc.aqicalculator.PollutantCode;
  * 
  * @author ThangLeQuoc
  */
-public class PollutantConcentrationTruncator {
-
-    private static String PM10 = PollutantCode.PM10.getLiteral();
-    private static String PM25 = PollutantCode.PM25.getLiteral();
-    private static String O3 = PollutantCode.O3.getLiteral();
-    private static String CO = PollutantCode.CO.getLiteral();
-    private static String SO2 = PollutantCode.SO2.getLiteral();
-    private static String NO2 = PollutantCode.NO2.getLiteral();
+class PollutantConcentrationTruncator {
 
     /**
      * Gets the truncated pollutant concentration on pollutant code.
@@ -29,20 +22,21 @@ public class PollutantConcentrationTruncator {
      * For <i>Ozone</i>, truncate to 3 decimal place
      * 
      * 
-     * @param pollutantCode
-     *            the pollutant code (<i>PM10, PM2.5, O3, CO, NO2, SO2</i>)
+     * @param pollutant
+     *            the pollutant (<i>PM10, PM2.5, O3, CO, NO2, SO2</i>)
      * @param concentration
      *            the concentration
-     * @return the truncated pollutant concentration on pollutant code
+     * @return the truncated concentration base on pollutant
      */
-    double getTruncatedPollutantConcentrationOnPollutantCode(String pollutantCode, double concentration) {
-	if (pollutantCode.equals(PM10) || pollutantCode.equals(SO2) || pollutantCode.equals(NO2)) {
+    double getTruncatedPollutantConcentrationBaseOnPollutant(Pollutant pollutant, double concentration) {
+	if (Pollutant.PM10.equals(pollutant) || Pollutant.SO2.equals(pollutant) || Pollutant.NO2.equals(pollutant)) {
 	    return Math.round(concentration);
-	} else if (pollutantCode.equals(CO) || pollutantCode.equals(PM25)) {
-	    return Math.round(concentration * 10d) / 10d;
-	} else {
-	    return Math.round(concentration * 1000d) / 1000d;
 	}
+	if (Pollutant.CO.equals(pollutant) || Pollutant.PM25.equals(pollutant)) {
+	    return Math.round(concentration * 10d) / 10d;
+	}
+	return Math.round(concentration * 1000d) / 1000d;
+
     }
 
 }

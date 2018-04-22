@@ -3,7 +3,7 @@ package com.thanglequoc.aqicalculator;
 /**
  * List of pollutant code.
  */
-public enum PollutantCode {
+public enum Pollutant {
 
     PM25("PM2.5"), 
     PM10("PM10"), 
@@ -14,12 +14,21 @@ public enum PollutantCode {
 
     private String literal;
 
-    PollutantCode(String literal) {
+    Pollutant(String literal) {
 	this.literal = literal;
     }
 
     public String getLiteral() {
 	return literal;
+    }
+    
+    public static Pollutant parseFromString(String text) {
+	for (Pollutant pollutant : Pollutant.values()) {
+	    if (pollutant.getLiteral().equals(text)) {
+		return pollutant;
+	    } 
+	}
+	return null;
     }
     
 }

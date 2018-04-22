@@ -19,7 +19,7 @@ class AQIMessageParser {
 	
 	List<SpecificAQILevelMessage> specificAQILevelMessages = new ArrayList<>();
 	String pollutantCode = specificMsgNode.path(AQICalculatorConstants.CODE).asText();
-	
+	Pollutant pollutant = Pollutant.parseFromString(pollutantCode);
 	JsonNode specificLevelMessagesNode = specificMsgNode.path(AQICalculatorConstants.AQI_LEVEL);
 	for (JsonNode aqiLevelMessageNode: specificLevelMessagesNode) {
 	    String category = aqiLevelMessageNode.path(AQICalculatorConstants.CATEGORY).asText();
@@ -30,7 +30,7 @@ class AQIMessageParser {
 	    specificAQILevelMessages.add(levelMessage);
 	}
 	
-	return new SpecificAQIMessage(pollutantCode, specificAQILevelMessages);
+	return new SpecificAQIMessage(pollutant, specificAQILevelMessages);
     }
     
     private Index parseIndexNode(JsonNode node) {
