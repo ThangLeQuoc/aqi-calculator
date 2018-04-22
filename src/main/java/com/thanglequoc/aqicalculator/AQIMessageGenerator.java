@@ -9,20 +9,19 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class AQIMessageGenerator {
+class AQIMessageGenerator {
 
     private static String generalMessagesPath = "AQIresource/aqi-general-messages.json";
     private static String specificMessagesPath = "AQIresource/aqi-specific-messages.json";
 
-    
     private List<GeneralAQIMessage> generalAQIMessages ;
     private List<SpecificAQIMessage> specificAQIMessages;
     
     AQIMessageGenerator() throws IOException, JsonProcessingException {
 	ObjectMapper mapper = new ObjectMapper();
 	ClassLoader classLoader = AQIMessageGenerator.class.getClassLoader();
-	generalAQIMessages = new ArrayList<GeneralAQIMessage>();
-	specificAQIMessages = new ArrayList<SpecificAQIMessage>();
+	generalAQIMessages = new ArrayList<>();
+	specificAQIMessages = new ArrayList<>();
 	
 	AQIMessageParser msgParser = new AQIMessageParser();
 
@@ -59,8 +58,8 @@ public class AQIMessageGenerator {
     SpecificAQILevelMessage getSpecifcAQILevelMessageOnAQILevelOfPollutant(String pollutantCode, int AQI){
 	
 	SpecificAQIMessage targetPollutantMessage;
-	for ( SpecificAQIMessage specificAQIMessage : specificAQIMessages) {
-	    if(specificAQIMessage.getPollutantCode().equals(pollutantCode)){
+	for (SpecificAQIMessage specificAQIMessage : specificAQIMessages) {
+	    if (specificAQIMessage.getPollutantCode().equals(pollutantCode)) {
 		targetPollutantMessage = specificAQIMessage;
 		
 		for (SpecificAQILevelMessage specificAQILevelMessage : targetPollutantMessage.getLevelMessages()) {

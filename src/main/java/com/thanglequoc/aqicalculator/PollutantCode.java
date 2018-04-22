@@ -1,46 +1,24 @@
 package com.thanglequoc.aqicalculator;
 
 /**
- * The Enum PollutantCode.
+ * List of pollutant code.
  */
 public enum PollutantCode {
-	
-	/** The pm25. */
-	PM25("PM2.5"), 
-	
-	/** The pm10. */
-	PM10("PM10"),
-	
-	/** The o3. */
-	O3("O3"),
-	
-	/** The co. */
-	CO("CO"),
-	
-	/** The so2. */
-	SO2("SO2"),
-	
-	/** The no2. */
-	NO2("NO2");
-	
-	/** The literal. */
-	private String literal;
-	
-	/**
-	 * Instantiates a new pollutant code.
-	 *
-	 * @param literal the literal
-	 */
-	PollutantCode(String literal) {
-		this.literal = literal;
-	}
-	
-	/**
-	 * Gets the literal.
-	 *
-	 * @return the literal
-	 */
-	public String getLiteral() {
-		return literal;
-	}
+
+    PM25("PM2.5"), 
+    PM10("PM10"), 
+    O3("O3"), 
+    CO("CO"), 
+    SO2("SO2"), 
+    NO2("NO2");
+
+    private String literal;
+
+    PollutantCode(String literal) {
+	this.literal = literal;
+    }
+
+    public String getLiteral() {
+	return literal;
+    }
 }

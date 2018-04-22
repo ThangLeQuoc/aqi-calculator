@@ -16,28 +16,20 @@ import java.util.Optional;
 
 public class AQICalculator {
 
-    /** The breakpoint generator. */
     private PollutantsBreakpointGenerator breakpointGenerator;
 
-    /** The AQI message generator. */
     private AQIMessageGenerator messageGenerator;
 
-    /** The pollutants breakpoint. */
     private PollutantsBreakpoint pollutantsBreakpoint;
 
-    /** The pollutant breakpoint. */
     private PollutantBreakpoint pollutantBreakpoint;
 
-    /** The target pollutant concentration. */
     private Optional<PollutantConcentration> targetPollutantConcentration;
 
-    /** The nowcast calculator. */
     private NowcastCalculator nowcastCalculator;
 
-    /** The truncator. */
     private PollutantConcentrationTruncator truncator;
 
-    /** The unique AQI calculator instance. */
     private static AQICalculator uniqueAQICalculatorInstance;
 
     /**
@@ -57,13 +49,14 @@ public class AQICalculator {
      */
     private AQICalculator() {
 	/*
-	 * Constructor, AQI Calculator will generate the following thing
+	 * AQI Calculator will generate the following thing
 	 * PollutantBreakpointGenerator: Generator to get the breakpoints table
 	 * from JSON File PollutantsBreakpoint: Store a list of pollutant
 	 * breakpoint Nowcast Calculator: calculator to get avgAQI at present
 	 * for PM10, PM2.5, Ozone
 	 */
-
+	
+	//TODO: Handle this exception
 	try {
 	    this.breakpointGenerator = new PollutantsBreakpointGenerator();
 	    this.messageGenerator = new AQIMessageGenerator();
@@ -77,26 +70,6 @@ public class AQICalculator {
 	this.truncator = new PollutantConcentrationTruncator();
     }
 
-    /**
-     * Gets the AQI for pollutant.
-     *
-     * @param pollutantCode
-     *            the pollutant code
-     * @param avgConcentration
-     *            the avg concentration
-     * @return the AQI for pollutant
-     * @deprecated Use <b>getAQI</b> for AQIResult instead
-     */
-
-    /**
-     * Calculate AQI
-     *
-     * @param pollutantCode
-     *            the pollutant code
-     * @param avgConcentration
-     *            the avg concentration
-     * @return the int
-     */
     private int calculateAQI(String pollutantCode, double avgConcentration) {
 	pollutantBreakpoint = this.pollutantsBreakpoint.getPollutantBreakpointByCode(pollutantCode);
 
@@ -154,10 +127,8 @@ public class AQICalculator {
 	    double c_low = targetPollutantConcentration.get().getMinConcentration();
 	    double c_high = targetPollutantConcentration.get().getMaxConcentration();
 
-	    // perform the calculation formula
 	    double result = (i_high - i_low) / (c_high - c_low) * (avgConcentration - c_low) + i_low;
 
-	    /* Air Quality Index */
 	    aqi = calculateAQI(pollutantCode, avgConcentration);
 
 	    GeneralAQIMessage generalMessage = messageGenerator.getGeneralAQIMessageObjectOnAQILevel(aqi);
@@ -170,7 +141,7 @@ public class AQICalculator {
 	    guidanceStatement = specificAQILevelMessage.getGuidance();
 
 	}
-	
+
 	return new AQIResult(aqi, category, generalAQIMessage, healthEffectsStatement, guidanceStatement);
     }
 
@@ -184,8 +155,6 @@ public class AQICalculator {
      * @return the nowcast AQI
      */
     public AQIResult getNowcastAQI(String pollutantCode, double[] data) {
-	// Get the breakpoint on pollutant code (ex: SO2, NO2
-	// breakpoint)
 	pollutantBreakpoint = this.pollutantsBreakpoint.getPollutantBreakpointByCode(pollutantCode);
 
 	double nowcastConcentration = nowcastCalculator.getNowcastConcentration(pollutantCode, data);
@@ -194,7 +163,7 @@ public class AQICalculator {
 	String generalAQIMessage = InvalidMessage.INVALID_GENERAL_MESSAGE.getLiteral();
 	String healthEffectsStatement = InvalidMessage.INVALID_HEALTH_EFFECTS_STATEMENTS_MESSAGE.getLiteral();
 	String guidanceStatement = InvalidMessage.INVALID_GUIDANCE_MESSAGE.getLiteral();
-	;
+	
 	// check if the nowcast has a valid data , if not, return aqi = -1
 	if (nowcastConcentration < 0) {
 	    return new AQIResult(aqi, category, generalAQIMessage, healthEffectsStatement, guidanceStatement);

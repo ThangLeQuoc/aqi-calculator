@@ -55,11 +55,7 @@ public class PollutantBreakpointParser {
 			int minIndex = indexObj.path("min").asInt();
 			int maxIndex = indexObj.path("max").asInt();
 			
-			Index index = new Index();
-			index.setMinIndex(minIndex);
-			index.setMaxIndex(maxIndex);
-			/**---- **/
-			
+			Index index = new Index(minIndex, maxIndex);		
 			concentration.setIndex(index);
 			
 			/* Add this concentration to concentrationList */

@@ -7,7 +7,7 @@ package com.thanglequoc.aqicalculator;
  * 
  * @author ThangLeQuoc
  */
-public class Index {
+class Index {
 
     /** The upper bound index. */
     private int min;
@@ -15,55 +15,23 @@ public class Index {
     /** The lower bound index. */
     private int max;
 
-    /**
-     * @param min
-     * @param max
-     */
-    public Index(int min, int max) {
+    Index(int min, int max) {
 	this.min = min;
 	this.max = max;
     }
 
-    /**
-     * Default index constructor
-     */
-    public Index() {
-    }
-
-    /**
-     * Gets the lower bound index.
-     *
-     * @return the lower bound index
-     */
     int getMinIndex() {
 	return min;
     }
 
-    /**
-     * Sets the lower bound index.
-     *
-     * @param minIndex
-     *            the new lower bound index
-     */
     void setMinIndex(int minIndex) {
 	this.min = minIndex;
     }
 
-    /**
-     * Gets the upper bound index.
-     *
-     * @return the upper bound index
-     */
     int getMaxIndex() {
 	return max;
     }
 
-    /**
-     * Sets the upper bound index.
-     *
-     * @param maxIndex
-     *            the new upper bound index
-     */
     void setMaxIndex(int maxIndex) {
 	this.max = maxIndex;
     }
