@@ -21,4 +21,5 @@ public enum PollutantCode {
     public String getLiteral() {
 	return literal;
     }
+    
 }

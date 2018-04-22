@@ -14,21 +14,21 @@ import java.util.List;
  */
 public class PollutantsBreakpoint {
 
-    List<PollutantBreakpoint> breakpointList;
+    List<PollutantBreakpoint> breakpoints;
 
     /**
      * Instantiates a new pollutants breakpoint .
      */
     PollutantsBreakpoint() {
-	breakpointList = new ArrayList<>();
+	breakpoints = new ArrayList<>();
     }
 
     List<PollutantBreakpoint> getBreakpointList() {
-	return breakpointList;
+	return breakpoints;
     }
 
     void setBreakpointList(ArrayList<PollutantBreakpoint> breakpointList) {
-	this.breakpointList = breakpointList;
+	this.breakpoints = breakpointList;
     }
 
     /**
@@ -38,18 +38,17 @@ public class PollutantsBreakpoint {
      *            the pollutant breakpoint
      */
     void addPollutantBreakpoint(PollutantBreakpoint pollutantBreakpoint) {
-	this.breakpointList.add(pollutantBreakpoint);
+	this.breakpoints.add(pollutantBreakpoint);
     }
 
     /**
      * Gets the pollutant breakpoint by pollutant code.
      *
-     * @param pollutantCode
-     *            the pollutant code (ex <i>PM10, PM2.5, O3, SO2, NO2, CO</i>)
+     * @param pollutantCode the pollutant code (ex <i>PM10, PM2.5, O3, SO2, NO2, CO</i>)
      * @return the pollutant breakpoint by code
      */
     PollutantBreakpoint getPollutantBreakpointByCode(String pollutantCode) {
-	for (PollutantBreakpoint pollutantBreakpoint : breakpointList) {
+	for (PollutantBreakpoint pollutantBreakpoint : breakpoints) {
 	    if (pollutantBreakpoint.getCode().equals(pollutantCode)) {
 		return pollutantBreakpoint;
 	    }

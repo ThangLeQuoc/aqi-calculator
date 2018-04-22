@@ -1,70 +1,39 @@
 package com.thanglequoc.aqicalculator;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
-/**
- * The Class PollutantBreakpointParser.
- */
-public class PollutantBreakpointParser {
+class PollutantBreakpointParser {
+
+    PollutantBreakpoint parseNode(JsonNode node) {
 	
-	/** The pollutant breakpoint. */
-	private PollutantBreakpoint pollutantBreakpoint;
+	String code = node.path(AQIResourcePathConstants.CODE).asText();
+	String unit = node.path(AQIResourcePathConstants.UNIT).asText();
+	String period = node.path(AQIResourcePathConstants.PERIOD).asText();
+	PollutantBreakpoint pollutantBreakpoint = new PollutantBreakpoint(code, unit, period);
 
-	/**
-	 * Instantiates a new pollutant breakpoint parser.
-	 */
-	public PollutantBreakpointParser() {
-		
+	List<PollutantConcentration> concentrationList = new ArrayList<>();
+
+	JsonNode concentrationArray = node.path(AQIResourcePathConstants.CONCENTRATIONS);
+	for (JsonNode concentrationNode : concentrationArray) {
+	    double minConcentration = concentrationNode.path(AQIResourcePathConstants.MIN).asDouble();
+	    double maxConcentration = concentrationNode.path(AQIResourcePathConstants.MAX).asDouble();
+
+	    JsonNode indexObj = concentrationNode.path(AQIResourcePathConstants.INDEX);
+	    int minIndex = indexObj.path(AQIResourcePathConstants.MIN).asInt();
+	    int maxIndex = indexObj.path(AQIResourcePathConstants.MAX).asInt();
+	    Index index = new Index(minIndex, maxIndex);
+
+	    PollutantConcentration concentration = new PollutantConcentration(index, minConcentration,
+		    maxConcentration);
+	    concentrationList.add(concentration);
 	}
 
-	/**
-	 * Parses the node.
-	 *
-	 * @param node the node
-	 * @return the pollutant breakpoint
-	 */
-	public PollutantBreakpoint parseNode(JsonNode node) {
-		this.pollutantBreakpoint = new PollutantBreakpoint();
-		/**
-		 * code: Pollutant Code (ex: PM10, PM2.5) unit: Unit of Measurement (ex:
-		 * ug/m3) period: Breakpoint Period (ex: 24h)
-		 **/
-		String code = node.path("code").asText();
-		String unit = node.path("unit").asText();
-		String period = node.path("period").asText();
+	pollutantBreakpoint.setPollutantConcentrations(concentrationList);
 
-		pollutantBreakpoint.setCode(code);
-		pollutantBreakpoint.setUnit(unit);
-		pollutantBreakpoint.setPeriod(period);
-
-		ArrayList<PollutantConcentration> concentrationList = new ArrayList<PollutantConcentration>();
-		
-		/** Parse Concentration array **/
-		JsonNode concentrationArray = node.path("concentrations");
-		for (JsonNode concentrationNode : concentrationArray) {
-			PollutantConcentration concentration = new PollutantConcentration();
-			concentration.setMinConcentration(concentrationNode.path("min").asDouble());
-			concentration.setMaxConcentration(concentrationNode.path("max").asDouble());
-			
-			/** Parse Pollutant Index Object for that concentration **/
-			
-			// get value from Json node
-			JsonNode indexObj = concentrationNode.path("index");
-			int minIndex = indexObj.path("min").asInt();
-			int maxIndex = indexObj.path("max").asInt();
-			
-			Index index = new Index(minIndex, maxIndex);		
-			concentration.setIndex(index);
-			
-			/* Add this concentration to concentrationList */
-			concentrationList.add(concentration);
-		}
-		
-		pollutantBreakpoint.setPollutantConcentrationList(concentrationList);
-		
-		return this.pollutantBreakpoint;
-	}
+	return pollutantBreakpoint;
+    }
 
 }
