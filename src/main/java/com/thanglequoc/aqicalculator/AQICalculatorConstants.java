@@ -1,6 +1,7 @@
 package com.thanglequoc.aqicalculator;
 
-class AQIResourcePathConstants {
+class AQICalculatorConstants {
+    /* Resource Path Constants */
     static String INDEX = "index";
     static String MIN = "min";
     static String MAX = "max";
@@ -12,8 +13,8 @@ class AQIResourcePathConstants {
     static String AQI_LEVEL = "aqiLevel";
     static String HEALTH_EFFECTS_STATEMENT = "healthEffectsStatement";
     static String CONCENTRATIONS = "concentrations";
-
-    private AQIResourcePathConstants() {
+    
+    private AQICalculatorConstants() {
 
     }
 }

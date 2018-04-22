@@ -9,21 +9,21 @@ class PollutantBreakpointParser {
 
     PollutantBreakpoint parseNode(JsonNode node) {
 	
-	String code = node.path(AQIResourcePathConstants.CODE).asText();
-	String unit = node.path(AQIResourcePathConstants.UNIT).asText();
-	String period = node.path(AQIResourcePathConstants.PERIOD).asText();
+	String code = node.path(AQICalculatorConstants.CODE).asText();
+	String unit = node.path(AQICalculatorConstants.UNIT).asText();
+	String period = node.path(AQICalculatorConstants.PERIOD).asText();
 	PollutantBreakpoint pollutantBreakpoint = new PollutantBreakpoint(code, unit, period);
 
 	List<PollutantConcentration> concentrationList = new ArrayList<>();
 
-	JsonNode concentrationArray = node.path(AQIResourcePathConstants.CONCENTRATIONS);
+	JsonNode concentrationArray = node.path(AQICalculatorConstants.CONCENTRATIONS);
 	for (JsonNode concentrationNode : concentrationArray) {
-	    double minConcentration = concentrationNode.path(AQIResourcePathConstants.MIN).asDouble();
-	    double maxConcentration = concentrationNode.path(AQIResourcePathConstants.MAX).asDouble();
+	    double minConcentration = concentrationNode.path(AQICalculatorConstants.MIN).asDouble();
+	    double maxConcentration = concentrationNode.path(AQICalculatorConstants.MAX).asDouble();
 
-	    JsonNode indexObj = concentrationNode.path(AQIResourcePathConstants.INDEX);
-	    int minIndex = indexObj.path(AQIResourcePathConstants.MIN).asInt();
-	    int maxIndex = indexObj.path(AQIResourcePathConstants.MAX).asInt();
+	    JsonNode indexObj = concentrationNode.path(AQICalculatorConstants.INDEX);
+	    int minIndex = indexObj.path(AQICalculatorConstants.MIN).asInt();
+	    int maxIndex = indexObj.path(AQICalculatorConstants.MAX).asInt();
 	    Index index = new Index(minIndex, maxIndex);
 
 	    PollutantConcentration concentration = new PollutantConcentration(index, minConcentration,

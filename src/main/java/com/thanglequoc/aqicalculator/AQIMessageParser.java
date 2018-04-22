@@ -9,8 +9,8 @@ class AQIMessageParser {
 
     GeneralAQIMessage parseGeneralMessageNode(JsonNode generalMsgNode) {
 	
-	String category = generalMsgNode.path(AQIResourcePathConstants.CATEGORY).asText();
-	String guidance = generalMsgNode.path(AQIResourcePathConstants.GUIDANCE).asText();
+	String category = generalMsgNode.path(AQICalculatorConstants.CATEGORY).asText();
+	String guidance = generalMsgNode.path(AQICalculatorConstants.GUIDANCE).asText();
 	Index index = parseIndexNode(generalMsgNode);	
 	return new GeneralAQIMessage(index, category, guidance);
     }
@@ -18,13 +18,13 @@ class AQIMessageParser {
     SpecificAQIMessage parseSpecificAQIMessageNode(JsonNode specificMsgNode) {
 	
 	List<SpecificAQILevelMessage> specificAQILevelMessages = new ArrayList<>();
-	String pollutantCode = specificMsgNode.path(AQIResourcePathConstants.CODE).asText();
+	String pollutantCode = specificMsgNode.path(AQICalculatorConstants.CODE).asText();
 	
-	JsonNode specificLevelMessagesNode = specificMsgNode.path(AQIResourcePathConstants.AQI_LEVEL);
+	JsonNode specificLevelMessagesNode = specificMsgNode.path(AQICalculatorConstants.AQI_LEVEL);
 	for (JsonNode aqiLevelMessageNode: specificLevelMessagesNode) {
-	    String category = aqiLevelMessageNode.path(AQIResourcePathConstants.CATEGORY).asText();
-	    String healthEffectsStatements = aqiLevelMessageNode.path(AQIResourcePathConstants.HEALTH_EFFECTS_STATEMENT).asText();
-	    String guidance = aqiLevelMessageNode.path(AQIResourcePathConstants.GUIDANCE).asText();
+	    String category = aqiLevelMessageNode.path(AQICalculatorConstants.CATEGORY).asText();
+	    String healthEffectsStatements = aqiLevelMessageNode.path(AQICalculatorConstants.HEALTH_EFFECTS_STATEMENT).asText();
+	    String guidance = aqiLevelMessageNode.path(AQICalculatorConstants.GUIDANCE).asText();
 	    Index index = parseIndexNode(aqiLevelMessageNode);
 	    SpecificAQILevelMessage levelMessage = new SpecificAQILevelMessage(index, category, healthEffectsStatements, guidance);
 	    specificAQILevelMessages.add(levelMessage);
@@ -34,8 +34,8 @@ class AQIMessageParser {
     }
     
     private Index parseIndexNode(JsonNode node) {
-	int minIndex = node.path(AQIResourcePathConstants.INDEX).path(AQIResourcePathConstants.MIN).asInt();
-	int maxIndex = node.path(AQIResourcePathConstants.INDEX).path(AQIResourcePathConstants.MAX).asInt();
+	int minIndex = node.path(AQICalculatorConstants.INDEX).path(AQICalculatorConstants.MIN).asInt();
+	int maxIndex = node.path(AQICalculatorConstants.INDEX).path(AQICalculatorConstants.MAX).asInt();
 	return new Index(minIndex, maxIndex);
     }
 

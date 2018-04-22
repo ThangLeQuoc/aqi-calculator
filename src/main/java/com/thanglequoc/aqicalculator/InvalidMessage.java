@@ -1,5 +1,6 @@
 package com.thanglequoc.aqicalculator;
 
+@Deprecated
 public enum InvalidMessage {
     
     INVALID_CATEGORY("Uncategorized"),
