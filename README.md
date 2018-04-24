@@ -6,7 +6,9 @@
 </h1>
 
 # Maven AQI Calculator
-
+[![Build Status](https://travis-ci.org/ThangLeQuoc/aqi-calculator.svg?branch=master)](https://travis-ci.org/ThangLeQuoc/aqi-calculator)
+[![CodeFactor](https://www.codefactor.io/repository/github/thanglequoc/aqi-calculator/badge)](https://www.codefactor.io/repository/github/thanglequoc/aqi-calculator)
+[![BCH compliance](https://bettercodehub.com/edge/badge/ThangLeQuoc/aqi-calculator?branch=master)](https://bettercodehub.com/)
 ### Foreword
 All methods, constraints use in this project follows **US EPA AQI Calculation Method** (which includes breakpoint table and calculation formulas) . Since each country issues different AQI calculation methods, using this package might be inappropriate, consider your usage.
 
