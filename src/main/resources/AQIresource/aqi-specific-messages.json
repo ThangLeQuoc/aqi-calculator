@@ -6,7 +6,7 @@
         "max": 50
       },
       "category": "Good",
-      "healthEffectsStatements": "None",
+      "healthEffectsStatement": "None",
       "guidance": "None"
     },
     {
@@ -15,7 +15,7 @@
         "max": 100
       },
       "category": "Moderate",
-      "healthEffectsStatements": "Respiratory symptoms possible in unusually sensitive individuals; possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults",
+      "healthEffectsStatement": "Respiratory symptoms possible in unusually sensitive individuals; possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults",
       "guidance": "Unusually sensitive people should consider reducing prolonged or heavy exertion"
     }, {
       "index": {
@@ -23,7 +23,7 @@
         "max": 150
       },
       "category": "Unhealthy for Sensitive Groups",
-      "healthEffectsStatements": "Increasing likelihood of respiratory symptoms in sensitive groups including older adults, children, and people of lower socioeconomic status; aggravation of heart or lung disease and premature mortality in people with heart or lung disease",
+      "healthEffectsStatement": "Increasing likelihood of respiratory symptoms in sensitive groups including older adults, children, and people of lower socioeconomic status; aggravation of heart or lung disease and premature mortality in people with heart or lung disease",
       "guidance": "People with heart or lung disease, older adults, children, and people of lower socioeconomic status should reduce prolonged or heavy exertion"
     }, {
       "index": {
@@ -31,7 +31,7 @@
         "max": 200
       },
       "category": "Unhealthy",
-      "healthEffectsStatements": "Increased aggravation of respiratory symptoms in sensitive groups including older adults, children, and people of lower socioeconomic status; increased aggravation of heart or lung disease and premature mortality in people with heart or lung disease; increased respiratory effects in general population",
+      "healthEffectsStatement": "Increased aggravation of respiratory symptoms in sensitive groups including older adults, children, and people of lower socioeconomic status; increased aggravation of heart or lung disease and premature mortality in people with heart or lung disease; increased respiratory effects in general population",
       "guidance": "People with heart or lung disease, older adults, children, and people of lower socioeconomic status should avoid prolonged or heavy exertion; everyone else should reduce prolonged or heavy exertion"
     }, {
       "index": {
@@ -39,7 +39,7 @@
         "max": 300
       },
       "category": "Very Unhealthy",
-      "healthEffectsStatements": "Significant aggravation of respiratory symptoms in sensitive groups including older adults, children, and people of lower socioeconomic status; significant aggravation of heart or lung disease and premature mortality in people with heart or lung disease; significant increase in respiratory effects in general population",
+      "healthEffectsStatement": "Significant aggravation of respiratory symptoms in sensitive groups including older adults, children, and people of lower socioeconomic status; significant aggravation of heart or lung disease and premature mortality in people with heart or lung disease; significant increase in respiratory effects in general population",
       "guidance": "People with heart or lung disease, older adults, children, and people of lower socioeconomic status should avoid all physical activity outdoors. Everyone else should avoid prolonged or heavy exertion"
     }, {
       "index": {
@@ -47,7 +47,7 @@
         "max": 500
       },
       "category": "Hazardous",
-      "healthEffectsStatements": "Serious aggravation of respiratory symptoms in sensitive groups including older adults, children, and people of lower socioeconomic status; serious aggravation of heart or lung disease and premature mortality in people with heart or lung disease; serious risk of respiratory effects in general population",
+      "healthEffectsStatement": "Serious aggravation of respiratory symptoms in sensitive groups including older adults, children, and people of lower socioeconomic status; serious aggravation of heart or lung disease and premature mortality in people with heart or lung disease; serious risk of respiratory effects in general population",
       "guidance": "Everyone should avoid all physical activity outdoors; people with heart or lung disease, older adults, children, and people of lower socioeconomic status should remain indoors and keep activity levels low"
     }
   ]
@@ -59,7 +59,7 @@
         "max": 50
       },
       "category": "Good",
-      "healthEffectsStatements": "None",
+      "healthEffectsStatement": "None",
       "guidance": "None"
     },
     {
@@ -68,7 +68,7 @@
         "max": 100
       },
       "category": "Moderate",
-      "healthEffectsStatements": "Respiratory symptoms possible in unusually sensitive individuals; possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults",
+      "healthEffectsStatement": "Respiratory symptoms possible in unusually sensitive individuals; possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults",
       "guidance": "Unusually sensitive people should consider reducing prolonged or heavy exertion"
     }, {
       "index": {
@@ -76,7 +76,7 @@
         "max": 150
       },
       "category": "Unhealthy for Sensitive Groups",
-      "healthEffectsStatements": "Increasing likelihood of respiratory symptoms in sensitive groups including older adults, children, and people of lower socioeconomic status; aggravation of heart or lung disease and premature mortality in people with heart or lung disease",
+      "healthEffectsStatement": "Increasing likelihood of respiratory symptoms in sensitive groups including older adults, children, and people of lower socioeconomic status; aggravation of heart or lung disease and premature mortality in people with heart or lung disease",
       "guidance": "People with heart or lung disease, older adults, children, and people of lower socioeconomic status should reduce prolonged or heavy exertion"
     }, {
       "index": {
@@ -84,7 +84,7 @@
         "max": 200
       },
       "category": "Unhealthy",
-      "healthEffectsStatements": "Increased aggravation of respiratory symptoms in sensitive groups including older adults, children, and people of lower socioeconomic status; increased aggravation of heart or lung disease and premature mortality in people with heart or lung disease; increased respiratory effects in general population",
+      "healthEffectsStatement": "Increased aggravation of respiratory symptoms in sensitive groups including older adults, children, and people of lower socioeconomic status; increased aggravation of heart or lung disease and premature mortality in people with heart or lung disease; increased respiratory effects in general population",
       "guidance": "People with heart or lung disease, older adults, children, and people of lower socioeconomic status should avoid prolonged or heavy exertion; everyone else should reduce prolonged or heavy exertion"
     }, {
       "index": {
@@ -92,7 +92,7 @@
         "max": 300
       },
       "category": "Very Unhealthy",
-      "healthEffectsStatements": "Significant aggravation of respiratory symptoms in sensitive groups including older adults, children, and people of lower socioeconomic status; significant aggravation of heart or lung disease and premature mortality in people with heart or lung disease; significant increase in respiratory effects in general population",
+      "healthEffectsStatement": "Significant aggravation of respiratory symptoms in sensitive groups including older adults, children, and people of lower socioeconomic status; significant aggravation of heart or lung disease and premature mortality in people with heart or lung disease; significant increase in respiratory effects in general population",
       "guidance": "People with heart or lung disease, older adults, children, and people of lower socioeconomic status should avoid all physical activity outdoors. Everyone else should avoid prolonged or heavy exertion"
     }, {
       "index": {
@@ -100,7 +100,7 @@
         "max": 500
       },
       "category": "Hazardous",
-      "healthEffectsStatements": "Serious aggravation of respiratory symptoms in sensitive groups including older adults, children, and people of lower socioeconomic status; serious aggravation of heart or lung disease and premature mortality in people with heart or lung disease; serious risk of respiratory effects in general population",
+      "healthEffectsStatement": "Serious aggravation of respiratory symptoms in sensitive groups including older adults, children, and people of lower socioeconomic status; serious aggravation of heart or lung disease and premature mortality in people with heart or lung disease; serious risk of respiratory effects in general population",
       "guidance": "Everyone should avoid all physical activity outdoors; people with heart or lung disease, older adults, children, and people of lower socioeconomic status should remain indoors and keep activity levels low"
     }
   ]
@@ -112,7 +112,7 @@
         "max": 50
       },
       "category": "Good",
-      "healthEffectsStatements": "None",
+      "healthEffectsStatement": "None",
       "guidance": "None"
     },
     {
@@ -121,7 +121,7 @@
         "max": 100
       },
       "category": "Moderate",
-      "healthEffectsStatements": "Unusually sensitive individuals may experience respiratory symptoms",
+      "healthEffectsStatement": "Unusually sensitive individuals may experience respiratory symptoms",
       "guidance": "Unusually sensitive people should consider reducing prolonged or heavy outdoor exertion"
     }, {
       "index": {
@@ -129,7 +129,7 @@
         "max": 150
       },
       "category": "Unhealthy for Sensitive Groups",
-      "healthEffectsStatements": "Increasing likelihood of respiratory symptoms and breathing discomfort in people with lung disease (such as asthma), children, older adults, people who are active outdoors (including outdoor workers), people with certain genetic variants, and people with diets limited in certain nutrients",
+      "healthEffectsStatement": "Increasing likelihood of respiratory symptoms and breathing discomfort in people with lung disease (such as asthma), children, older adults, people who are active outdoors (including outdoor workers), people with certain genetic variants, and people with diets limited in certain nutrients",
       "guidance": "People with lung disease (such as asthma), children, older adults, people who are active outdoors (including outdoor workers), people with certain genetic variants, and people with diets limited in certain nutrients should reduce prolonged or heavy outdoor exertion"
     }, {
       "index": {
@@ -137,7 +137,7 @@
         "max": 200
       },
       "category": "Unhealthy",
-      "healthEffectsStatements": "Greater likelihood of respiratory symptoms and breathing in people with lung disease (such as asthma), children, older adults, people who are active outdoors (including outdoor workers), people with certain genetic variants, and people with diets limited in certain nutrients; possible respiratory effects in general population",
+      "healthEffectsStatement": "Greater likelihood of respiratory symptoms and breathing in people with lung disease (such as asthma), children, older adults, people who are active outdoors (including outdoor workers), people with certain genetic variants, and people with diets limited in certain nutrients; possible respiratory effects in general population",
       "guidance": "People with lung disease (such as asthma), children, older adults, people who are active outdoors (including outdoor workers), people with certain genetic variants, and people with diets limited in certain nutrients should avoid prolonged or heavy outdoor exertion; everyone else should reduce prolonged or heavy outdoor exertion"
     }, {
       "index": {
@@ -145,7 +145,7 @@
         "max": 300
       },
       "category": "Very Unhealthy",
-      "healthEffectsStatements": "Increasingly severe symptoms and impaired breathing likely in people with lung disease (such as asthma), children, older adults, people who are active outdoors (including outdoor workers), people with certain genetic variants, and people with diets limited in certain nutrients; increasing likelihood of respiratory effects in general population",
+      "healthEffectsStatement": "Increasingly severe symptoms and impaired breathing likely in people with lung disease (such as asthma), children, older adults, people who are active outdoors (including outdoor workers), people with certain genetic variants, and people with diets limited in certain nutrients; increasing likelihood of respiratory effects in general population",
       "guidance": "People with lung disease (such as asthma), children, older adults, people who are active outdoors (including outdoor workers), people with certain genetic variants, and people with diets limited in certain nutrients should avoid all outdoor exertion; everyone else should reduce outdoor exertion"
     }, {
       "index": {
@@ -153,7 +153,7 @@
         "max": 500
       },
       "category": "Hazardous",
-      "healthEffectsStatements": "Severe respiratory effects and impaired breathing likely in people with lung disease (such as asthma), children, older adults, people who are active outdoors (including outdoor workers), people with certain genetic variants, and people with diets limited in certain nutrients; increasingly severe respiratory effects likely in general population",
+      "healthEffectsStatement": "Severe respiratory effects and impaired breathing likely in people with lung disease (such as asthma), children, older adults, people who are active outdoors (including outdoor workers), people with certain genetic variants, and people with diets limited in certain nutrients; increasingly severe respiratory effects likely in general population",
       "guidance": "Everyone should avoid all outdoor exertion"
     }
   ]
@@ -165,7 +165,7 @@
         "max": 50
       },
       "category": "Good",
-      "healthEffectsStatements": "None",
+      "healthEffectsStatement": "None",
       "guidance": "None"
     },
     {
@@ -174,7 +174,7 @@
         "max": 100
       },
       "category": "Moderate",
-      "healthEffectsStatements": "None",
+      "healthEffectsStatement": "None",
       "guidance": "None"
     }, {
       "index": {
@@ -182,7 +182,7 @@
         "max": 150
       },
       "category": "Unhealthy for Sensitive Groups",
-      "healthEffectsStatements": "Increasing likelihood of reduced exercise tolerance due to increased cardiovascular symptoms, such as chest pain, in people with heart disease",
+      "healthEffectsStatement": "Increasing likelihood of reduced exercise tolerance due to increased cardiovascular symptoms, such as chest pain, in people with heart disease",
       "guidance": "People with heart disease, such as angina, should limit heavy exertion and avoid sources of CO, such as heavy traffic"
     }, {
       "index": {
@@ -190,7 +190,7 @@
         "max": 200
       },
       "category": "Unhealthy",
-      "healthEffectsStatements": "Reduced exercise tolerance due to increased cardiovascular symptoms, such as chest pain, in people with heart disease",
+      "healthEffectsStatement": "Reduced exercise tolerance due to increased cardiovascular symptoms, such as chest pain, in people with heart disease",
       "guidance": "People with heart disease, such as angina, should limit moderate exertion and avoid sources of CO, such as heavy traffic"
     }, {
       "index": {
@@ -198,7 +198,7 @@
         "max": 300
       },
       "category": "Very Unhealthy",
-      "healthEffectsStatements": "Significant aggravation of cardiovascular symptoms, such as chest pain, in people with heart disease",
+      "healthEffectsStatement": "Significant aggravation of cardiovascular symptoms, such as chest pain, in people with heart disease",
       "guidance": "People with heart disease, such as angina, should avoid exertion and sources of CO, such as heavy traffic"
     }, {
       "index": {
@@ -206,7 +206,7 @@
         "max": 500
       },
       "category": "Hazardous",
-      "healthEffectsStatements": "Serious aggravation of cardiovascular symptoms, such as chest pain, in people with heart disease; impairment of strenuous activities in general population",
+      "healthEffectsStatement": "Serious aggravation of cardiovascular symptoms, such as chest pain, in people with heart disease; impairment of strenuous activities in general population",
       "guidance": "People with heart disease, such as angina, should avoid exertion and sources of CO, such as heavy traffic; everyone else should limit heavy exertion"
     }
   ]
@@ -218,7 +218,7 @@
         "max": 50
       },
       "category": "Good",
-      "healthEffectsStatements": "None",
+      "healthEffectsStatement": "None",
       "guidance": "None"
     },
     {
@@ -227,7 +227,7 @@
         "max": 100
       },
       "category": "Moderate",
-      "healthEffectsStatements": "None",
+      "healthEffectsStatement": "None",
       "guidance": "None"
     }, {
       "index": {
@@ -235,7 +235,7 @@
         "max": 150
       },
       "category": "Unhealthy for Sensitive Groups",
-      "healthEffectsStatements": "Increasing likelihood of respiratory symptoms, such as chest tightness and breathing discomfort, in people with asthma",
+      "healthEffectsStatement": "Increasing likelihood of respiratory symptoms, such as chest tightness and breathing discomfort, in people with asthma",
       "guidance": "People with asthma should consider limiting outdoor exertion"
     }, {
       "index": {
@@ -243,7 +243,7 @@
         "max": 200
       },
       "category": "Unhealthy",
-      "healthEffectsStatements": "Increased respiratory symptoms, such as chest tightness and wheezing in people with asthma; possible aggravation of other lung diseases",
+      "healthEffectsStatement": "Increased respiratory symptoms, such as chest tightness and wheezing in people with asthma; possible aggravation of other lung diseases",
       "guidance": "Children, people with asthma, or other lung diseases, should limit outdoor exertion"
     }, {
       "index": {
@@ -251,7 +251,7 @@
         "max": 300
       },
       "category": "Very Unhealthy",
-      "healthEffectsStatements": "Significant increase in respiratory symptoms, such as wheezing and shortness of breath, in people with asthma; aggravation of other lung diseases",
+      "healthEffectsStatement": "Significant increase in respiratory symptoms, such as wheezing and shortness of breath, in people with asthma; aggravation of other lung diseases",
       "guidance": "Children, people with asthma, or other lung diseases should avoid outdoor exertion; everyone else should reduce outdoor exertion"
     }, {
       "index": {
@@ -259,7 +259,7 @@
         "max": 500
       },
       "category": "Hazardous",
-      "healthEffectsStatements": "Severe respiratory symptoms, such as wheezing and shortness of breath, in people with asthma; increased aggravation of other lung diseases; possible respiratory effects in general population",
+      "healthEffectsStatement": "Severe respiratory symptoms, such as wheezing and shortness of breath, in people with asthma; increased aggravation of other lung diseases; possible respiratory effects in general population",
       "guidance": "Children, people with asthma, or other lung diseases, should remain indoors; everyone else should avoid outdoor exertion"
     }
   ]
@@ -271,7 +271,7 @@
         "max": 50
       },
       "category": "Good",
-      "healthEffectsStatements": "None",
+      "healthEffectsStatement": "None",
       "guidance": "None"
     },
     {
@@ -280,7 +280,7 @@
         "max": 100
       },
       "category": "Moderate",
-      "healthEffectsStatements": "None",
+      "healthEffectsStatement": "None",
       "guidance": "Unusually sensitive individuals should consider limiting prolonged exertion especially near busy roads"
     }, {
       "index": {
@@ -288,7 +288,7 @@
         "max": 150
       },
       "category": "Unhealthy for Sensitive Groups",
-      "healthEffectsStatements": "Increasing likelihood of respiratory symptoms, such as chest tightness and breathing discomfort, in people with asthma",
+      "healthEffectsStatement": "Increasing likelihood of respiratory symptoms, such as chest tightness and breathing discomfort, in people with asthma",
       "guidance": "People with asthma, children and older adults should limit prolonged exertion especially near busy roads"
     }, {
       "index": {
@@ -296,7 +296,7 @@
         "max": 200
       },
       "category": "Unhealthy",
-      "healthEffectsStatements": "Increased respiratory symptoms, such as chest tightness and wheezing in people with asthma; possible aggravation of other lung diseases",
+      "healthEffectsStatement": "Increased respiratory symptoms, such as chest tightness and wheezing in people with asthma; possible aggravation of other lung diseases",
       "guidance": "People with asthma, children and older adults should avoid prolonged exertion near roadways; everyone else should limit prolonged exertion especially near busy roads"
     }, {
       "index": {
@@ -304,7 +304,7 @@
         "max": 300
       },
       "category": "Very Unhealthy",
-      "healthEffectsStatements": "Significant increase in respiratory symptoms, such as wheezing and shortness of breath, in people with asthma; aggravation of other lung diseases",
+      "healthEffectsStatement": "Significant increase in respiratory symptoms, such as wheezing and shortness of breath, in people with asthma; aggravation of other lung diseases",
       "guidance": "People with asthma, children and older adults should avoid all outdoor exertion; everyone else should avoid prolonged exertion especially near busy roads"
     }, {
       "index": {
@@ -312,7 +312,7 @@
         "max": 500
       },
       "category": "Hazardous",
-      "healthEffectsStatements": "Severe respiratory symptoms, such as wheezing and shortness of breath, in people with asthma; increased aggravation of other lung diseases; possible respiratory effects in general population",
+      "healthEffectsStatement": "Severe respiratory symptoms, such as wheezing and shortness of breath, in people with asthma; increased aggravation of other lung diseases; possible respiratory effects in general population",
       "guidance": "People with asthma, children and older adults should remain indoors; everyone else should avoid all outdoor exertion"
     }
   ]

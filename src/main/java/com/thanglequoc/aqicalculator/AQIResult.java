@@ -2,28 +2,26 @@ package com.thanglequoc.aqicalculator;
 
 /**
  * An object which store all necessary AQI result information, include
- * the<b>index</b> value, <b>category</b>, <b>health effects statements</b> and <b>guidance message</b>,
+ * the<b>index</b> value, <b>category</b>, <b>health effects statements</b> and
+ * <b>guidance message</b>,
  * 
  * @author ThangLeQuoc
  * 
  */
 public class AQIResult {
 
-    /** <i>Air Quality Index</i>. */
+    private Pollutant pollutant;
+    private double concentration;
     private int aqi;
     private String category;
     private String generalMessage;
     private String healthEffectsStatement;
     private String guidanceStatement;
 
-    /**
-     * @param aqi
-     * @param category
-     * @param generalMessage
-     * @param healthEffectsStatement
-     * @param guidanceStatement
-     */
-    AQIResult(int aqi, String category,  String generalMessage, String healthEffectStatement, String guidanceStatement) {
+    AQIResult(Pollutant pollutant, double concentration, int aqi, String category, String generalMessage,
+	    String healthEffectStatement, String guidanceStatement) {
+	this.pollutant = pollutant;
+	this.concentration = concentration;
 	this.aqi = aqi;
 	this.category = category;
 	this.generalMessage = generalMessage;
@@ -31,39 +29,31 @@ public class AQIResult {
 	this.guidanceStatement = guidanceStatement;
     }
 
-    /**
-     * @return the aqi
-     */
+    public Pollutant getPollutant() {
+	return pollutant;
+    }
+
     public int getAqi() {
-        return aqi;
+	return aqi;
     }
 
-    /**
-     * @return the category
-     */
     public String getCategory() {
-        return category;
+	return category;
     }
 
-
-    /**
-     * @return the healthEffectsStatement
-     */
     public String getHealthEffectsStatement() {
-        return healthEffectsStatement;
+	return healthEffectsStatement;
     }
 
-    /**
-     * @return the guidanceStatement
-     */
     public String getGuidanceStatement() {
-        return guidanceStatement;
+	return guidanceStatement;
     }
 
-    /**
-     * @return the generalMessage
-     */
     public String getGeneralMessage() {
-        return generalMessage;
+	return generalMessage;
+    }
+
+    public double getConcentration() {
+	return concentration;
     }
 }

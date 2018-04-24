@@ -1,56 +1,39 @@
 package com.thanglequoc.aqicalculator;
 
 /**
- * Object to store information for a specifc pollutant code at diferrent AQI level
+ * Object to store information for a specific pollutant code at different AQI
+ * level
  * 
  * @author ThangLeQuoc
- * */
-public class SpecificAQILevelMessage {
+ */
+class SpecificAQILevelMessage {
+
     Index index;
     String category;
-    String healthEffectsStatements;
+    String healthEffectsStatement;
     String guidance;
-    
-    
-    
-    
-    /**
-     * @param index
-     * @param category
-     * @param healthEffectsStatements
-     * @param guidance
-     */
-    SpecificAQILevelMessage(Index index, String category, String healthEffectsStatements, String guidance) {
-	super();
+
+    SpecificAQILevelMessage(Index index, String category, String healthEffectsStatement, String guidance) {
 	this.index = index;
 	this.category = category;
-	this.healthEffectsStatements = healthEffectsStatements;
+	this.healthEffectsStatement = healthEffectsStatement;
 	this.guidance = guidance;
     }
-    
-    
-    /**
-     * @return the index
-     */
+
     Index getIndex() {
-        return index;
+	return index;
     }
-    /**
-     * @return the category
-     */
+
     String getCategory() {
-        return category;
+	return category;
     }
-    /**
-     * @return the healthEffectsStatements
-     */
+
     String getHealthEffectsStatements() {
-        return healthEffectsStatements;
+	return healthEffectsStatement;
     }
-    /**
-     * @return the guidance
-     */
+
     String getGuidance() {
-        return guidance;
-    }   
+	return guidance;
+    }
+
 }
