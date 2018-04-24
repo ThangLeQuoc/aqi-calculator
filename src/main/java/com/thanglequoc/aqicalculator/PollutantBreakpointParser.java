@@ -21,10 +21,7 @@ class PollutantBreakpointParser {
 	    double minConcentration = concentrationNode.path(AQICalculatorConstants.MIN).asDouble();
 	    double maxConcentration = concentrationNode.path(AQICalculatorConstants.MAX).asDouble();
 
-	    JsonNode indexObj = concentrationNode.path(AQICalculatorConstants.INDEX);
-	    int minIndex = indexObj.path(AQICalculatorConstants.MIN).asInt();
-	    int maxIndex = indexObj.path(AQICalculatorConstants.MAX).asInt();
-	    Index index = new Index(minIndex, maxIndex);
+	    Index index = Index.fromIndexNode(concentrationNode.path(AQICalculatorConstants.INDEX));
 
 	    PollutantConcentration concentration = new PollutantConcentration(index, minConcentration,
 		    maxConcentration);

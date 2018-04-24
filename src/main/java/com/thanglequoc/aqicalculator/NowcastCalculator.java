@@ -13,43 +13,36 @@ import com.thanglequoc.aqicalculator.Pollutant;
 class NowcastCalculator {
 
     double getNowcastConcentration(Pollutant pollutant, double[] data) {
-	PollutantConcentrationTruncator truncator = new PollutantConcentrationTruncator();
 	if (!PollutantHelper.isPollutantValidForNowcastAQICalculation(pollutant) || !isValidNowcastData(data))
 	    return -1;
+	return truncateConcentration(pollutant, data);
 
-	double totalConcentrationWithWeight = 0;
+    }
+
+    private double truncateConcentration(Pollutant pollutant, double[] data) {
 	double weight = getWeightFactor(pollutant, data);
+	double totalConcentrationWithWeight = 0;
 	double totalWeight = 0;
-	// TODO: refactor this, code duplication
+	PollutantConcentrationTruncator truncator = new PollutantConcentrationTruncator();
+	int indexDataSlot = getArraySizeToLoopForPollutant(pollutant);
+	for (int i = 0; i < indexDataSlot; i++) {
+	    if (data[i] < 0)
+		continue;
+	    else {
+		totalConcentrationWithWeight += data[i] * Math.pow(weight, i);
+		totalWeight += Math.pow(weight, i);
+	    }
+	}
+	return truncator.getTruncatedPollutantConcentrationBaseOnPollutant(pollutant,
+		totalConcentrationWithWeight / totalWeight);
+
+    }
+
+    private int getArraySizeToLoopForPollutant(Pollutant pollutant) {
 	if (Pollutant.PM10.equals(pollutant) || Pollutant.PM25.equals(pollutant)) {
-	    for (int i = 0; i < 11; i++) {
-		if (data[i] < 0)
-		    continue;
-		else {
-		    totalConcentrationWithWeight += data[i] * Math.pow(weight, i);
-		    totalWeight += Math.pow(weight, i);
-		}
-
-	    }
-
-	    return truncator.getTruncatedPollutantConcentrationBaseOnPollutant(pollutant,
-		    totalConcentrationWithWeight / totalWeight);
-
+	    return 11;
 	}
-	if (Pollutant.O3.equals(pollutant)) {
-	    for (int i = 0; i < 7; i++) {
-		if (data[i] < 0)
-		    continue;
-		else {
-		    totalConcentrationWithWeight += data[i] * Math.pow(weight, i);
-		    totalWeight += Math.pow(weight, i);
-		}
-	    }
-	    return truncator.getTruncatedPollutantConcentrationBaseOnPollutant(pollutant,
-		    totalConcentrationWithWeight / totalWeight);
-	}
-
-	return -1;
+	return 7;
     }
 
     private boolean isValidNowcastData(double[] data) {

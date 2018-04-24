@@ -7,9 +7,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 class PollutantsBreakpointGenerator {
-    
-    private static final String resourcePath = "AQIresource/aqi-breakpoint.json";
-    
+
     private PollutantsBreakpoint pollutantsBreakpoint;
     private PollutantBreakpointParser pollutantBreakpointParser;
 
@@ -22,7 +20,8 @@ class PollutantsBreakpointGenerator {
     private void parseBreakpoints() throws IOException {
 	ObjectMapper mapper = new ObjectMapper();
 	ClassLoader classLoader = PollutantsBreakpointGenerator.class.getClassLoader();
-	try (InputStream inputStream = classLoader.getResourceAsStream(resourcePath)) {
+	try (InputStream inputStream = classLoader
+		.getResourceAsStream(AQICalculatorConstants.AQI_BREAKPOINT_RESOURCE_PATH)) {
 	    JsonNode root = mapper.readTree(inputStream);
 	    for (JsonNode pollutantNode : root) {
 		PollutantBreakpoint pollutantBreakpoint = pollutantBreakpointParser.parseNode(pollutantNode);
@@ -34,5 +33,5 @@ class PollutantsBreakpointGenerator {
     PollutantsBreakpoint getPollutantsBreakpoint() {
 	return pollutantsBreakpoint;
     }
- 
+
 }

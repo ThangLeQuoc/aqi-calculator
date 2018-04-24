@@ -1,5 +1,7 @@
 package com.thanglequoc.aqicalculator;
 
+import com.fasterxml.jackson.databind.JsonNode;
+
 /**
  * Represent <i>upper bound index</i> (<b>I-high</b>) and <i>lower bound
  * index</i> (<b>I-low</b>) of a corresponding range in
@@ -23,6 +25,12 @@ class Index {
 
     int getMaxIndex() {
 	return max;
+    }
+    
+    static Index fromIndexNode(JsonNode indexNode) {
+	int minIndex = indexNode.path(AQICalculatorConstants.MIN).asInt();
+	int maxIndex = indexNode.path(AQICalculatorConstants.MAX).asInt();
+	return new Index(minIndex, maxIndex);
     }
 
 }

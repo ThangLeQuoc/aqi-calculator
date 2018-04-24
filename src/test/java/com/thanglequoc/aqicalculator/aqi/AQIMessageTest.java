@@ -9,17 +9,20 @@ import org.junit.Test;
 
 import com.thanglequoc.aqicalculator.AQICalculator;
 import com.thanglequoc.aqicalculator.AQIResult;
-import com.thanglequoc.aqicalculator.InvalidMessage;
 import com.thanglequoc.aqicalculator.Pollutant;
 
 public class AQIMessageTest {
     AQICalculator calculator;
 
     private Pollutant pollutant;
-    private String category;
+    private String category;	
     private String generalMessage;
     private String specificGuidanceMessage;
     private String healthEffectsStatements;
+    
+    static String UNCATEGORIZED = "Uncategorized";
+    static String INVALID_GENERAL_MESSAGE = "Invalid pollutant concentration range for calculation";
+    static String NONE = "None";
 
     @Before
     public void begin() throws IOException, Exception {
@@ -848,8 +851,8 @@ public class AQIMessageTest {
 
 	String expectedCategory = AQILevel.INVALID.getLiteral();
 	String expectedGeneralMessage = AQILevelGeneralMessage.INVALID.getGeneralGuidanceMessage();
-	String expectedSpecificGuidanceMessage = InvalidMessage.INVALID_GUIDANCE_MESSAGE.getLiteral();
-	String expectedHealthEffectsStatements = InvalidMessage.INVALID_HEALTH_EFFECTS_STATEMENTS_MESSAGE.getLiteral();
+	String expectedSpecificGuidanceMessage = NONE;
+	String expectedHealthEffectsStatements = NONE;
 
 	AQIResult result = calculator.getAQI(pollutant, -10);
 	category = result.getCategory();
@@ -869,8 +872,8 @@ public class AQIMessageTest {
 
 	String expectedCategory = AQILevel.INVALID.getLiteral();
 	String expectedGeneralMessage = AQILevelGeneralMessage.INVALID.getGeneralGuidanceMessage();
-	String expectedSpecificGuidanceMessage = InvalidMessage.INVALID_GUIDANCE_MESSAGE.getLiteral();
-	String expectedHealthEffectsStatements = InvalidMessage.INVALID_HEALTH_EFFECTS_STATEMENTS_MESSAGE.getLiteral();
+	String expectedSpecificGuidanceMessage = NONE;
+	String expectedHealthEffectsStatements = NONE;
 
 	AQIResult result = calculator.getAQI(pollutant, -1000000);
 	category = result.getCategory();

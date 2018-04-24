@@ -35,7 +35,7 @@ class PollutantsBreakpoint {
 	this.breakpoints.add(pollutantBreakpoint);
     }
 
-    PollutantBreakpoint getPollutantBreakpointByCode(Pollutant pollutant) {
+    PollutantBreakpoint getBreakpointOfPollutant(Pollutant pollutant) {
 	for (PollutantBreakpoint pollutantBreakpoint : breakpoints) {
 	    if (pollutantBreakpoint.getPollutant().equals(pollutant)) {
 		return pollutantBreakpoint;

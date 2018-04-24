@@ -1,10 +1,11 @@
 package com.thanglequoc.aqicalculator;
 
 /**
- * Object to map to json file, contain an index and it corresponding category and message
+ * Object to map to json file, contain an index and it corresponding category
+ * and message
  * 
  * @author ThangLeQuoc
- * */
+ */
 
 class GeneralAQIMessage {
 
@@ -19,15 +20,15 @@ class GeneralAQIMessage {
     }
 
     Index getIndex() {
-        return index;
+	return index;
     }
 
     String getCategory() {
-        return category;
+	return category;
     }
 
     String getMessage() {
-        return message;
+	return message;
     }
 
 }

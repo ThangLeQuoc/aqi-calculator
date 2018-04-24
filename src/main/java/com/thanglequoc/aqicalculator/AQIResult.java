@@ -10,18 +10,27 @@ package com.thanglequoc.aqicalculator;
  */
 public class AQIResult {
 
+    private Pollutant pollutant;
+    private double concentration;
     private int aqi;
     private String category;
     private String generalMessage;
     private String healthEffectsStatement;
     private String guidanceStatement;
 
-    AQIResult(int aqi, String category, String generalMessage, String healthEffectStatement, String guidanceStatement) {
+    AQIResult(Pollutant pollutant, double concentration, int aqi, String category, String generalMessage,
+	    String healthEffectStatement, String guidanceStatement) {
+	this.pollutant = pollutant;
+	this.concentration = concentration;
 	this.aqi = aqi;
 	this.category = category;
 	this.generalMessage = generalMessage;
 	this.healthEffectsStatement = healthEffectStatement;
 	this.guidanceStatement = guidanceStatement;
+    }
+
+    public Pollutant getPollutant() {
+	return pollutant;
     }
 
     public int getAqi() {
@@ -42,5 +51,9 @@ public class AQIResult {
 
     public String getGeneralMessage() {
 	return generalMessage;
+    }
+
+    public double getConcentration() {
+	return concentration;
     }
 }

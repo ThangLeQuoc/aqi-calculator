@@ -6,4 +6,8 @@ class PollutantHelper {
 	return (Pollutant.O3.equals(pollutant) || Pollutant.PM10.equals(pollutant) 
 		|| Pollutant.PM25.equals(pollutant)) ? true:false;
     }
+    
+    private PollutantHelper() {
+	
+    }
 }
