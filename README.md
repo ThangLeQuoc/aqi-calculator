@@ -42,21 +42,15 @@ Or for other stuff like Gradle, SBT, Ivy,.. you may find it on [Maven Central Re
 Grab the target jar in `target-jar` folder and add the jar to your project.
 
 ## Quick Usage
+### Note
+From version _1.2.3_, the input string as pollutant is replaced by _Pollutant_ enum class for strong
+consistence.
 
 #### For Regular AQI Calculation
-
-##### Using old method (it only give you plain AQI, and nothing more):
-<span style="color:red">**@Obsoleted:**</span> `getAQIforPollutant` is obsoleted and will be removed in the near future. Consider using `AQIResult` object insteads
+##### Using AQIResult Object:
 ```
 AQICalculator calculator = AQICalculator.getAQICalculatorInstance();
-calculator.getAQIforPollutant("PM10", 134.12);
-```
->90
-
-##### Using AQIResult Object (new replacement, AQI now comes in more detail :muscle: ):
-```
-AQICalculator calculator = AQICalculator.getAQICalculatorInstance();
-AQIResult result = calculator.getAQI("PM10", 99);
+AQIResult result = calculator.getAQI(Pollutant.PM10, 99);
 ```
 
 Now `AQIResult` store all the related information that you might need, query them by the following methods
@@ -64,6 +58,11 @@ Now `AQIResult` store all the related information that you might need, query the
 
 ```result.getAqi();```
 >73
+
+```result.getConcentration();```
+
+For _Nowcast_ calculation, this will be the **Nowcast Concentration**
+>99.0
 
 * Get the AQI Category
 
@@ -82,7 +81,7 @@ Now `AQIResult` store all the related information that you might need, query the
 
 * Get the guidance message for the pollutant with that level
 
-`result.getGuidanceStatement();` 
+`result.getGuidanceStatement();`
 >Unusually sensitive people should consider reducing prolonged or heavy exertion
 
 
@@ -103,7 +102,7 @@ The first value in the array is the avg value in the current hour, and the upcom
 
 If the hour doesn't have data, replace missing data in the hour with **-1**
 ##### Example Nowcast Dataset for PM10: (have some missing data in hour)
-| Hour | Avg Concentration 
+| Hour | Avg Concentration
 | ---- |:-------------:|
 | 14      | 64 ppb |
 | 13      | 63 ppb |
