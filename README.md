@@ -177,7 +177,7 @@ To compute a valid NowCast, you must have at least two of the most recent 3 hour
 
 [Daily and Hourly AQI - PM2.5 and PM10](https://forum.airnowtech.org/t/daily-and-hourly-aqi-pm2-5-and-pm10/171)
 
-[Daily and Hourly AQI - PM2.5 and PM10](https://forum.airnowtech.org/t/daily-and-hourly-aqi-ozone/170)
+[Daily and Hourly AQI - Ozone](https://forum.airnowtech.org/t/daily-and-hourly-aqi-ozone/170)
 
 [US EPA AQI Brochure](https://www3.epa.gov/airnow/aqi_brochure_02_14.pdf)
 
