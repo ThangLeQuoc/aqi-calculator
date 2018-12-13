@@ -7,20 +7,20 @@ public class PollutantConcentration {
     private Index index;
 
     PollutantConcentration(Index index, double min, double max) {
-	this.index = index;
-	this.min = min;
-	this.max = max;
+        this.index = index;
+        this.min = min;
+        this.max = max;
     }
 
     double getMinConcentration() {
-	return min;
+        return min;
     }
 
     double getMaxConcentration() {
-	return max;
+        return max;
     }
 
     Index getIndex() {
-	return index;
+        return index;
     }
 }

@@ -8,19 +8,20 @@ public enum AQILevelGeneralMessage {
     UNHEALTHY("Active children and adults, and people with respiratory disease, such as asthma, should avoid prolonged outdoor exertion; everyone else, especially children, should limit prolonged outdoor exertion"),
     VERY_UNHEALTHY("Active children and adults, and people with respiratory disease, such as asthma, should avoid all outdoor exertion; everyone else, especially children, should limit outdoor exertion"),
     HAZARDOUS("Everyone should avoid all outdoor exertion");
-    
-    
+
+
     private String guidanceMessage;
-    AQILevelGeneralMessage(String message){
-	this.guidanceMessage = message;
+
+    AQILevelGeneralMessage(String message) {
+        this.guidanceMessage = message;
     }
-    
+
     /**
      * Gets the general guidance message.
      *
      * @return the general guidance message
      */
-    public String getGeneralGuidanceMessage(){
-	return guidanceMessage;
+    public String getGeneralGuidanceMessage() {
+        return guidanceMessage;
     }
 }

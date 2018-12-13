@@ -12,45 +12,44 @@ class PollutantBreakpoint {
     private List<PollutantConcentration> concentrations;
 
     PollutantBreakpoint(Pollutant code, String unit, String period) {
-	this.pollutant = code;
-	this.unit = unit;
-	this.period = period;
+        this.pollutant = code;
+        this.unit = unit;
+        this.period = period;
     }
 
     Pollutant getPollutant() {
-	return pollutant;
+        return pollutant;
     }
 
     String getUnit() {
-	return unit;
+        return unit;
     }
 
     String getPeriod() {
-	return period;
+        return period;
     }
 
     List<PollutantConcentration> getPollutantConcentrations() {
-	return concentrations;
+        return concentrations;
     }
 
     void setPollutantConcentrations(List<PollutantConcentration> pollutantConcentrations) {
-	this.concentrations = pollutantConcentrations;
+        this.concentrations = pollutantConcentrations;
     }
 
     /**
      * Gets the concentration range with avg concentration.
      *
-     * @param concentration
-     *            the concentration
+     * @param concentration the concentration
      * @return the concentration range with avg concentration
      */
     Optional<PollutantConcentration> getConcentrationRangeWithAvgConcentration(double concentration) {
-	for (PollutantConcentration pollutantConcentration : concentrations) {
-	    if (concentration >= pollutantConcentration.getMinConcentration()
-		    && concentration <= pollutantConcentration.getMaxConcentration()) {
-		return Optional.of(pollutantConcentration);
-	    }
-	}
-	return Optional.empty();
+        for (PollutantConcentration pollutantConcentration : concentrations) {
+            if (concentration >= pollutantConcentration.getMinConcentration()
+                    && concentration <= pollutantConcentration.getMaxConcentration()) {
+                return Optional.of(pollutantConcentration);
+            }
+        }
+        return Optional.empty();
     }
 }

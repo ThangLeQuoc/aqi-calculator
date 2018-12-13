@@ -12,26 +12,26 @@ class PollutantsBreakpointGenerator {
     private PollutantBreakpointParser pollutantBreakpointParser;
 
     PollutantsBreakpointGenerator() throws IOException {
-	pollutantBreakpointParser = new PollutantBreakpointParser();
-	pollutantsBreakpoint = new PollutantsBreakpoint();
-	parseBreakpoints();
+        pollutantBreakpointParser = new PollutantBreakpointParser();
+        pollutantsBreakpoint = new PollutantsBreakpoint();
+        parseBreakpoints();
     }
 
     private void parseBreakpoints() throws IOException {
-	ObjectMapper mapper = new ObjectMapper();
-	ClassLoader classLoader = PollutantsBreakpointGenerator.class.getClassLoader();
-	try (InputStream inputStream = classLoader
-		.getResourceAsStream(AQICalculatorConstants.AQI_BREAKPOINT_RESOURCE_PATH)) {
-	    JsonNode root = mapper.readTree(inputStream);
-	    for (JsonNode pollutantNode : root) {
-		PollutantBreakpoint pollutantBreakpoint = pollutantBreakpointParser.parseNode(pollutantNode);
-		pollutantsBreakpoint.addPollutantBreakpoint(pollutantBreakpoint);
-	    }
-	}
+        ObjectMapper mapper = new ObjectMapper();
+        ClassLoader classLoader = PollutantsBreakpointGenerator.class.getClassLoader();
+        try (InputStream inputStream = classLoader
+                .getResourceAsStream(AQICalculatorConstants.AQI_BREAKPOINT_RESOURCE_PATH)) {
+            JsonNode root = mapper.readTree(inputStream);
+            for (JsonNode pollutantNode : root) {
+                PollutantBreakpoint pollutantBreakpoint = pollutantBreakpointParser.parseNode(pollutantNode);
+                pollutantsBreakpoint.addPollutantBreakpoint(pollutantBreakpoint);
+            }
+        }
     }
 
     PollutantsBreakpoint getPollutantsBreakpoint() {
-	return pollutantsBreakpoint;
+        return pollutantsBreakpoint;
     }
 
 }
