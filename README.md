@@ -1,6 +1,6 @@
 <h1 align="center">
 	<br>
-	<img width="320" src="http://aqicn.org/aqicn/view/experiments/images/aqi-transparent.png">
+	<img width="320" src="https://www.pscleanair.org/ImageRepository/Document?documentId=150">
 	<br>
   <br>
 </h1>
