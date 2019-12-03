@@ -11,7 +11,7 @@
 	<developers>
 		<developer>
 			<name>Thang Le Quoc</name>
-			<email>silverhair.guy@gmail.com</email>
+			<email>thanglequoc.it@gmail.com</email>
 		</developer>
 	</developers>
 
@@ -37,7 +37,7 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
-        
+
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
