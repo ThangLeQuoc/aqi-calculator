@@ -1,26 +1,26 @@
 package com.thanglequoc.aqicalculator;
 
-public class PollutantConcentration {
-
+class PollutantConcentration {
+    
     private double min;
     private double max;
     private Index index;
-
+    
     PollutantConcentration(Index index, double min, double max) {
-	this.index = index;
-	this.min = min;
-	this.max = max;
+        this.index = index;
+        this.min = min;
+        this.max = max;
     }
-
+    
     double getMinConcentration() {
-	return min;
+        return min;
     }
-
+    
     double getMaxConcentration() {
-	return max;
+        return max;
     }
-
+    
     Index getIndex() {
-	return index;
+        return index;
     }
 }

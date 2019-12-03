@@ -9,38 +9,38 @@ import java.util.List;
  * It contain a list of smaller <tt>PollutantBreakpoint</tt>, each
  * <tt>PollutantBreakpoint</tt> in this list represent <b>breakpoint</b> of a
  * pollutant code
- * 
+ *
  * @author ThangLeQuoc
  */
 class PollutantsBreakpoint {
-
-    List<PollutantBreakpoint> breakpoints;
-
+    
+    private List<PollutantBreakpoint> breakpoints;
+    
     /**
      * Instantiates a new pollutants breakpoint .
      */
     PollutantsBreakpoint() {
-	breakpoints = new ArrayList<>();
+        breakpoints = new ArrayList<>();
     }
-
+    
     List<PollutantBreakpoint> getBreakpoints() {
-	return breakpoints;
+        return breakpoints;
     }
-
+    
     void setBreakpoints(List<PollutantBreakpoint> breakpointList) {
-	this.breakpoints = breakpointList;
+        this.breakpoints = breakpointList;
     }
-
+    
     void addPollutantBreakpoint(PollutantBreakpoint pollutantBreakpoint) {
-	this.breakpoints.add(pollutantBreakpoint);
+        this.breakpoints.add(pollutantBreakpoint);
     }
-
+    
     PollutantBreakpoint getBreakpointOfPollutant(Pollutant pollutant) {
-	for (PollutantBreakpoint pollutantBreakpoint : breakpoints) {
-	    if (pollutantBreakpoint.getPollutant().equals(pollutant)) {
-		return pollutantBreakpoint;
-	    }
-	}
-	return null;
+        for (PollutantBreakpoint pollutantBreakpoint : breakpoints) {
+            if (pollutantBreakpoint.getPollutant().equals(pollutant)) {
+                return pollutantBreakpoint;
+            }
+        }
+        return null;
     }
 }
