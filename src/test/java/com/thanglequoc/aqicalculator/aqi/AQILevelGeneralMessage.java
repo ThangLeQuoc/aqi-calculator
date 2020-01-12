@@ -11,8 +11,9 @@ public enum AQILevelGeneralMessage {
     
     
     private String guidanceMessage;
-    AQILevelGeneralMessage(String message){
-	this.guidanceMessage = message;
+    
+    AQILevelGeneralMessage(String message) {
+        this.guidanceMessage = message;
     }
     
     /**
@@ -20,7 +21,7 @@ public enum AQILevelGeneralMessage {
      *
      * @return the general guidance message
      */
-    public String getGeneralGuidanceMessage(){
-	return guidanceMessage;
+    public String getGeneralGuidanceMessage() {
+        return guidanceMessage;
     }
 }
