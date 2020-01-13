@@ -11,6 +11,7 @@ import java.util.Optional;
  * <tt>getAQICalculatorInstance() </tt> method directly
  *
  * @author ThangLeQuoc
+ * @see <a href="https://github.com/ThangLeQuoc/aqi-calculator"> AQI Calculator Documentation</a>
  */
 
 public class AQICalculator {
@@ -29,7 +30,7 @@ public class AQICalculator {
     
     private PollutantConcentrationTruncator truncator;
 
-    private AQICustomSettings userSettings;
+    private AQICustomSettings customSettings;
     
     private static AQICalculator uniqueAQICalculatorInstance;
     
@@ -67,7 +68,7 @@ public class AQICalculator {
         this.pollutantsBreakpoint = breakpointGenerator.getPollutantsBreakpoint();
         this.nowcastCalculator = new NowcastCalculator();
         this.truncator = new PollutantConcentrationTruncator();
-        this.userSettings = new AQICustomSettings();
+        this.customSettings = new AQICustomSettings();
     }
     
     private int calculateAQI(Pollutant pollutant, double avgConcentration) {
@@ -86,11 +87,11 @@ public class AQICalculator {
     }
     
     /**
-     * Gets the aqi.
+     * Calculate the AQI result
      *
      * @param pollutant        the pollutant code
      * @param avgConcentration the avg concentration
-     * @return the aqi
+     * @return the AQIResult
      */
     public AQIResult getAQI(Pollutant pollutant, double avgConcentration) {
         pollutantBreakpoint = this.pollutantsBreakpoint.getBreakpointOfPollutant(pollutant);
@@ -117,19 +118,20 @@ public class AQICalculator {
             guidanceStatement = specificAQILevelMessage.getGuidance();
             
         }
-        
         return new AQIResult(pollutant, avgConcentration, aqi, category, generalAQIMessage, healthEffectsStatement,
                 guidanceStatement);
     }
     
     /**
-     * Gets the nowcast AQIResult object
+     * Calculate the NowCast AQI result
      *
      * @param pollutant the pollutant code
-     * @param data      the data
-     * @return the nowcast AQI
+     * @param data      the average concentration at the hours. The first value in the array is the avg value in the current hour, and the upcoming element in the array represent one step hour before current hour.
+     * If the hour doesn't have data, replace missing data in the hour with -1.
+     * @return the NowCast AQI result. The concentration in AQIResult is the NowCast concentration
+     * @see <a href="https://github.com/ThangLeQuoc/aqi-calculator"> AQI Calculator Documentation</a> for example of usage
      */
-    public AQIResult getNowcastAQI(Pollutant pollutant, double[] data) {
+    public AQIResult getNowCastAQI(Pollutant pollutant, double[] data) {
         pollutantBreakpoint = this.pollutantsBreakpoint.getBreakpointOfPollutant(pollutant);
         double nowcastConcentration = nowcastCalculator.getNowcastConcentration(pollutant, data);
         int aqi = -1;
@@ -171,27 +173,42 @@ public class AQICalculator {
         return (int) Math.round(rawAQI);
     }
 
-    public synchronized void updateSettings(AQICustomSettings userSettings) {
-        if (userSettings == null) {
+    /**
+     * Apply custom settings configuration and reinitialize AQI Messages base on custom settings file path
+     * */
+    public synchronized void applyCustomSettings(AQICustomSettings customSettings) {
+        if (customSettings == null) {
             throw new IllegalArgumentException("User Settings must not be null");
         }
-        if (userSettings.isOverrideDefaultMessage()) {
-            // reinitialized message class
+        if (customSettings.isInOverrideSettingMode()) {
+            // reinitialized AQI messages dictionary
             try {
-                this.messageGenerator = new AQIMessageGenerator(userSettings);
+                this.messageGenerator = new AQIMessageGenerator(customSettings);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
 
+    /**
+     * Reset the AQI Calculator to default setting, use the default message bundle files path. Also reset the current
+     * custom user settings (if any) in the instance
+     * */
     public synchronized void resetDefaultSettings() {
-        this.userSettings = new AQICustomSettings();
+        this.customSettings = new AQICustomSettings();
         try {
             this.messageGenerator = new AQIMessageGenerator();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Retrieve the current setting of the AQI Calculator instance
+     * @return the current user setting that being used by AQICalculator
+     * */
+    public AQICustomSettings getCustomSettings() {
+        return this.customSettings;
     }
     
 }

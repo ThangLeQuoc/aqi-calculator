@@ -32,7 +32,7 @@ public class AQIResult {
         return pollutant;
     }
     
-    public int getAqi() {
+    public int getAQI() {
         return aqi;
     }
     
