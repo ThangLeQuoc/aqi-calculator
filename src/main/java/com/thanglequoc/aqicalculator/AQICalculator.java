@@ -28,6 +28,8 @@ public class AQICalculator {
     private NowcastCalculator nowcastCalculator;
     
     private PollutantConcentrationTruncator truncator;
+
+    private AQICustomSettings userSettings;
     
     private static AQICalculator uniqueAQICalculatorInstance;
     
@@ -65,6 +67,7 @@ public class AQICalculator {
         this.pollutantsBreakpoint = breakpointGenerator.getPollutantsBreakpoint();
         this.nowcastCalculator = new NowcastCalculator();
         this.truncator = new PollutantConcentrationTruncator();
+        this.userSettings = new AQICustomSettings();
     }
     
     private int calculateAQI(Pollutant pollutant, double avgConcentration) {
@@ -166,6 +169,29 @@ public class AQICalculator {
         double cHigh = concentration.getMaxConcentration();
         double rawAQI = (iHigh - iLow) / (cHigh - cLow) * (rawConcentration - cLow) + iLow;
         return (int) Math.round(rawAQI);
+    }
+
+    public synchronized void updateSettings(AQICustomSettings userSettings) {
+        if (userSettings == null) {
+            throw new IllegalArgumentException("User Settings must not be null");
+        }
+        if (userSettings.isOverrideDefaultMessage()) {
+            // reinitialized message class
+            try {
+                this.messageGenerator = new AQIMessageGenerator(userSettings);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public synchronized void resetDefaultSettings() {
+        this.userSettings = new AQICustomSettings();
+        try {
+            this.messageGenerator = new AQIMessageGenerator();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     
 }

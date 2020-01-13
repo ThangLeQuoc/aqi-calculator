@@ -1,0 +1,43 @@
+[{
+  "index": {
+    "min": 0,
+    "max": 50
+  },
+  "category": "Gut",
+  "guidance": "Keiner"
+}, {
+  "index": {
+    "min": 51,
+    "max": 100
+  },
+  "category": "Mäßig",
+  "guidance": "Ungewöhnlich sensible Menschen sollten in Betracht ziehen, längere oder schwere Belastungen im Freien zu reduzieren"
+}, {
+  "index": {
+    "min": 101,
+    "max": 150
+  },
+  "category": "Ungesund für sensible Gruppen",
+  "guidance": "Aktive Kinder und Erwachsene sowie Menschen mit Atemwegserkrankungen wie Asthma sollten eine längere Belastung im Freien einschränken"
+}, {
+  "index": {
+    "min": 151,
+    "max": 200
+  },
+  "category": "Ungesund",
+  "guidance": "Aktive Kinder und Erwachsene sowie Menschen mit Atemwegserkrankungen wie Asthma sollten eine längere Belastung im Freien vermeiden. Alle anderen, insbesondere Kinder, sollten eine längere Belastung im Freien einschränken"
+}, {
+  "index": {
+    "min": 201,
+    "max": 300
+  },
+  "category": "Sehr ungesund",
+  "guidance": "Aktive Kinder und Erwachsene sowie Menschen mit Atemwegserkrankungen wie Asthma sollten jede Anstrengung im Freien vermeiden. Alle anderen, insbesondere Kinder, sollten die Belastung im Freien begrenzen"
+}, {
+  "index": {
+    "min": 301,
+    "max": 500
+  },
+  "category": "Gefährlich",
+  "guidance": "Jeder sollte jede Anstrengung im Freien vermeiden"
+}]
