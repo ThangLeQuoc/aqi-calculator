@@ -5,7 +5,7 @@ import java.util.Optional;
 
 /**
  * A calculator use to calculate AQI from pollutant concentration, support both
- * <b>regular AQI</b> calculation and <b>Nowcast AQI</b> calculation.
+ * <b>regular AQI</b> calculation and <b>NowCast AQI</b> calculation.
  * <p>
  * To use the <i>AQICalculator</i> object, get its instance by calling
  * <tt>getAQICalculatorInstance() </tt> method directly
@@ -26,7 +26,7 @@ public class AQICalculator {
     
     private Optional<PollutantConcentration> targetPollutantConcentration;
     
-    private NowcastCalculator nowcastCalculator;
+    private NowCastCalculator nowCastCalculator;
     
     private PollutantConcentrationTruncator truncator;
 
@@ -66,7 +66,7 @@ public class AQICalculator {
             e.printStackTrace();
         }
         this.pollutantsBreakpoint = breakpointGenerator.getPollutantsBreakpoint();
-        this.nowcastCalculator = new NowcastCalculator();
+        this.nowCastCalculator = new NowCastCalculator();
         this.truncator = new PollutantConcentrationTruncator();
         this.customSettings = new AQICustomSettings();
     }
@@ -128,24 +128,24 @@ public class AQICalculator {
      * @param pollutant the pollutant code
      * @param data      the average concentration at the hours. The first value in the array is the avg value in the current hour, and the upcoming element in the array represent one step hour before current hour.
      * If the hour doesn't have data, replace missing data in the hour with -1.
-     * @return the NowCast AQI result. The concentration in AQIResult is the NowCast concentration
+     * @return the NowCast AQI result. The concentration in AQIResult is the NowCast concentration.
      * @see <a href="https://github.com/ThangLeQuoc/aqi-calculator"> AQI Calculator Documentation</a> for example of usage
      */
     public AQIResult getNowCastAQI(Pollutant pollutant, double[] data) {
         pollutantBreakpoint = this.pollutantsBreakpoint.getBreakpointOfPollutant(pollutant);
-        double nowcastConcentration = nowcastCalculator.getNowcastConcentration(pollutant, data);
+        double nowCastConcentration = nowCastCalculator.getNowCastConcentration(pollutant, data);
         int aqi = -1;
         String category = AQICalculatorConstants.UNCATEGORIZED;
         String generalAQIMessage = AQICalculatorConstants.INVALID_GENERAL_MESSAGE;
         String healthEffectsStatement = AQICalculatorConstants.NONE;
         String guidanceStatement = AQICalculatorConstants.NONE;
         
-        if (nowcastConcentration >= 0) {
+        if (nowCastConcentration >= 0) {
             // find the target Concentration with it corresponding Index level
             targetPollutantConcentration = pollutantBreakpoint
-                    .getConcentrationRangeWithAvgConcentration(nowcastConcentration);
+                    .getConcentrationRangeWithAvgConcentration(nowCastConcentration);
             if (targetPollutantConcentration.isPresent()) {
-                aqi = calculateAQIWithIndexAndConcentrationRange(nowcastConcentration,
+                aqi = calculateAQIWithIndexAndConcentrationRange(nowCastConcentration,
                         targetPollutantConcentration.get());
                 GeneralAQIMessage generalMessage = messageGenerator.getGeneralAQIMessageObjectOnAQILevel(aqi);
                 SpecificAQILevelMessage specificAQILevelMessage = messageGenerator
@@ -158,7 +158,7 @@ public class AQICalculator {
             }
             
         }
-        return new AQIResult(pollutant, nowcastConcentration, aqi, category, generalAQIMessage, healthEffectsStatement,
+        return new AQIResult(pollutant, nowCastConcentration, aqi, category, generalAQIMessage, healthEffectsStatement,
                 guidanceStatement);
         
     }

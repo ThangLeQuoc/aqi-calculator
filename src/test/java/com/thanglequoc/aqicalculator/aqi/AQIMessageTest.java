@@ -1,16 +1,15 @@
 package com.thanglequoc.aqicalculator.aqi;
 
-import static org.junit.Assert.assertEquals;
-
-import java.io.IOException;
-
+import com.thanglequoc.aqicalculator.AQICalculator;
 import com.thanglequoc.aqicalculator.AQICustomSettings;
+import com.thanglequoc.aqicalculator.AQIResult;
+import com.thanglequoc.aqicalculator.Pollutant;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.thanglequoc.aqicalculator.AQICalculator;
-import com.thanglequoc.aqicalculator.AQIResult;
-import com.thanglequoc.aqicalculator.Pollutant;
+import java.io.IOException;
+
+import static org.junit.Assert.assertEquals;
 
 public class AQIMessageTest {
     AQICalculator calculator;

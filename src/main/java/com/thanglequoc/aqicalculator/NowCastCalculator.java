@@ -1,19 +1,17 @@
 package com.thanglequoc.aqicalculator;
 
-import com.thanglequoc.aqicalculator.Pollutant;
-
 /**
- * A small size calculator use to calculate <b>Nowcast Concentration</b> from an
- * array set of concentration. The nowcast concentration will be send back to
+ * A small size calculator use to calculate <b>NowCast Concentration</b> from an
+ * array set of concentration. The NowCast concentration will be send back to
  * <tt>AQICalculator</tt> object to calculate the AQI, which will then represent
- * Nowcast AQI
+ * NowCast AQI
  *
  * @author ThangLeQuoc
  */
-class NowcastCalculator {
+class NowCastCalculator {
     
-    double getNowcastConcentration(Pollutant pollutant, double[] data) {
-        if (!PollutantHelper.isPollutantValidForNowcastAQICalculation(pollutant) || !isValidNowcastData(data))
+    double getNowCastConcentration(Pollutant pollutant, double[] data) {
+        if (!PollutantHelper.isPollutantValidForNowcastAQICalculation(pollutant) || !isValidNowCastData(data))
             return -1;
         return truncateConcentration(pollutant, data);
         
@@ -44,8 +42,11 @@ class NowcastCalculator {
         }
         return 7;
     }
-    
-    private boolean isValidNowcastData(double[] data) {
+
+    /**
+     * A valid NowCast dataset must have at least two of the most recent 3 hours
+     * */
+    private boolean isValidNowCastData(double[] data) {
         int missingData = 0;
         for (int i = 0; i < 3; i++) {
             if (data[i] < 0) {

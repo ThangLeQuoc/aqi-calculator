@@ -1,15 +1,12 @@
 package com.thanglequoc.aqicalculator.aqi;
 
-import static org.junit.Assert.assertEquals;
-
-import java.io.IOException;
-
-import org.junit.Before;
-import org.junit.Test;
-
 import com.thanglequoc.aqicalculator.AQICalculator;
 import com.thanglequoc.aqicalculator.AQIResult;
 import com.thanglequoc.aqicalculator.Pollutant;
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class AQICalculatorTest {
     
@@ -18,7 +15,7 @@ public class AQICalculatorTest {
     private Pollutant pollutant;
     
     @Before
-    public void begin() throws IOException, Exception {
+    public void begin() {
         calculator = AQICalculator.getAQICalculatorInstance();
     }
     
@@ -56,9 +53,9 @@ public class AQICalculatorTest {
     }
     
     @Test
-    public void should_ReturnEqualsPM10NowcastAQI_When_InputListOfConcentration() {
+    public void should_ReturnEqualsPM10NowCastAQI_When_InputListOfConcentration() {
         /**
-         * Example Data for Nowcast PM10 12h period - 64, 63, 72, 77, 65, 61,
+         * Example Data for NowCast PM10 12h period - 64, 63, 72, 77, 65, 61,
          * 70, 71, 64, 57, 58, 64
          **/
         this.pollutant = Pollutant.PM10;
@@ -69,7 +66,7 @@ public class AQICalculatorTest {
     }
     
     @Test
-    public void should_ReturnEqualsPM10NowcastAQI_When_InputValidListOfMissingConcentration() {
+    public void should_ReturnEqualsPM10NowCastAQI_When_InputValidListOfMissingConcentration() {
         
         this.pollutant = Pollutant.PM10;
         double[] data = {64, -1, 62, 77, 65, 61, 70, 71, 64, 57, 58, 64};
@@ -86,7 +83,7 @@ public class AQICalculatorTest {
     }
     
     @Test
-    public void shoud_ReturnPM10NoNowcastAQI_When_InputInvalidListOfMissingConcentration() {
+    public void should_ReturnPM10NoNowCastAQI_When_InputInvalidListOfMissingConcentration() {
         this.pollutant = Pollutant.PM10;
         // missing 3 nearest hour of data
         double[] data = {-1, -1, -1, 77, 65, 61, 70, 71, 64, 57, 58, 64};
@@ -96,7 +93,7 @@ public class AQICalculatorTest {
         assertEquals(expectedAQI, result.getAQI());
         
         /**
-         * Example Data for Nowcast PM10 12h period - 64, -1, -1, 77, 65, 61,
+         * Example Data for NowCast PM10 12h period - 64, -1, -1, 77, 65, 61,
          * 70, 71, 64, 57, 58, 64 , missing 2 of 3 nearest data -> invalid
          **/
         this.pollutant = Pollutant.PM10;
@@ -152,7 +149,7 @@ public class AQICalculatorTest {
     }
     
     @Test
-    public void should_ReturnPM25NowcastAQI_When_InputListOfConcentration() {
+    public void should_ReturnPM25NowCastAQI_When_InputListOfConcentration() {
         /***
          *
          * */
@@ -169,11 +166,11 @@ public class AQICalculatorTest {
     }
     
     @Test
-    public void shoud_ReturnPM25NowcastAQI_When_InputValidListOfMissingConcentration() {
+    public void shoud_ReturnPM25NowCastAQI_When_InputValidListOfMissingConcentration() {
         this.pollutant = Pollutant.PM25;
         
         /**
-         * Example Data for Nowcast PM2.5 12h period - missing 1 of the nearest
+         * Example Data for NowCast PM2.5 12h period - missing 1 of the nearest
          * 3 hours -> still valid
          **/
         double[] data = {30.5, 12.5, -1, 30, 32.4, 31.1, 28.2, 30.7, 32.8, 32.6, 33.1, 28.5};
@@ -183,7 +180,7 @@ public class AQICalculatorTest {
     }
     
     @Test
-    public void shoud_ReturnPM25NoNowcastAQI_When_InputInvalidListOfMissingConcentration() {
+    public void shoud_ReturnPM25NoNowCastAQI_When_InputInvalidListOfMissingConcentration() {
         this.pollutant = Pollutant.PM25;
         double[] data = {30.5, -1, -1, 30, 32.4, 31.1, 28.2, 30.7, 32.8, 32.6, 33.1, 28.5};
         int expectedAQI = -1; // no AQI
@@ -240,7 +237,7 @@ public class AQICalculatorTest {
     }
     
     @Test
-    public void should_ReturnOzoneNowcastAQI_When_InputListOfConcentration() {
+    public void should_ReturnOzoneNowCastAQI_When_InputListOfConcentration() {
         this.pollutant = Pollutant.O3;
         double[] data = {38.611, 47.406, 54.469, 52.377, 50.754, 43.373, 39.143, 35.334};
         int expectedAQI = 42;
@@ -255,7 +252,7 @@ public class AQICalculatorTest {
     }
     
     @Test
-    public void shoud_ReturnOzoneNowcastAQI_When_InputValidListOfMissingConcentration() {
+    public void shoud_ReturnOzoneNowCastAQI_When_InputValidListOfMissingConcentration() {
         this.pollutant = Pollutant.O3;
         
         double[] data = {145.32, 167.54, 187.12, 123.12, -1, -1, -1, -1};
@@ -276,7 +273,7 @@ public class AQICalculatorTest {
     }
     
     @Test
-    public void shoud_ReturnOzoneNoNowcastAQI_When_InputInvalidListOfMissingConcentration() {
+    public void shoud_ReturnOzoneNoNowCastAQI_When_InputInvalidListOfMissingConcentration() {
         this.pollutant = Pollutant.O3;
         double[] data = {-1, -1, -1, 12, 45, 12, 45, 56};
         int expectedAQI = -1;
