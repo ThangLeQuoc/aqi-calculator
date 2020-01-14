@@ -20,23 +20,39 @@ class AQIMessageGenerator {
         specificAQIMessages = new ArrayList<>();
         AQIMessageParser msgParser = new AQIMessageParser();
         
-        initializeMessageResources(mapper, classLoader, msgParser);
+        initializeMessageResources(mapper, classLoader, msgParser, null);
     }
-    
-    private void initializeMessageResources(ObjectMapper mapper, ClassLoader classLoader, AQIMessageParser msgParser)
-            throws IOException {
+
+    AQIMessageGenerator(AQICustomSettings userSettings) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        ClassLoader classLoader = AQIMessageGenerator.class.getClassLoader();
+        generalAQIMessages = new ArrayList<>();
+        specificAQIMessages = new ArrayList<>();
+        AQIMessageParser msgParser = new AQIMessageParser();
+
+        initializeMessageResources(mapper, classLoader, msgParser, userSettings);
+    }
+
+    private void initializeMessageResources(ObjectMapper mapper, ClassLoader classLoader, AQIMessageParser msgParser, AQICustomSettings userSettings) throws IOException {
+
+        String specificMessagePath = AQICalculatorConstants.AQI_SPECIFIC_MESSAGES_RESOURCE_PATH;
+        String generalMessagePath = AQICalculatorConstants.AQI_GENERAL_MESSAGES_RESOURCE_PATH;
+        if (userSettings != null && userSettings.isInOverrideSettingMode()) {
+            specificMessagePath = userSettings.getSpecificMessageResourcePath();
+            generalMessagePath = userSettings.getGeneralMessagesResourcePath();
+        }
+
         try (InputStream specificAQIMessagesStream = classLoader
-                .getResourceAsStream(AQICalculatorConstants.AQI_SPECIFIC_MESSAGES_RESOURCE_PATH);
+                .getResourceAsStream(specificMessagePath);
              InputStream generalAQIMessageStream = classLoader
-                     .getResourceAsStream(AQICalculatorConstants.AQI_GENERAL_MESSAGES_RESOURCE_PATH)) {
-            
+                     .getResourceAsStream(generalMessagePath)) {
+
             /* Parse General Message Node */
             JsonNode generalMessageNodeRoot = mapper.readTree(generalAQIMessageStream);
             for (JsonNode generalMessageNode : generalMessageNodeRoot) {
                 GeneralAQIMessage generalAQIMessage = msgParser.parseGeneralMessageNode(generalMessageNode);
                 generalAQIMessages.add(generalAQIMessage);
             }
-            
             /* Parse Specific Message Node */
             JsonNode specificMessageNodeRoot = mapper.readTree(specificAQIMessagesStream);
             for (JsonNode specificMessageNode : specificMessageNodeRoot) {

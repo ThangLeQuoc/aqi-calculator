@@ -31,27 +31,45 @@ public class AQIResult {
     public Pollutant getPollutant() {
         return pollutant;
     }
-    
-    public int getAqi() {
+
+    /**
+     * Get the Air Quality Index
+     * */
+    public int getAQI() {
         return aqi;
     }
-    
+
+    /**
+     * Get the Air Quality Category
+     * */
     public String getCategory() {
         return category;
     }
-    
+
+    /**
+     * Get the Health Effects Statement
+     * */
     public String getHealthEffectsStatement() {
         return healthEffectsStatement;
     }
-    
+
+    /**
+     * Get the Guidance Statement for this pollutant at this category level
+     * */
     public String getGuidanceStatement() {
         return guidanceStatement;
     }
-    
+
+    /**
+     * Get the general AIR at this category level
+     * */
     public String getGeneralMessage() {
         return generalMessage;
     }
-    
+
+    /**
+     * Get the concentration. If calculated from NowCast, this will be the NowCast concentration
+     * */
     public double getConcentration() {
         return concentration;
     }

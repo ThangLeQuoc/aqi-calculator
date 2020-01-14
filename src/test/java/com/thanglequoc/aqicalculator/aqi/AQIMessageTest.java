@@ -1,15 +1,15 @@
 package com.thanglequoc.aqicalculator.aqi;
 
-import static org.junit.Assert.assertEquals;
-
-import java.io.IOException;
-
+import com.thanglequoc.aqicalculator.AQICalculator;
+import com.thanglequoc.aqicalculator.AQICustomSettings;
+import com.thanglequoc.aqicalculator.AQIResult;
+import com.thanglequoc.aqicalculator.Pollutant;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.thanglequoc.aqicalculator.AQICalculator;
-import com.thanglequoc.aqicalculator.AQIResult;
-import com.thanglequoc.aqicalculator.Pollutant;
+import java.io.IOException;
+
+import static org.junit.Assert.assertEquals;
 
 public class AQIMessageTest {
     AQICalculator calculator;
@@ -885,6 +885,36 @@ public class AQIMessageTest {
         assertEquals(expectedGeneralMessage, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
+    }
+
+    @Test
+    public void should_ReturnCustomMessages_When_UserSettingIsEnable() {
+        AQICustomSettings userSettings = new AQICustomSettings().withCustomMessagesMode(true)
+                .withGeneralMessageResourcePath("AQIresource/custom-aqi-general-messages_de.json")
+                .withSpecificMessageResourcePath("AQIresource/custom-aqi-specific-messages_de.json");
+        calculator.applyCustomSettings(userSettings);
+
+        pollutant = Pollutant.PM25;
+
+        double avgConcentration = 197.9;
+        AQIResult result = calculator.getAQI(pollutant, avgConcentration);
+
+        category = result.getCategory();
+        generalMessage = result.getGeneralMessage();
+        specificGuidanceMessage = result.getGuidanceStatement();
+        healthEffectsStatements = result.getHealthEffectsStatement();
+
+        String expectedCategory = "Sehr ungesund";
+        String expectedGeneralMessage = "Aktive Kinder und Erwachsene sowie Menschen mit Atemwegserkrankungen wie Asthma sollten jede Anstrengung im Freien vermeiden. Alle anderen, insbesondere Kinder, sollten die Belastung im Freien begrenzen";
+        String expectedSpecificGuidanceMessage = "Menschen mit Herz- oder Lungenerkrankungen, ältere Erwachsene, Kinder und Menschen mit einem niedrigeren sozioökonomischen Status sollten jegliche körperliche Aktivität im Freien vermeiden. Alle anderen sollten eine längere oder schwere Anstrengung vermeiden";
+        String expectedHealthEffectsStatements = "Signifikante Verschlechterung der Atemwegsbeschwerden in sensiblen Gruppen, einschließlich älterer Erwachsener, Kinder und Personen mit niedrigerem sozioökonomischen Status; signifikante Verschlechterung der Herz- oder Lungenerkrankung und vorzeitige Sterblichkeit bei Menschen mit Herz- oder Lungenerkrankung; signifikante Zunahme der Atemwegserkrankungen in der Allgemeinbevölkerung";
+
+        assertEquals(expectedCategory, result.getCategory());
+        assertEquals(expectedGeneralMessage, result.getGeneralMessage());
+        assertEquals(expectedHealthEffectsStatements, result.getHealthEffectsStatement());
+        assertEquals(expectedSpecificGuidanceMessage, result.getGuidanceStatement());
+
+        calculator.resetDefaultSettings();
     }
     
 }

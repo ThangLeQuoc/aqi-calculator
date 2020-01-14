@@ -23,14 +23,6 @@ class PollutantsBreakpoint {
         breakpoints = new ArrayList<>();
     }
     
-    List<PollutantBreakpoint> getBreakpoints() {
-        return breakpoints;
-    }
-    
-    void setBreakpoints(List<PollutantBreakpoint> breakpointList) {
-        this.breakpoints = breakpointList;
-    }
-    
     void addPollutantBreakpoint(PollutantBreakpoint pollutantBreakpoint) {
         this.breakpoints.add(pollutantBreakpoint);
     }

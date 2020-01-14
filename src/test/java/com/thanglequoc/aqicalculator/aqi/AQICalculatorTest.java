@@ -1,15 +1,12 @@
 package com.thanglequoc.aqicalculator.aqi;
 
-import static org.junit.Assert.assertEquals;
-
-import java.io.IOException;
-
-import org.junit.Before;
-import org.junit.Test;
-
 import com.thanglequoc.aqicalculator.AQICalculator;
 import com.thanglequoc.aqicalculator.AQIResult;
 import com.thanglequoc.aqicalculator.Pollutant;
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class AQICalculatorTest {
     
@@ -18,7 +15,7 @@ public class AQICalculatorTest {
     private Pollutant pollutant;
     
     @Before
-    public void begin() throws IOException, Exception {
+    public void begin() {
         calculator = AQICalculator.getAQICalculatorInstance();
     }
     
@@ -33,17 +30,17 @@ public class AQICalculatorTest {
         int expectedAQI = 91;
         
         AQIResult result = this.calculator.getAQI(pollutant, concentration);
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
         
         concentration = 175;
         expectedAQI = 111;
         result = this.calculator.getAQI(pollutant, concentration);
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
         
         concentration = 357;
         expectedAQI = 204;
         result = this.calculator.getAQI(pollutant, concentration);
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
     }
     
     @Test
@@ -52,58 +49,58 @@ public class AQICalculatorTest {
         double concentration = -1;
         int expectedAQI = -1;
         AQIResult result = this.calculator.getAQI(pollutant, concentration);
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
     }
     
     @Test
-    public void should_ReturnEqualsPM10NowcastAQI_When_InputListOfConcentration() {
+    public void should_ReturnEqualsPM10NowCastAQI_When_InputListOfConcentration() {
         /**
-         * Example Data for Nowcast PM10 12h period - 64, 63, 72, 77, 65, 61,
+         * Example Data for NowCast PM10 12h period - 64, 63, 72, 77, 65, 61,
          * 70, 71, 64, 57, 58, 64
          **/
         this.pollutant = Pollutant.PM10;
         double[] data = {64, 63, 72, 77, 65, 61, 70, 71, 64, 57, 58, 64};
         int expectedAQI = 57;
-        AQIResult result = this.calculator.getNowcastAQI(pollutant, data);
-        assertEquals(expectedAQI, result.getAqi());
+        AQIResult result = this.calculator.getNowCastAQI(pollutant, data);
+        assertEquals(expectedAQI, result.getAQI());
     }
     
     @Test
-    public void should_ReturnEqualsPM10NowcastAQI_When_InputValidListOfMissingConcentration() {
+    public void should_ReturnEqualsPM10NowCastAQI_When_InputValidListOfMissingConcentration() {
         
         this.pollutant = Pollutant.PM10;
         double[] data = {64, -1, 62, 77, 65, 61, 70, 71, 64, 57, 58, 64};
         int expectedAQI = 56;
-        AQIResult result = this.calculator.getNowcastAQI(pollutant, data);
-        assertEquals(expectedAQI, result.getAqi());
+        AQIResult result = this.calculator.getNowCastAQI(pollutant, data);
+        assertEquals(expectedAQI, result.getAQI());
         
         // Only some data available
         double[] data2 = {165, 123, 45, 12, -1, -1, -1, -1, -1, 123, 154, -1};
         expectedAQI = 87;
-        result = this.calculator.getNowcastAQI(pollutant, data2);
-        assertEquals(expectedAQI, result.getAqi());
+        result = this.calculator.getNowCastAQI(pollutant, data2);
+        assertEquals(expectedAQI, result.getAQI());
         
     }
     
     @Test
-    public void shoud_ReturnPM10NoNowcastAQI_When_InputInvalidListOfMissingConcentration() {
+    public void should_ReturnPM10NoNowCastAQI_When_InputInvalidListOfMissingConcentration() {
         this.pollutant = Pollutant.PM10;
         // missing 3 nearest hour of data
         double[] data = {-1, -1, -1, 77, 65, 61, 70, 71, 64, 57, 58, 64};
         int expectedAQI = -1;
-        AQIResult result = this.calculator.getNowcastAQI(pollutant, data);
+        AQIResult result = this.calculator.getNowCastAQI(pollutant, data);
         
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
         
         /**
-         * Example Data for Nowcast PM10 12h period - 64, -1, -1, 77, 65, 61,
+         * Example Data for NowCast PM10 12h period - 64, -1, -1, 77, 65, 61,
          * 70, 71, 64, 57, 58, 64 , missing 2 of 3 nearest data -> invalid
          **/
         this.pollutant = Pollutant.PM10;
         double[] data2 = {64, -1, -1, 77, 65, 61, 70, 71, 64, 57, 58, 64};
         expectedAQI = -1;
-        result = this.calculator.getNowcastAQI(pollutant, data2);
-        assertEquals(expectedAQI, result.getAqi());
+        result = this.calculator.getNowCastAQI(pollutant, data2);
+        assertEquals(expectedAQI, result.getAQI());
     }
     
     @Test
@@ -114,7 +111,7 @@ public class AQICalculatorTest {
         int expectedAQI = -1;
         AQIResult result = calculator.getAQI(pollutant, concentration);
         
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
     }
     
     /**
@@ -129,17 +126,17 @@ public class AQICalculatorTest {
         int concentration = 35;
         int expectedAQI = 99;
         AQIResult result = this.calculator.getAQI(pollutant, concentration);
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
         
         concentration = 78;
         expectedAQI = 163;
         result = this.calculator.getAQI(pollutant, concentration);
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
         
         concentration = 12;
         expectedAQI = 50;
         result = this.calculator.getAQI(pollutant, concentration);
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
     }
     
     @Test
@@ -148,52 +145,52 @@ public class AQICalculatorTest {
         int concentration = -1;
         int expectedAQI = -1;
         AQIResult result = this.calculator.getAQI(pollutant, concentration);
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
     }
     
     @Test
-    public void should_ReturnPM25NowcastAQI_When_InputListOfConcentration() {
+    public void should_ReturnPM25NowCastAQI_When_InputListOfConcentration() {
         /***
          *
          * */
         this.pollutant = Pollutant.PM25;
         double[] data = {30.5, 28.8, 29.5, 30, 32.4, 31.1, 28.2, 30.7, 32.8, 32.6, 33.1, 28.5};
         int expectedAQI = 89;
-        AQIResult result = this.calculator.getNowcastAQI(pollutant, data);
-        assertEquals(expectedAQI, result.getAqi());
+        AQIResult result = this.calculator.getNowCastAQI(pollutant, data);
+        assertEquals(expectedAQI, result.getAQI());
         
         double[] data2 = {165, 123, 45, 12, 45, 12, 56, 42, 12, 123, 154, 32};
         expectedAQI = 185;
-        result = this.calculator.getNowcastAQI(pollutant, data2);
-        assertEquals(expectedAQI, result.getAqi());
+        result = this.calculator.getNowCastAQI(pollutant, data2);
+        assertEquals(expectedAQI, result.getAQI());
     }
     
     @Test
-    public void shoud_ReturnPM25NowcastAQI_When_InputValidListOfMissingConcentration() {
+    public void shoud_ReturnPM25NowCastAQI_When_InputValidListOfMissingConcentration() {
         this.pollutant = Pollutant.PM25;
         
         /**
-         * Example Data for Nowcast PM2.5 12h period - missing 1 of the nearest
+         * Example Data for NowCast PM2.5 12h period - missing 1 of the nearest
          * 3 hours -> still valid
          **/
         double[] data = {30.5, 12.5, -1, 30, 32.4, 31.1, 28.2, 30.7, 32.8, 32.6, 33.1, 28.5};
         int expectedAQI = 79;
-        AQIResult result = this.calculator.getNowcastAQI(pollutant, data);
-        assertEquals(expectedAQI, result.getAqi());
+        AQIResult result = this.calculator.getNowCastAQI(pollutant, data);
+        assertEquals(expectedAQI, result.getAQI());
     }
     
     @Test
-    public void shoud_ReturnPM25NoNowcastAQI_When_InputInvalidListOfMissingConcentration() {
+    public void shoud_ReturnPM25NoNowCastAQI_When_InputInvalidListOfMissingConcentration() {
         this.pollutant = Pollutant.PM25;
         double[] data = {30.5, -1, -1, 30, 32.4, 31.1, 28.2, 30.7, 32.8, 32.6, 33.1, 28.5};
         int expectedAQI = -1; // no AQI
-        AQIResult result = this.calculator.getNowcastAQI(pollutant, data);
-        assertEquals(expectedAQI, result.getAqi());
+        AQIResult result = this.calculator.getNowCastAQI(pollutant, data);
+        assertEquals(expectedAQI, result.getAQI());
         
         double[] data2 = {-1, -1, -1, 30, 32.4, 31.1, 28.2, 30.7, 32.8, 32.6, 33.1, 28.5};
         expectedAQI = -1;
-        result = this.calculator.getNowcastAQI(pollutant, data2);
-        assertEquals(expectedAQI, result.getAqi());
+        result = this.calculator.getNowCastAQI(pollutant, data2);
+        assertEquals(expectedAQI, result.getAQI());
     }
     
     @Test
@@ -204,7 +201,7 @@ public class AQICalculatorTest {
         int expectedAQI = -1;
         AQIResult result = calculator.getAQI(pollutant, concentration);
         
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
     }
     
     /***
@@ -217,17 +214,17 @@ public class AQICalculatorTest {
         double concentration = 45;
         int expectedAQI = 42;
         AQIResult result = this.calculator.getAQI(pollutant, concentration);
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
         
         concentration = 89;
         expectedAQI = 159;
         result = this.calculator.getAQI(pollutant, concentration);
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
         
         concentration = 72.71875;
         expectedAQI = 107;
         result = this.calculator.getAQI(pollutant, concentration);
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
     }
     
     @Test
@@ -236,57 +233,57 @@ public class AQICalculatorTest {
         double concentration = -1;
         int expectedAQI = -1;
         AQIResult result = this.calculator.getAQI(pollutant, concentration);
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
     }
     
     @Test
-    public void should_ReturnOzoneNowcastAQI_When_InputListOfConcentration() {
+    public void should_ReturnOzoneNowCastAQI_When_InputListOfConcentration() {
         this.pollutant = Pollutant.O3;
         double[] data = {38.611, 47.406, 54.469, 52.377, 50.754, 43.373, 39.143, 35.334};
         int expectedAQI = 42;
-        AQIResult result = this.calculator.getNowcastAQI(pollutant, data);
-        assertEquals(expectedAQI, result.getAqi());
+        AQIResult result = this.calculator.getNowCastAQI(pollutant, data);
+        assertEquals(expectedAQI, result.getAQI());
         
         double[] data1 = {42.12, 32.12, 34.12, -1, -1, -1, -1, -1};
-        result = this.calculator.getNowcastAQI(pollutant, data1);
+        result = this.calculator.getNowCastAQI(pollutant, data1);
         expectedAQI = 34;
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
         
     }
     
     @Test
-    public void shoud_ReturnOzoneNowcastAQI_When_InputValidListOfMissingConcentration() {
+    public void shoud_ReturnOzoneNowCastAQI_When_InputValidListOfMissingConcentration() {
         this.pollutant = Pollutant.O3;
         
         double[] data = {145.32, 167.54, 187.12, 123.12, -1, -1, -1, -1};
         int expectedAQI = 254;
-        AQIResult result = this.calculator.getNowcastAQI(pollutant, data);
-        assertEquals(expectedAQI, result.getAqi());
+        AQIResult result = this.calculator.getNowCastAQI(pollutant, data);
+        assertEquals(expectedAQI, result.getAQI());
         
         double[] data2 = {145.32, 167.54, -1, 123.12, 0, 183.2, 32.4, 145.3};
         expectedAQI = 242;
-        result = this.calculator.getNowcastAQI(pollutant, data2);
-        assertEquals(expectedAQI, result.getAqi());
+        result = this.calculator.getNowCastAQI(pollutant, data2);
+        assertEquals(expectedAQI, result.getAQI());
         
         double[] data3 = {-1, 47.406, 54.469, 52.377, 50.754, 43.373, 39.143, 35.334};
         expectedAQI = 46;
-        result = this.calculator.getNowcastAQI(pollutant, data3);
-        assertEquals(expectedAQI, result.getAqi());
+        result = this.calculator.getNowCastAQI(pollutant, data3);
+        assertEquals(expectedAQI, result.getAQI());
         
     }
     
     @Test
-    public void shoud_ReturnOzoneNoNowcastAQI_When_InputInvalidListOfMissingConcentration() {
+    public void shoud_ReturnOzoneNoNowCastAQI_When_InputInvalidListOfMissingConcentration() {
         this.pollutant = Pollutant.O3;
         double[] data = {-1, -1, -1, 12, 45, 12, 45, 56};
         int expectedAQI = -1;
-        AQIResult result = this.calculator.getNowcastAQI(pollutant, data);
-        assertEquals(expectedAQI, result.getAqi());
+        AQIResult result = this.calculator.getNowCastAQI(pollutant, data);
+        assertEquals(expectedAQI, result.getAQI());
         
         double[] data2 = {-1, -1, 1, 12, 45, 12, 45, 56};
         expectedAQI = -1;
-        result = this.calculator.getNowcastAQI(pollutant, data2);
-        assertEquals(expectedAQI, result.getAqi());
+        result = this.calculator.getNowCastAQI(pollutant, data2);
+        assertEquals(expectedAQI, result.getAQI());
     }
     
     @Test
@@ -297,7 +294,7 @@ public class AQICalculatorTest {
         int expectedAQI = -1;
         AQIResult result = calculator.getAQI(pollutant, concentration);
         
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
     }
     
     /***
@@ -310,12 +307,12 @@ public class AQICalculatorTest {
         double concentration = 12000;
         int expectedAQI = 143;
         AQIResult result = this.calculator.getAQI(pollutant, concentration);
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
         
         concentration = 7000;
         expectedAQI = 76;
         result = this.calculator.getAQI(pollutant, concentration);
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
     }
     
     @Test
@@ -324,7 +321,7 @@ public class AQICalculatorTest {
         double concentration = -1;
         int expectedAQI = -1;
         AQIResult result = this.calculator.getAQI(pollutant, concentration);
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
     }
     
     @Test
@@ -335,7 +332,7 @@ public class AQICalculatorTest {
         int expectedAQI = -1;
         AQIResult result = calculator.getAQI(pollutant, concentration);
         
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
     }
     
     /**
@@ -349,12 +346,12 @@ public class AQICalculatorTest {
         double concentration = 145.12;
         int expectedAQI = 109;
         AQIResult result = this.calculator.getAQI(pollutant, concentration);
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
         
         concentration = 43;
         expectedAQI = 41;
         result = this.calculator.getAQI(pollutant, concentration);
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
     }
     
     @Test
@@ -363,7 +360,7 @@ public class AQICalculatorTest {
         double concentration = -1;
         int expectedAQI = -1;
         AQIResult result = this.calculator.getAQI(pollutant, concentration);
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
     }
     
     @Test
@@ -374,7 +371,7 @@ public class AQICalculatorTest {
         int expectedAQI = -1;
         AQIResult result = calculator.getAQI(pollutant, concentration);
         
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
     }
     
     /***
@@ -388,12 +385,12 @@ public class AQICalculatorTest {
         double concentration = 132;
         int expectedAQI = 126;
         AQIResult result = this.calculator.getAQI(pollutant, concentration);
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
         
         concentration = 42;
         expectedAQI = 59;
         result = this.calculator.getAQI(pollutant, concentration);
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
     }
     
     @Test
@@ -402,7 +399,7 @@ public class AQICalculatorTest {
         double concentration = -1;
         int expectedAQI = -1;
         AQIResult result = this.calculator.getAQI(pollutant, concentration);
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
     }
     
     @Test
@@ -413,6 +410,6 @@ public class AQICalculatorTest {
         int expectedAQI = -1;
         AQIResult result = calculator.getAQI(pollutant, concentration);
         
-        assertEquals(expectedAQI, result.getAqi());
+        assertEquals(expectedAQI, result.getAQI());
     }
 }
