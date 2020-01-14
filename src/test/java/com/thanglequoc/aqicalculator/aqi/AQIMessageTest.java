@@ -888,7 +888,7 @@ public class AQIMessageTest {
     }
 
     @Test
-    public void should_ReturnOverrideMessages_When_UserSettingIsEnable() {
+    public void should_ReturnCustomMessages_When_UserSettingIsEnable() {
         AQICustomSettings userSettings = new AQICustomSettings().withCustomMessagesMode(true)
                 .withGeneralMessageResourcePath("AQIresource/custom-aqi-general-messages_de.json")
                 .withSpecificMessageResourcePath("AQIresource/custom-aqi-specific-messages_de.json");

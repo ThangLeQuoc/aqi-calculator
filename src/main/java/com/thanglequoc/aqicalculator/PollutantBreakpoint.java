@@ -20,19 +20,7 @@ class PollutantBreakpoint {
     Pollutant getPollutant() {
         return pollutant;
     }
-    
-    String getUnit() {
-        return unit;
-    }
-    
-    String getPeriod() {
-        return period;
-    }
-    
-    List<PollutantConcentration> getPollutantConcentrations() {
-        return concentrations;
-    }
-    
+
     void setPollutantConcentrations(List<PollutantConcentration> pollutantConcentrations) {
         this.concentrations = pollutantConcentrations;
     }
