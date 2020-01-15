@@ -10,10 +10,10 @@ public enum AQILevelGeneralMessage {
     HAZARDOUS("Everyone should avoid all outdoor exertion");
     
     
-    private String guidanceMessage;
+    private String meaning;
     
-    AQILevelGeneralMessage(String message) {
-        this.guidanceMessage = message;
+    AQILevelGeneralMessage(String meaning) {
+        this.meaning = meaning;
     }
     
     /**
@@ -21,7 +21,7 @@ public enum AQILevelGeneralMessage {
      *
      * @return the general guidance message
      */
-    public String getGeneralGuidanceMessage() {
-        return guidanceMessage;
+    public String getMeaning() {
+        return meaning;
     }
 }
