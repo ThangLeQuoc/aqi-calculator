@@ -7,7 +7,9 @@ class AQICalculatorConstants {
     static final String MIN = "min";
     static final String MAX = "max";
     static final String CATEGORY = "category";
+    static final String MEANING = "meaning";
     static final String GUIDANCE = "guidance";
+    static final String COLOR = "color";
     static final String CODE = "code";
     static final String UNIT = "unit";
     static final String PERIOD = "period";
@@ -17,8 +19,8 @@ class AQICalculatorConstants {
     
     /* Text for invalid AQI Stuffs */
     static final String UNCATEGORIZED = "Uncategorized";
-    static final String INVALID_GENERAL_MESSAGE = "Invalid pollutant concentration range for calculation";
-    static final String NONE = "None";
+    static final String INVALID_CONCENTRATION_RANGE_MSG = "Invalid pollutant concentration range for calculation";
+    static final String NOT_APPLICABLE = "N/A";
     
     /* Resource Path */
     static final String AQI_BREAKPOINT_RESOURCE_PATH = "AQIresource/aqi-breakpoint.json";

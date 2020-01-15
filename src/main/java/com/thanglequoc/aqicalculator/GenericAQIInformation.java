@@ -7,16 +7,18 @@ package com.thanglequoc.aqicalculator;
  * @author ThangLeQuoc
  */
 
-class GeneralAQIMessage {
+class GenericAQIInformation {
     
     private Index index;
     private String category;
-    private String message;
+    private String meaning;
+    private String color;
     
-    GeneralAQIMessage(Index index, String category, String message) {
+    GenericAQIInformation(Index index, String category, String message, String color) {
         this.index = index;
         this.category = category;
-        this.message = message;
+        this.meaning = message;
+        this.color = color;
     }
     
     Index getIndex() {
@@ -27,8 +29,11 @@ class GeneralAQIMessage {
         return category;
     }
     
-    String getMessage() {
-        return message;
+    String getMeaning() {
+        return meaning;
     }
-    
+
+    String getColor() {
+        return color;
+    }
 }

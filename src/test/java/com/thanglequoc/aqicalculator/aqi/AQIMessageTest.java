@@ -22,7 +22,7 @@ public class AQIMessageTest {
     
     static String UNCATEGORIZED = "Uncategorized";
     static String INVALID_GENERAL_MESSAGE = "Invalid pollutant concentration range for calculation";
-    static String NONE = "None";
+    static String NOT_APPLICABLE = "N/A";
     
     @Before
     public void begin() throws IOException, Exception {
@@ -42,7 +42,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -64,7 +64,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -87,7 +87,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -110,7 +110,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -133,7 +133,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -156,7 +156,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -184,7 +184,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -207,7 +207,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -230,7 +230,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -253,7 +253,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -276,7 +276,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -299,7 +299,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -327,7 +327,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -353,7 +353,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -379,7 +379,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -405,7 +405,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -431,7 +431,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -457,7 +457,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -488,7 +488,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -511,7 +511,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -534,7 +534,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -557,7 +557,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -580,7 +580,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -603,7 +603,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -631,7 +631,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -655,7 +655,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -679,7 +679,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -703,7 +703,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -727,7 +727,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -756,7 +756,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -779,7 +779,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -802,7 +802,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -825,7 +825,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
         
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -851,12 +851,12 @@ public class AQIMessageTest {
         
         String expectedCategory = AQILevel.INVALID.getLiteral();
         String expectedGeneralMessage = AQILevelGeneralMessage.INVALID.getGeneralGuidanceMessage();
-        String expectedSpecificGuidanceMessage = NONE;
-        String expectedHealthEffectsStatements = NONE;
+        String expectedSpecificGuidanceMessage = NOT_APPLICABLE;
+        String expectedHealthEffectsStatements = NOT_APPLICABLE;
         
         AQIResult result = calculator.getAQI(pollutant, -10);
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -872,12 +872,12 @@ public class AQIMessageTest {
         
         String expectedCategory = AQILevel.INVALID.getLiteral();
         String expectedGeneralMessage = AQILevelGeneralMessage.INVALID.getGeneralGuidanceMessage();
-        String expectedSpecificGuidanceMessage = NONE;
-        String expectedHealthEffectsStatements = NONE;
+        String expectedSpecificGuidanceMessage = NOT_APPLICABLE;
+        String expectedHealthEffectsStatements = NOT_APPLICABLE;
         
         AQIResult result = calculator.getAQI(pollutant, -1000000);
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
         
@@ -900,7 +900,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
 
         category = result.getCategory();
-        generalMessage = result.getGeneralMessage();
+        generalMessage = result.getMeaning();
         specificGuidanceMessage = result.getGuidanceStatement();
         healthEffectsStatements = result.getHealthEffectsStatement();
 
@@ -910,7 +910,7 @@ public class AQIMessageTest {
         String expectedHealthEffectsStatements = "Signifikante Verschlechterung der Atemwegsbeschwerden in sensiblen Gruppen, einschließlich älterer Erwachsener, Kinder und Personen mit niedrigerem sozioökonomischen Status; signifikante Verschlechterung der Herz- oder Lungenerkrankung und vorzeitige Sterblichkeit bei Menschen mit Herz- oder Lungenerkrankung; signifikante Zunahme der Atemwegserkrankungen in der Allgemeinbevölkerung";
 
         assertEquals(expectedCategory, result.getCategory());
-        assertEquals(expectedGeneralMessage, result.getGeneralMessage());
+        assertEquals(expectedGeneralMessage, result.getMeaning());
         assertEquals(expectedHealthEffectsStatements, result.getHealthEffectsStatement());
         assertEquals(expectedSpecificGuidanceMessage, result.getGuidanceStatement());
 

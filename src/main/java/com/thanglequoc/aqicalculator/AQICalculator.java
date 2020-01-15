@@ -102,23 +102,25 @@ public class AQICalculator {
                 .getConcentrationRangeWithAvgConcentration(truncatedConcentration);
         int aqi = -1;
         String category = AQICalculatorConstants.UNCATEGORIZED;
-        String generalAQIMessage = AQICalculatorConstants.INVALID_GENERAL_MESSAGE;
-        String healthEffectsStatement = AQICalculatorConstants.NONE;
-        String guidanceStatement = AQICalculatorConstants.NONE;
+        String meaning = AQICalculatorConstants.INVALID_CONCENTRATION_RANGE_MSG;
+        String healthEffectsStatement = AQICalculatorConstants.NOT_APPLICABLE;
+        String guidanceStatement = AQICalculatorConstants.NOT_APPLICABLE;
+        String color = AQICalculatorConstants.NOT_APPLICABLE;
         
         if (targetPollutantConcentration.isPresent()) {
             aqi = calculateAQI(pollutant, avgConcentration);
-            GeneralAQIMessage generalMessage = messageGenerator.getGeneralAQIMessageObjectOnAQILevel(aqi);
+            GenericAQIInformation generalMessage = messageGenerator.getGeneralAQIMessageObjectOnAQILevel(aqi);
             SpecificAQILevelMessage specificAQILevelMessage = messageGenerator
                     .getSpecificAQILevelMessageOnAQILevelOfPollutant(pollutant, aqi);
             
             category = generalMessage.getCategory();
-            generalAQIMessage = generalMessage.getMessage();
+            meaning = generalMessage.getMeaning();
+            color = generalMessage.getColor();
             healthEffectsStatement = specificAQILevelMessage.getHealthEffectsStatements();
             guidanceStatement = specificAQILevelMessage.getGuidance();
             
         }
-        return new AQIResult(pollutant, avgConcentration, aqi, category, generalAQIMessage, healthEffectsStatement,
+        return new AQIResult(pollutant, avgConcentration, aqi, category, meaning, color, healthEffectsStatement,
                 guidanceStatement);
     }
     
@@ -136,10 +138,11 @@ public class AQICalculator {
         double nowCastConcentration = nowCastCalculator.getNowCastConcentration(pollutant, data);
         int aqi = -1;
         String category = AQICalculatorConstants.UNCATEGORIZED;
-        String generalAQIMessage = AQICalculatorConstants.INVALID_GENERAL_MESSAGE;
-        String healthEffectsStatement = AQICalculatorConstants.NONE;
-        String guidanceStatement = AQICalculatorConstants.NONE;
-        
+        String meaning = AQICalculatorConstants.INVALID_CONCENTRATION_RANGE_MSG;
+        String healthEffectsStatement = AQICalculatorConstants.NOT_APPLICABLE;
+        String guidanceStatement = AQICalculatorConstants.NOT_APPLICABLE;
+        String color = AQICalculatorConstants.NOT_APPLICABLE;
+
         if (nowCastConcentration >= 0) {
             // find the target Concentration with it corresponding Index level
             targetPollutantConcentration = pollutantBreakpoint
@@ -147,18 +150,18 @@ public class AQICalculator {
             if (targetPollutantConcentration.isPresent()) {
                 aqi = calculateAQIWithIndexAndConcentrationRange(nowCastConcentration,
                         targetPollutantConcentration.get());
-                GeneralAQIMessage generalMessage = messageGenerator.getGeneralAQIMessageObjectOnAQILevel(aqi);
+                GenericAQIInformation generalMessage = messageGenerator.getGeneralAQIMessageObjectOnAQILevel(aqi);
                 SpecificAQILevelMessage specificAQILevelMessage = messageGenerator
                         .getSpecificAQILevelMessageOnAQILevelOfPollutant(pollutant, aqi);
                 
                 category = generalMessage.getCategory();
-                generalAQIMessage = generalMessage.getMessage();
+                meaning = generalMessage.getMeaning();
+                color = generalMessage.getColor();
                 healthEffectsStatement = specificAQILevelMessage.getHealthEffectsStatements();
                 guidanceStatement = specificAQILevelMessage.getGuidance();
             }
-            
         }
-        return new AQIResult(pollutant, nowCastConcentration, aqi, category, generalAQIMessage, healthEffectsStatement,
+        return new AQIResult(pollutant, nowCastConcentration, aqi, category, meaning, color, healthEffectsStatement,
                 guidanceStatement);
         
     }
