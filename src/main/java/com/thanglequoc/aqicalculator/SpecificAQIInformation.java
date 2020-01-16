@@ -7,12 +7,12 @@ import java.util.List;
  *
  * @author ThangLeQuoc
  */
-class SpecificAQIMessage {
+class SpecificAQIInformation {
     
     private Pollutant pollutant;
     private List<SpecificAQILevelMessage> levelMessages;
     
-    SpecificAQIMessage(Pollutant pollutant, List<SpecificAQILevelMessage> levelMessages) {
+    SpecificAQIInformation(Pollutant pollutant, List<SpecificAQILevelMessage> levelMessages) {
         this.pollutant = pollutant;
         this.levelMessages = levelMessages;
     }

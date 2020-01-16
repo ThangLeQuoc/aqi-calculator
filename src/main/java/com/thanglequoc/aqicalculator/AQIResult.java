@@ -11,19 +11,21 @@ public class AQIResult {
     
     private Pollutant pollutant;
     private double concentration;
-    private int aqi;
+    private int AQI;
     private String category;
-    private String generalMessage;
+    private String color;
+    private String meaning;
     private String healthEffectsStatement;
     private String guidanceStatement;
     
-    AQIResult(Pollutant pollutant, double concentration, int aqi, String category, String generalMessage,
+    AQIResult(Pollutant pollutant, double concentration, int AQI, String category, String meaning, String color,
               String healthEffectStatement, String guidanceStatement) {
         this.pollutant = pollutant;
         this.concentration = concentration;
-        this.aqi = aqi;
+        this.AQI = AQI;
         this.category = category;
-        this.generalMessage = generalMessage;
+        this.meaning = meaning;
+        this.color = color;
         this.healthEffectsStatement = healthEffectStatement;
         this.guidanceStatement = guidanceStatement;
     }
@@ -36,7 +38,7 @@ public class AQIResult {
      * Get the Air Quality Index
      * */
     public int getAQI() {
-        return aqi;
+        return AQI;
     }
 
     /**
@@ -61,10 +63,10 @@ public class AQIResult {
     }
 
     /**
-     * Get the general AIR at this category level
+     * Get the meaning, health implications of this AQI level
      * */
-    public String getGeneralMessage() {
-        return generalMessage;
+    public String getMeaning() {
+        return meaning;
     }
 
     /**
@@ -72,5 +74,12 @@ public class AQIResult {
      * */
     public double getConcentration() {
         return concentration;
+    }
+
+    /**
+     * Get the specific color of this AQI level that assigned by EPA
+     * */
+    public String getColor() {
+        return color;
     }
 }

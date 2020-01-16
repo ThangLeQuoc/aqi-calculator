@@ -2,32 +2,39 @@ package com.thanglequoc.aqicalculator.aqi;
 
 public enum AQILevel {
     
-    INVALID("Uncategorized"),
+    INVALID("Uncategorized", "N/A"),
     
-    GOOD("Good"),
+    GOOD("Good", "Green"),
     
-    MODERATE("Moderate"),
+    MODERATE("Moderate", "Yellow"),
     
-    UNHEALTHY_FOR_SENSITIVE_GROUPS("Unhealthy for Sensitive Groups"),
+    UNHEALTHY_FOR_SENSITIVE_GROUPS("Unhealthy for Sensitive Groups", "Orange"),
     
-    UNHEALTHY("Unhealthy"),
+    UNHEALTHY("Unhealthy","Red"),
     
-    VERY_UNHEALTHY("Very Unhealthy"),
+    VERY_UNHEALTHY("Very Unhealthy","Purple"),
     
-    HAZARDOUS("Hazardous");
+    HAZARDOUS("Hazardous", "Maroon");
     
     /**
      * The literal.
      */
     private String literal;
+
+    private String color;
     
     
-    AQILevel(String literal) {
+    AQILevel(String literal, String color) {
         this.literal = literal;
+        this.color = color;
     }
     
     public String getLiteral() {
         return literal;
+    }
+
+    public String getColor() {
+        return color;
     }
 }
 
