@@ -5,7 +5,7 @@
 	<artifactId>aqi-calculator</artifactId>
 	<version>1.2.3</version>
 	<name>AQI Calculator</name>
-	<description>AQI Calculator give the detail result from AQI calculation. It also supports Nowcast</description>
+	<description>AQI Calculator give the detail result from AQI calculation. It also supports NowCast</description>
 	<url>https://github.com/ThangLeQuoc/aqi-calculator</url>
 
 	<developers>
