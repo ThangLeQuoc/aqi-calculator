@@ -37,24 +37,15 @@ public class AQIMessageTest {
     @Test
     public void should_ReturnGoodAQILevel_When_AQIPM10Is30() {
         pollutant = Pollutant.PM10;
-        
         double avgConcentration = 32;
+
         AQIResult result = calculator.getAQI(pollutant, avgConcentration);
-        
-        category = result.getCategory();
-        generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
-        
-        String expectedCategory = AQILevel.GOOD.getLiteral();
-        String expectedMeaning = AQILevelGenericMessages.GOOD.getMeaning();
-        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForPM10.GOOD.getGuidance();
-        String expectedHealthEffectsStatements = AQILevelSpecificMessageForPM10.GOOD.getHealthEffectsStatements();
-        
-        assertEquals(expectedCategory, category);
-        assertEquals(expectedMeaning, generalMessage);
-        assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
-        assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
+
+        assertEquals(AQILevel.GOOD.getLiteral(), result.getCategory());
+        assertEquals(AQILevel.GOOD.getColor(), result.getColor());
+        assertEquals(AQILevelGenericMessages.GOOD.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelSpecificMessageForPM10.GOOD.getGuidance(), result.getGuidanceStatement());
+        assertEquals(AQILevelSpecificMessageForPM10.GOOD.getHealthEffectsStatements(), result.getHealthEffectsStatement());
     }
     
     @Test
