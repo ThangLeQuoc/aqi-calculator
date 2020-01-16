@@ -20,11 +20,11 @@ This project is intended to community target for free use. The author is not ass
 ## Highlights
 - Calculate AQI from raw concentration
 - The result from calculation includes Air Quality Index, AQI Category, General Message, Specific Health Effects Statements for the pollutant and the corresponding guidance message.
-- Support Nowcast Concentration
+- Support NowCast Concentration
 
 ### Support the following pollutants
 
-| Pollutant  | Scientific name| Unit of Measurement |Input Code Usage |Regular Calculation Support |Nowcast Support | Health Effects Statements | Guidance Message|
+| Pollutant  | Scientific name| Unit of Measurement |Input Code Usage |Regular Calculation Support |NowCast Support | Health Effects Statements | Guidance Message|
 | ---- |:-------------:|:-------------:|:-------------:|:-------------:|-------------:|-------------:|-------------:|
 | PM10      |  10 μm Particle Pollutant  | μg/m3| PM10 | :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
 | PM2.5      |  2.5 μm Particle Pollutant  | μg/m3| PM2.5 |  :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
@@ -66,7 +66,7 @@ Now `AQIResult` store all the related information that you might need, query the
 
 ```result.getConcentration();```
 
-For _Nowcast_ calculation, this will be the **Nowcast Concentration**
+For _NowCast_ calculation, this will be the **NowCast Concentration**
 >99.0
 
 * Get the AQI Category
@@ -90,14 +90,14 @@ For _Nowcast_ calculation, this will be the **Nowcast Concentration**
 >Unusually sensitive people should consider reducing prolonged or heavy exertion
 
 
-#### For Nowcast AQI Calculation
+#### For NowCast AQI Calculation
 
 ~~~~
-/* Example Data for Nowcast PM10 12h period - 64, 63, 72, 77, 65, 61, 70, 71, 64, 57, 58, 64 */
+/* Example Data for NowCast PM10 12h period - 64, 63, 72, 77, 65, 61, 70, 71, 64, 57, 58, 64 */
 AQICalculator calculator = AQICalculator.getAQICalculatorInstance();
 
 double[] data = { 64, 63, 72, 77, 65, 61, 70, 71, 64, 57, 58, 64 };`
-AQIResult result = calculator.getNowcastAQI("PM10", data);
+AQIResult result = calculator.getNowCastAQI("PM10", data);
 
 result.getAqi();
 ~~~~
@@ -106,7 +106,7 @@ result.getAqi();
 The first value in the array is the avg value in the current hour, and the upcoming element in the array represent one step hour before current hour.
 
 If the hour doesn't have data, replace missing data in the hour with **-1**
-##### Example Nowcast Dataset for PM10: (have some missing data in hour)
+##### Example NowCast Dataset for PM10: (have some missing data in hour)
 | Hour | Avg Concentration
 | ---- |:-------------:|
 | 14      | 64 ppb |
@@ -122,11 +122,11 @@ If the hour doesn't have data, replace missing data in the hour with **-1**
 | 4      | 58 ppb|
 | 3      | 64 ppb|
 
-Presume that you want to calculate Nowcast AQI for PM10 at **14**, the data array should be
+Presume that you want to calculate NowCast AQI for PM10 at **14**, the data array should be
 
 ~~~~
 double[] data = { 64, 63, -1, 77, 65, -1, 70, 71, -1, 57, 58, 64 };`
-AQIResult result = calculator.getNowcastAQI("PM10", data);
+AQIResult result = calculator.getNowCastAQI("PM10", data);
 result.getAqi();
 ~~~~
 >56
@@ -154,15 +154,15 @@ The AQI is the highest value calculated for each pollutant as follows:
 
 <img width="600" src="https://image.ibb.co/n6w3VQ/2017_07_20_15_25_59.png" alt="2017_07_20_15_25_59" border="0">
 
-### Nowcast for PM and Ozone
+### NowCast for PM and Ozone
 The concentration of PM10, PM2.5 is so dynamic since wind can completely clean the air in less
 than 30 minutes, or a wildfire can raise the concentration with a very fast rate in an hour. So
-Nowcast is introduced, it mainly focus on detect the average changing of the period hour and
+NowCast is introduced, it mainly focus on detect the average changing of the period hour and
 perform counter balancing.
 
 <img  width="800" src="https://image.ibb.co/gcrCqQ/2017_07_20_15_30_08.png" alt="2017_07_20_15_30_08" border="0">
 
-#### Nowcast Rules
+#### NowCast Rules
 <img width="800" src="https://image.ibb.co/ntF0c5/image.png" alt="image" border="0">
 
 ##### Handling Missing data
@@ -171,9 +171,12 @@ To compute a valid NowCast, you must have at least two of the most recent 3 hour
 <img width="300" src="https://image.ibb.co/hxVYx5/image.png" alt="image" border="0">
 
 ## Extra Documents and Tools that you might needs
+
+[Air Quality Index (AQI) Basics](https://airnow.gov/index.cfm?action=aqibasics.aqi)  
+
 [Air Now AQI Calculator: Concentration to AQI](https://airnow.gov/index.cfm?action=resources.conc_aqi_calc)
 
-[Air Now Nowcast Calculator](https://www3.epa.gov/airnow/aqicalctest/nowcast.htm)
+[Air Now NowCast Calculator](https://www3.epa.gov/airnow/aqicalctest/nowcast.htm)
 
 [Daily and Hourly AQI - PM2.5 and PM10](https://forum.airnowtech.org/t/daily-and-hourly-aqi-pm2-5-and-pm10/171)
 
@@ -183,6 +186,6 @@ To compute a valid NowCast, you must have at least two of the most recent 3 hour
 
 [US EPA AQI Technical Assistance Document](https://www3.epa.gov/airnow/aqi-technical-assistance-document-may2016.pdf)
 
-[US EPA Nowcast Overview](https://www3.epa.gov/airnow/ani/pm25_aqi_reporting_nowcast_overview.pdf)
+[US EPA NowCast Overview](https://www3.epa.gov/airnow/ani/pm25_aqi_reporting_nowcast_overview.pdf)
 
-###### Demonstration images for nowcast in this tutorial are from [US EPA Nowcast Overview](https://www3.epa.gov/airnow/ani/pm25_aqi_reporting_nowcast_overview.pdf) document
+###### Demonstration images for NowCast in this tutorial are from [US EPA NowCast Overview](https://www3.epa.gov/airnow/ani/pm25_aqi_reporting_nowcast_overview.pdf) document

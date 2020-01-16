@@ -54,7 +54,7 @@ public class AQICalculator {
          * AQI Calculator will generate the following thing
          * PollutantBreakpointGenerator: Generator to get the breakpoints table
          * from JSON File PollutantsBreakpoint: Store a list of pollutant
-         * breakpoint Nowcast Calculator: calculator to get avgAQI at present
+         * breakpoint NowCast Calculator: calculator to get avgAQI at present
          * for PM10, PM2.5, Ozone
          */
         

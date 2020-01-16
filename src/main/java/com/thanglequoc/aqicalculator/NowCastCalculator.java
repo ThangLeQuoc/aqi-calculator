@@ -11,7 +11,7 @@ package com.thanglequoc.aqicalculator;
 class NowCastCalculator {
     
     double getNowCastConcentration(Pollutant pollutant, double[] data) {
-        if (!PollutantHelper.isPollutantValidForNowcastAQICalculation(pollutant) || !isValidNowCastData(data))
+        if (!PollutantHelper.isPollutantValidForNowCastAQICalculation(pollutant) || !isValidNowCastData(data))
             return -1;
         return truncateConcentration(pollutant, data);
         
