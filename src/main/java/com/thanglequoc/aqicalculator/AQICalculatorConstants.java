@@ -24,7 +24,7 @@ class AQICalculatorConstants {
     
     /* Resource Path */
     static final String AQI_BREAKPOINT_RESOURCE_PATH = "AQIresource/aqi-breakpoint.json";
-    static final String AQI_GENERAL_MESSAGES_RESOURCE_PATH = "AQIresource/aqi-general-messages.json";
+    static final String AQI_GENERAL_MESSAGES_RESOURCE_PATH = "AQIresource/aqi-generic-messages.json";
     static final String AQI_SPECIFIC_MESSAGES_RESOURCE_PATH = "AQIresource/aqi-specific-messages.json";
     
     private AQICalculatorConstants() {
