@@ -4,7 +4,7 @@
     "max": 50
   },
   "category": "Good",
-  "meaning": "None",
+  "meaning": "Air quality is considered satisfactory, and air pollution poses little or no risk",
   "color": "Green"
 }, {
   "index": {
@@ -12,7 +12,7 @@
     "max": 100
   },
   "category": "Moderate",
-  "meaning": "Unusually sensitive people should consider reducing prolonged or heavy outdoor exertion",
+  "meaning": "Air quality is acceptable; however, for some pollutants there may be a moderate health concern for a very small number of people who are unusually sensitive to air pollution",
   "color": "Yellow"
 }, {
   "index": {
@@ -20,7 +20,7 @@
     "max": 150
   },
   "category": "Unhealthy for Sensitive Groups",
-  "meaning": "Active children and adults, and people with respiratory disease, such as asthma, should limit prolonged outdoor exertion",
+  "meaning": "Members of sensitive groups may experience health effects. The general public is not likely to be affected",
   "color": "Orange"
 }, {
   "index": {
@@ -28,7 +28,7 @@
     "max": 200
   },
   "category": "Unhealthy",
-  "meaning": "Active children and adults, and people with respiratory disease, such as asthma, should avoid prolonged outdoor exertion; everyone else, especially children, should limit prolonged outdoor exertion",
+  "meaning": "Everyone may begin to experience health effects; members of sensitive groups may experience more serious health effects",
   "color": "Red"
 }, {
   "index": {
@@ -36,7 +36,7 @@
     "max": 300
   },
   "category": "Very Unhealthy",
-  "meaning": "Active children and adults, and people with respiratory disease, such as asthma, should avoid all outdoor exertion; everyone else, especially children, should limit outdoor exertion",
+  "meaning": "Health alert: everyone may experience more serious health effects",
   "color": "Purple"
 }, {
   "index": {
@@ -44,6 +44,6 @@
     "max": 500
   },
   "category": "Hazardous",
-  "meaning": "Everyone should avoid all outdoor exertion",
+  "meaning": "Health warnings of emergency conditions. The entire population is more likely to be affected",
   "color": "Maroon"
 }]
