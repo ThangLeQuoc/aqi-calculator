@@ -1,0 +1,26 @@
+[
+  {
+    "code": "PM2.5",
+    "sensitiveGroups": "People with respiratory or heart disease, the elderly and children are the groups most at risk"
+  },
+  {
+    "code": "PM10",
+    "sensitiveGroups": "People with respiratory disease are the group most at risk"
+  },
+  {
+    "code": "O3",
+    "sensitiveGroups": "Children and people with asthma are the groups most at risk"
+  },
+  {
+    "code": "CO",
+    "sensitiveGroups": "People with heart disease are the group most at risk"
+  },
+  {
+    "code": "SO2",
+    "sensitiveGroups": "People with asthma are the group most at risk"
+  },
+  {
+    "code": "NO2",
+    "sensitiveGroups": "People with asthma or other respiratory diseases, the elderly, and children are the groups most at risk"
+  }
+]
