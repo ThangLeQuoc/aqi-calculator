@@ -51,14 +51,14 @@ public class AQIResult {
     }
 
     /**
-     * Get the Health Effects Statement
+     * Get the Health Effects Statements
      * */
     public String getHealthEffectsStatements() {
         return healthEffectsStatements;
     }
 
     /**
-     * Get the Guidance Statement for this pollutant at this category level
+     * Get the Cautionary Statements for this pollutant at this category level
      * */
     public String getCautionaryStatements() {
         return cautionaryStatements;
