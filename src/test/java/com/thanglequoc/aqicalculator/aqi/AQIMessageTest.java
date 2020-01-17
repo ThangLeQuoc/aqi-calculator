@@ -46,7 +46,7 @@ public class AQIMessageTest {
         assertEquals(AQILevelGenericMessages.GOOD.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForPM10.GOOD.getGuidance(), result.getGuidanceStatement());
         assertEquals(AQILevelSpecificMessageForPM10.GOOD.getHealthEffectsStatements(), result.getHealthEffectsStatement());
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     @Test
@@ -69,7 +69,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     @Test
@@ -93,7 +93,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     @Test
@@ -117,7 +117,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     @Test
@@ -141,7 +141,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     @Test
@@ -165,7 +165,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     /**
@@ -194,7 +194,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     @Test
@@ -218,7 +218,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     @Test
@@ -242,7 +242,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     @Test
@@ -266,7 +266,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     @Test
@@ -290,7 +290,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     @Test
@@ -314,7 +314,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     /**
@@ -346,7 +346,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     @Test
@@ -373,7 +373,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     @Test
@@ -400,7 +400,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     @Test
@@ -427,7 +427,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     @Test
@@ -454,7 +454,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     @Test
@@ -481,7 +481,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     /**
@@ -510,7 +510,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     @Test
@@ -534,7 +534,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     @Test
@@ -558,7 +558,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     @Test
@@ -582,7 +582,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     @Test
@@ -606,7 +606,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     @Test
@@ -630,7 +630,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     /**
@@ -660,7 +660,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     @Test
@@ -685,7 +685,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     @Test
@@ -710,7 +710,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     @Test
@@ -735,7 +735,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     @Test
@@ -760,7 +760,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     /**
@@ -789,7 +789,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     @Test
@@ -813,7 +813,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     @Test
@@ -837,7 +837,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     @Test
@@ -861,7 +861,7 @@ public class AQIMessageTest {
         assertEquals(expectedMeaning, generalMessage);
         assertEquals(expectedSpecificGuidanceMessage, specificGuidanceMessage);
         assertEquals(expectedHealthEffectsStatements, healthEffectsStatements);
-        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
+        assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
     /**

@@ -28,7 +28,7 @@ enum SensitiveGroups {
         return pollutant;
     }
 
-    static String getSensitiveGroups(Pollutant pollutant) {
+    static String resolveSensitiveGroupsFromPollutant(Pollutant pollutant) {
         for (SensitiveGroups sensitiveGroups: SensitiveGroups.values()) {
             if (sensitiveGroups.getPollutant().equals(pollutant)) {
                 return sensitiveGroups.getSensitiveGroups();
