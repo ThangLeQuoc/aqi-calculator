@@ -8,13 +8,13 @@ class AQICalculatorConstants {
     static final String MAX = "max";
     static final String CATEGORY = "category";
     static final String MEANING = "meaning";
-    static final String GUIDANCE = "guidance";
+    static final String CAUTIONARY_STATEMENTS = "cautionaryStatements";
     static final String COLOR = "color";
     static final String CODE = "code";
     static final String UNIT = "unit";
     static final String PERIOD = "period";
     static final String AQI_LEVEL = "aqiLevel";
-    static final String HEALTH_EFFECTS_STATEMENT = "healthEffectsStatement";
+    static final String HEALTH_EFFECTS_STATEMENTS = "healthEffectsStatements";
     static final String CONCENTRATIONS = "concentrations";
     static final String SENSITIVE_GROUPS = "sensitiveGroups";
     

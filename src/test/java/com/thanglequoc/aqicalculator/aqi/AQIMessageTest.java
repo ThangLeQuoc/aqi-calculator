@@ -44,8 +44,8 @@ public class AQIMessageTest {
         assertEquals(AQILevel.GOOD.getLiteral(), result.getCategory());
         assertEquals(AQILevel.GOOD.getColor(), result.getColor());
         assertEquals(AQILevelGenericMessages.GOOD.getMeaning(), result.getMeaning());
-        assertEquals(AQILevelSpecificMessageForPM10.GOOD.getGuidance(), result.getGuidanceStatement());
-        assertEquals(AQILevelSpecificMessageForPM10.GOOD.getHealthEffectsStatements(), result.getHealthEffectsStatement());
+        assertEquals(AQILevelSpecificMessageForPM10.GOOD.getCautionaryStatements(), result.getCautionaryStatements());
+        assertEquals(AQILevelSpecificMessageForPM10.GOOD.getHealthEffectsStatements(), result.getHealthEffectsStatements());
         assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(pollutant), result.getSensitiveGroups());
     }
     
@@ -57,12 +57,12 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.GOOD.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.GOOD.getMeaning();
-        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForPM25.GOOD.getGuidance();
+        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForPM25.GOOD.getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForPM25.GOOD.getHealthEffectsStatements();
         
         assertEquals(expectedCategory, category);
@@ -81,12 +81,12 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.GOOD.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.GOOD.getMeaning();
-        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForO3.GOOD.getGuidance();
+        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForO3.GOOD.getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForO3.GOOD.getHealthEffectsStatements();
         
         assertEquals(expectedCategory, category);
@@ -105,12 +105,12 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.GOOD.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.GOOD.getMeaning();
-        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForCO.GOOD.getGuidance();
+        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForCO.GOOD.getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForCO.GOOD.getHealthEffectsStatements();
         
         assertEquals(expectedCategory, category);
@@ -129,12 +129,12 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.GOOD.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.GOOD.getMeaning();
-        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForSO2.GOOD.getGuidance();
+        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForSO2.GOOD.getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForSO2.GOOD.getHealthEffectsStatements();
         
         assertEquals(expectedCategory, category);
@@ -153,12 +153,12 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.GOOD.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.GOOD.getMeaning();
-        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForNO2.GOOD.getGuidance();
+        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForNO2.GOOD.getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForNO2.GOOD.getHealthEffectsStatements();
         
         assertEquals(expectedCategory, category);
@@ -182,12 +182,12 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.MODERATE.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.MODERATE.getMeaning();
-        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForPM10.MODERATE.getGuidance();
+        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForPM10.MODERATE.getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForPM10.MODERATE.getHealthEffectsStatements();
         
         assertEquals(expectedCategory, category);
@@ -206,12 +206,12 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.MODERATE.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.MODERATE.getMeaning();
-        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForPM25.MODERATE.getGuidance();
+        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForPM25.MODERATE.getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForPM25.MODERATE.getHealthEffectsStatements();
         
         assertEquals(expectedCategory, category);
@@ -230,12 +230,12 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.MODERATE.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.MODERATE.getMeaning();
-        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForO3.MODERATE.getGuidance();
+        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForO3.MODERATE.getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForO3.MODERATE.getHealthEffectsStatements();
         
         assertEquals(expectedCategory, category);
@@ -254,12 +254,12 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.MODERATE.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.MODERATE.getMeaning();
-        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForCO.MODERATE.getGuidance();
+        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForCO.MODERATE.getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForCO.MODERATE.getHealthEffectsStatements();
         
         assertEquals(expectedCategory, category);
@@ -278,12 +278,12 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.MODERATE.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.MODERATE.getMeaning();
-        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForSO2.MODERATE.getGuidance();
+        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForSO2.MODERATE.getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForSO2.MODERATE.getHealthEffectsStatements();
         
         assertEquals(expectedCategory, category);
@@ -302,12 +302,12 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.MODERATE.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.MODERATE.getMeaning();
-        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForNO2.MODERATE.getGuidance();
+        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForNO2.MODERATE.getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForNO2.MODERATE.getHealthEffectsStatements();
         
         assertEquals(expectedCategory, category);
@@ -331,14 +331,14 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.UNHEALTHY_FOR_SENSITIVE_GROUPS.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.UNHEALTHY_FOR_SENSITIVE_GROUPS
                 .getMeaning();
         String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForPM10.UNHEALTHY_FOR_SENSITIVE_GROUPS
-                .getGuidance();
+                .getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForPM10.UNHEALTHY_FOR_SENSITIVE_GROUPS
                 .getHealthEffectsStatements();
         
@@ -358,14 +358,14 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.UNHEALTHY_FOR_SENSITIVE_GROUPS.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.UNHEALTHY_FOR_SENSITIVE_GROUPS
                 .getMeaning();
         String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForPM25.UNHEALTHY_FOR_SENSITIVE_GROUPS
-                .getGuidance();
+                .getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForPM25.UNHEALTHY_FOR_SENSITIVE_GROUPS
                 .getHealthEffectsStatements();
         
@@ -385,14 +385,14 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.UNHEALTHY_FOR_SENSITIVE_GROUPS.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.UNHEALTHY_FOR_SENSITIVE_GROUPS
                 .getMeaning();
         String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForO3.UNHEALTHY_FOR_SENSITIVE_GROUPS
-                .getGuidance();
+                .getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForO3.UNHEALTHY_FOR_SENSITIVE_GROUPS
                 .getHealthEffectsStatements();
         
@@ -412,14 +412,14 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.UNHEALTHY_FOR_SENSITIVE_GROUPS.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.UNHEALTHY_FOR_SENSITIVE_GROUPS
                 .getMeaning();
         String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForCO.UNHEALTHY_FOR_SENSITIVE_GROUPS
-                .getGuidance();
+                .getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForCO.UNHEALTHY_FOR_SENSITIVE_GROUPS
                 .getHealthEffectsStatements();
         
@@ -439,14 +439,14 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.UNHEALTHY_FOR_SENSITIVE_GROUPS.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.UNHEALTHY_FOR_SENSITIVE_GROUPS
                 .getMeaning();
         String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForSO2.UNHEALTHY_FOR_SENSITIVE_GROUPS
-                .getGuidance();
+                .getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForSO2.UNHEALTHY_FOR_SENSITIVE_GROUPS
                 .getHealthEffectsStatements();
         
@@ -466,14 +466,14 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.UNHEALTHY_FOR_SENSITIVE_GROUPS.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.UNHEALTHY_FOR_SENSITIVE_GROUPS
                 .getMeaning();
         String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForNO2.UNHEALTHY_FOR_SENSITIVE_GROUPS
-                .getGuidance();
+                .getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForNO2.UNHEALTHY_FOR_SENSITIVE_GROUPS
                 .getHealthEffectsStatements();
         
@@ -498,12 +498,12 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.UNHEALTHY.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.UNHEALTHY.getMeaning();
-        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForPM10.UNHEALTHY.getGuidance();
+        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForPM10.UNHEALTHY.getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForPM10.UNHEALTHY.getHealthEffectsStatements();
         
         assertEquals(expectedCategory, category);
@@ -522,12 +522,12 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.UNHEALTHY.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.UNHEALTHY.getMeaning();
-        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForPM25.UNHEALTHY.getGuidance();
+        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForPM25.UNHEALTHY.getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForPM25.UNHEALTHY.getHealthEffectsStatements();
         
         assertEquals(expectedCategory, category);
@@ -546,12 +546,12 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.UNHEALTHY.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.UNHEALTHY.getMeaning();
-        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForO3.UNHEALTHY.getGuidance();
+        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForO3.UNHEALTHY.getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForO3.UNHEALTHY.getHealthEffectsStatements();
         
         assertEquals(expectedCategory, category);
@@ -570,12 +570,12 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.UNHEALTHY.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.UNHEALTHY.getMeaning();
-        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForCO.UNHEALTHY.getGuidance();
+        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForCO.UNHEALTHY.getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForCO.UNHEALTHY.getHealthEffectsStatements();
         
         assertEquals(expectedCategory, category);
@@ -594,12 +594,12 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.UNHEALTHY.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.UNHEALTHY.getMeaning();
-        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForSO2.UNHEALTHY.getGuidance();
+        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForSO2.UNHEALTHY.getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForSO2.UNHEALTHY.getHealthEffectsStatements();
         
         assertEquals(expectedCategory, category);
@@ -618,12 +618,12 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.UNHEALTHY.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.UNHEALTHY.getMeaning();
-        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForNO2.UNHEALTHY.getGuidance();
+        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForNO2.UNHEALTHY.getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForNO2.UNHEALTHY.getHealthEffectsStatements();
         
         assertEquals(expectedCategory, category);
@@ -647,12 +647,12 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.VERY_UNHEALTHY.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.VERY_UNHEALTHY.getMeaning();
-        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForPM10.VERY_UNHEALTHY.getGuidance();
+        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForPM10.VERY_UNHEALTHY.getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForPM10.VERY_UNHEALTHY
                 .getHealthEffectsStatements();
         
@@ -672,12 +672,12 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.VERY_UNHEALTHY.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.VERY_UNHEALTHY.getMeaning();
-        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForPM25.VERY_UNHEALTHY.getGuidance();
+        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForPM25.VERY_UNHEALTHY.getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForPM25.VERY_UNHEALTHY
                 .getHealthEffectsStatements();
         
@@ -697,12 +697,12 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.VERY_UNHEALTHY.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.VERY_UNHEALTHY.getMeaning();
-        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForO3.VERY_UNHEALTHY.getGuidance();
+        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForO3.VERY_UNHEALTHY.getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForO3.VERY_UNHEALTHY
                 .getHealthEffectsStatements();
         
@@ -722,12 +722,12 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.VERY_UNHEALTHY.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.VERY_UNHEALTHY.getMeaning();
-        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForCO.VERY_UNHEALTHY.getGuidance();
+        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForCO.VERY_UNHEALTHY.getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForCO.VERY_UNHEALTHY
                 .getHealthEffectsStatements();
         
@@ -747,12 +747,12 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.VERY_UNHEALTHY.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.VERY_UNHEALTHY.getMeaning();
-        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForNO2.VERY_UNHEALTHY.getGuidance();
+        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForNO2.VERY_UNHEALTHY.getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForNO2.VERY_UNHEALTHY
                 .getHealthEffectsStatements();
         
@@ -777,12 +777,12 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.HAZARDOUS.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.HAZARDOUS.getMeaning();
-        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForPM10.HAZARDOUS.getGuidance();
+        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForPM10.HAZARDOUS.getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForPM10.HAZARDOUS.getHealthEffectsStatements();
         
         assertEquals(expectedCategory, category);
@@ -801,12 +801,12 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.HAZARDOUS.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.HAZARDOUS.getMeaning();
-        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForPM25.HAZARDOUS.getGuidance();
+        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForPM25.HAZARDOUS.getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForPM25.HAZARDOUS.getHealthEffectsStatements();
         
         assertEquals(expectedCategory, category);
@@ -825,12 +825,12 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.HAZARDOUS.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.HAZARDOUS.getMeaning();
-        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForCO.HAZARDOUS.getGuidance();
+        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForCO.HAZARDOUS.getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForCO.HAZARDOUS.getHealthEffectsStatements();
         
         assertEquals(expectedCategory, category);
@@ -849,12 +849,12 @@ public class AQIMessageTest {
         
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         String expectedCategory = AQILevel.HAZARDOUS.getLiteral();
         String expectedMeaning = AQILevelGenericMessages.HAZARDOUS.getMeaning();
-        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForNO2.HAZARDOUS.getGuidance();
+        String expectedSpecificGuidanceMessage = AQILevelSpecificMessageForNO2.HAZARDOUS.getCautionaryStatements();
         String expectedHealthEffectsStatements = AQILevelSpecificMessageForNO2.HAZARDOUS.getHealthEffectsStatements();
         
         assertEquals(expectedCategory, category);
@@ -881,8 +881,8 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, -10);
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         assertEquals(expectedCategory, category);
         assertEquals(expectedMeaning, generalMessage);
@@ -903,8 +903,8 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(pollutant, -1000000);
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
         
         assertEquals(expectedCategory, category);
         assertEquals(expectedMeaning, generalMessage);
@@ -928,8 +928,8 @@ public class AQIMessageTest {
 
         category = result.getCategory();
         generalMessage = result.getMeaning();
-        specificGuidanceMessage = result.getGuidanceStatement();
-        healthEffectsStatements = result.getHealthEffectsStatement();
+        specificGuidanceMessage = result.getCautionaryStatements();
+        healthEffectsStatements = result.getHealthEffectsStatements();
 
         String expectedCategory = "Sehr ungesund";
         String expectedMeaning = "Aktive Kinder und Erwachsene sowie Menschen mit Atemwegserkrankungen wie Asthma sollten jede Anstrengung im Freien vermeiden. Alle anderen, insbesondere Kinder, sollten die Belastung im Freien begrenzen";
@@ -939,8 +939,8 @@ public class AQIMessageTest {
 
         assertEquals(expectedCategory, result.getCategory());
         assertEquals(expectedMeaning, result.getMeaning());
-        assertEquals(expectedHealthEffectsStatements, result.getHealthEffectsStatement());
-        assertEquals(expectedSpecificGuidanceMessage, result.getGuidanceStatement());
+        assertEquals(expectedHealthEffectsStatements, result.getHealthEffectsStatements());
+        assertEquals(expectedSpecificGuidanceMessage, result.getCautionaryStatements());
         assertEquals(expectedSensitiveGroups, result.getSensitiveGroups());
 
         calculator.resetDefaultSettings();

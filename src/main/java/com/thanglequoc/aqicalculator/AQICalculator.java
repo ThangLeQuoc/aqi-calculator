@@ -103,8 +103,8 @@ public class AQICalculator {
         int aqi = -1;
         String category = AQICalculatorConstants.UNCATEGORIZED;
         String meaning = AQICalculatorConstants.INVALID_CONCENTRATION_RANGE_MSG;
-        String healthEffectsStatement = AQICalculatorConstants.NOT_APPLICABLE;
-        String guidanceStatement = AQICalculatorConstants.NOT_APPLICABLE;
+        String healthEffectsStatements = AQICalculatorConstants.NOT_APPLICABLE;
+        String cautionaryStatements = AQICalculatorConstants.NOT_APPLICABLE;
         String color = AQICalculatorConstants.NOT_APPLICABLE;
         String sensitiveGroups = AQICalculatorConstants.NOT_APPLICABLE;
 
@@ -118,12 +118,12 @@ public class AQICalculator {
             category = generalMessage.getCategory();
             meaning = generalMessage.getMeaning();
             color = generalMessage.getColor();
-            healthEffectsStatement = specificAQILevelMessage.getHealthEffectsStatements();
-            guidanceStatement = specificAQILevelMessage.getGuidance();
+            healthEffectsStatements = specificAQILevelMessage.getHealthEffectsStatements();
+            cautionaryStatements = specificAQILevelMessage.getCautionaryStatements();
             sensitiveGroups = sensitiveGroupsInfo.getSensitiveGroups();
         }
-        return new AQIResult(pollutant, avgConcentration, aqi, category, meaning, color, healthEffectsStatement,
-                guidanceStatement, sensitiveGroups);
+        return new AQIResult(pollutant, avgConcentration, aqi, category, meaning, color, healthEffectsStatements,
+                cautionaryStatements, sensitiveGroups);
     }
     
     /**
@@ -141,8 +141,8 @@ public class AQICalculator {
         int aqi = -1;
         String category = AQICalculatorConstants.UNCATEGORIZED;
         String meaning = AQICalculatorConstants.INVALID_CONCENTRATION_RANGE_MSG;
-        String healthEffectsStatement = AQICalculatorConstants.NOT_APPLICABLE;
-        String guidanceStatement = AQICalculatorConstants.NOT_APPLICABLE;
+        String healthEffectsStatements = AQICalculatorConstants.NOT_APPLICABLE;
+        String cautionaryStatements = AQICalculatorConstants.NOT_APPLICABLE;
         String color = AQICalculatorConstants.NOT_APPLICABLE;
         String sensitiveGroups = AQICalculatorConstants.NOT_APPLICABLE;
 
@@ -161,13 +161,13 @@ public class AQICalculator {
                 category = generalMessage.getCategory();
                 meaning = generalMessage.getMeaning();
                 color = generalMessage.getColor();
-                healthEffectsStatement = specificAQILevelMessage.getHealthEffectsStatements();
-                guidanceStatement = specificAQILevelMessage.getGuidance();
+                healthEffectsStatements = specificAQILevelMessage.getHealthEffectsStatements();
+                cautionaryStatements = specificAQILevelMessage.getCautionaryStatements();
                 sensitiveGroups = sensitiveGroupsInfo.getSensitiveGroups();
             }
         }
-        return new AQIResult(pollutant, nowCastConcentration, aqi, category, meaning, color, healthEffectsStatement,
-                guidanceStatement, sensitiveGroups);
+        return new AQIResult(pollutant, nowCastConcentration, aqi, category, meaning, color, healthEffectsStatements,
+                cautionaryStatements, sensitiveGroups);
         
     }
     
