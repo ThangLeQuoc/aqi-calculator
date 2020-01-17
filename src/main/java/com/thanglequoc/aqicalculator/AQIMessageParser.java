@@ -36,11 +36,11 @@ class AQIMessageParser {
     
     private SpecificAQILevelMessage parseLevelMessageFromNode(JsonNode levelMessageNode) {
         String category = levelMessageNode.path(AQICalculatorConstants.CATEGORY).asText();
-        String healthEffectsStatements = levelMessageNode.path(AQICalculatorConstants.HEALTH_EFFECTS_STATEMENT)
+        String healthEffectsStatements = levelMessageNode.path(AQICalculatorConstants.HEALTH_EFFECTS_STATEMENTS)
                 .asText();
-        String guidance = levelMessageNode.path(AQICalculatorConstants.GUIDANCE).asText();
+        String cautionaryStatements = levelMessageNode.path(AQICalculatorConstants.CAUTIONARY_STATEMENTS).asText();
         Index index = Index.fromIndexNode(levelMessageNode.path(AQICalculatorConstants.INDEX));
-        return new SpecificAQILevelMessage(index, category, healthEffectsStatements, guidance);
+        return new SpecificAQILevelMessage(index, category, healthEffectsStatements, cautionaryStatements);
     }
     
 }

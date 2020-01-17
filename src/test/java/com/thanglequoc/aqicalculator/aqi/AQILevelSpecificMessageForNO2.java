@@ -9,19 +9,19 @@ enum AQILevelSpecificMessageForNO2 {
     HAZARDOUS("Severe respiratory symptoms, such as wheezing and shortness of breath, in people with asthma; increased aggravation of other lung diseases; possible respiratory effects in general population", "People with asthma, children and older adults should remain indoors; everyone else should avoid all outdoor exertion");
     
     private String healthEffectsStatements;
-    private String guidance;
+    private String cautionaryStatements;
     
     
-    AQILevelSpecificMessageForNO2(String healthEffectsStatements, String guidance) {
+    AQILevelSpecificMessageForNO2(String healthEffectsStatements, String cautionaryStatements) {
         this.healthEffectsStatements = healthEffectsStatements;
-        this.guidance = guidance;
+        this.cautionaryStatements = cautionaryStatements;
     }
     
     public String getHealthEffectsStatements() {
         return healthEffectsStatements;
     }
     
-    public String getGuidance() {
-        return guidance;
+    public String getCautionaryStatements() {
+        return cautionaryStatements;
     }
 }

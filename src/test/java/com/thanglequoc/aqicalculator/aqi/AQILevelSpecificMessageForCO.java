@@ -9,19 +9,19 @@ enum AQILevelSpecificMessageForCO {
     HAZARDOUS("Serious aggravation of cardiovascular symptoms, such as chest pain, in people with heart disease; impairment of strenuous activities in general population", "People with heart disease, such as angina, should avoid exertion and sources of CO, such as heavy traffic; everyone else should limit heavy exertion");
     
     private String healthEffectsStatements;
-    private String guidance;
+    private String cautionaryStatements;
     
     
-    AQILevelSpecificMessageForCO(String healthEffectsStatements, String guidance) {
+    AQILevelSpecificMessageForCO(String healthEffectsStatements, String cautionaryStatements) {
         this.healthEffectsStatements = healthEffectsStatements;
-        this.guidance = guidance;
+        this.cautionaryStatements = cautionaryStatements;
     }
     
     public String getHealthEffectsStatements() {
         return healthEffectsStatements;
     }
     
-    public String getGuidance() {
-        return guidance;
+    public String getCautionaryStatements() {
+        return cautionaryStatements;
     }
 }

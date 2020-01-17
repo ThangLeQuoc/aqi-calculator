@@ -10,14 +10,14 @@ class SpecificAQILevelMessage {
     
     private Index index;
     private String category;
-    private String healthEffectsStatement;
-    private String guidance;
+    private String healthEffectsStatements;
+    private String cautionaryStatements;
     
-    SpecificAQILevelMessage(Index index, String category, String healthEffectsStatement, String guidance) {
+    SpecificAQILevelMessage(Index index, String category, String healthEffectsStatements, String cautionaryStatements) {
         this.index = index;
         this.category = category;
-        this.healthEffectsStatement = healthEffectsStatement;
-        this.guidance = guidance;
+        this.healthEffectsStatements = healthEffectsStatements;
+        this.cautionaryStatements = cautionaryStatements;
     }
     
     Index getIndex() {
@@ -29,11 +29,11 @@ class SpecificAQILevelMessage {
     }
     
     String getHealthEffectsStatements() {
-        return healthEffectsStatement;
+        return healthEffectsStatements;
     }
     
-    String getGuidance() {
-        return guidance;
+    String getCautionaryStatements() {
+        return cautionaryStatements;
     }
     
 }

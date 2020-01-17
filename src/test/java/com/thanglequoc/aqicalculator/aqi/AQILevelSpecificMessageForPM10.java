@@ -9,19 +9,19 @@ enum AQILevelSpecificMessageForPM10 {
     HAZARDOUS("Serious aggravation of respiratory symptoms in sensitive groups including older adults, children, and people of lower socioeconomic status; serious aggravation of heart or lung disease and premature mortality in people with heart or lung disease; serious risk of respiratory effects in general population", "Everyone should avoid all physical activity outdoors; people with heart or lung disease, older adults, children, and people of lower socioeconomic status should remain indoors and keep activity levels low");
     
     private String healthEffectsStatements;
-    private String guidance;
+    private String cautionaryStatements;
     
     
-    AQILevelSpecificMessageForPM10(String healthEffectsStatements, String guidance) {
+    AQILevelSpecificMessageForPM10(String healthEffectsStatements, String cautionaryStatements) {
         this.healthEffectsStatements = healthEffectsStatements;
-        this.guidance = guidance;
+        this.cautionaryStatements = cautionaryStatements;
     }
     
     public String getHealthEffectsStatements() {
         return healthEffectsStatements;
     }
     
-    public String getGuidance() {
-        return guidance;
+    public String getCautionaryStatements() {
+        return cautionaryStatements;
     }
 }

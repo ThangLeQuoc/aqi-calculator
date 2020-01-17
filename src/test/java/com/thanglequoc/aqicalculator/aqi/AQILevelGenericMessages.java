@@ -17,9 +17,9 @@ enum AQILevelGenericMessages {
     }
     
     /**
-     * Gets the general guidance message.
+     * Gets the meaning message.
      *
-     * @return the general guidance message
+     * @return the meaning message
      */
     public String getMeaning() {
         return meaning;

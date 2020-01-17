@@ -4,41 +4,46 @@
     "max": 50
   },
   "category": "Gut",
-  "meaning": "Keiner",
-  "color": "Green"
+  "meaning": "Die Luftqualität wird als zufriedenstellend angesehen, und die Luftverschmutzung birgt kein oder nur ein geringes Risiko",
+  "color": "Grün"
 }, {
   "index": {
     "min": 51,
     "max": 100
   },
   "category": "Mäßig",
-  "meaning": "Ungewöhnlich sensible Menschen sollten in Betracht ziehen, längere oder schwere Belastungen im Freien zu reduzieren"
+  "meaning": "Luftqualität ist akzeptabel; Bei einigen Schadstoffen kann es jedoch zu einer mäßigen Gesundheitsgefährdung für eine sehr kleine Anzahl von Personen kommen, die ungewöhnlich empfindlich auf Luftverschmutzung reagieren",
+  "color": "Gelb"
 }, {
   "index": {
     "min": 101,
     "max": 150
   },
   "category": "Ungesund für sensible Gruppen",
-  "meaning": "Aktive Kinder und Erwachsene sowie Menschen mit Atemwegserkrankungen wie Asthma sollten eine längere Belastung im Freien einschränken"
+  "meaning": "Mitglieder sensibler Gruppen können gesundheitliche Auswirkungen haben. Die breite Öffentlichkeit dürfte davon nicht betroffen sein",
+  "color": "Orange"
 }, {
   "index": {
     "min": 151,
     "max": 200
   },
   "category": "Ungesund",
-  "meaning": "Aktive Kinder und Erwachsene sowie Menschen mit Atemwegserkrankungen wie Asthma sollten eine längere Belastung im Freien vermeiden. Alle anderen, insbesondere Kinder, sollten eine längere Belastung im Freien einschränken"
+  "meaning": "Jeder kann beginnen, gesundheitliche Auswirkungen zu spüren. Angehörige empfindlicher Gruppen können schwerwiegendere gesundheitliche Auswirkungen haben",
+  "color": "rot"
 }, {
   "index": {
     "min": 201,
     "max": 300
   },
   "category": "Sehr ungesund",
-  "meaning": "Aktive Kinder und Erwachsene sowie Menschen mit Atemwegserkrankungen wie Asthma sollten jede Anstrengung im Freien vermeiden. Alle anderen, insbesondere Kinder, sollten die Belastung im Freien begrenzen"
+  "meaning": "Gesundheitswarnung: Jeder kann schwerwiegendere gesundheitliche Auswirkungen haben",
+  "color": "Lila"
 }, {
   "index": {
     "min": 301,
     "max": 500
   },
   "category": "Gefährlich",
-  "meaning": "Jeder sollte jede Anstrengung im Freien vermeiden"
+  "meaning": "Gesundheitswarnungen bei Notfällen. Es ist wahrscheinlicher, dass die gesamte Bevölkerung betroffen ist",
+  "color": "Kastanienbraun"
 }]

@@ -10,19 +10,19 @@ enum AQILevelSpecificMessageForO3 {
     HAZARDOUS("Severe respiratory effects and impaired breathing likely in people with lung disease (such as asthma), children, older adults, people who are active outdoors (including outdoor workers), people with certain genetic variants, and people with diets limited in certain nutrients; increasingly severe respiratory effects likely in general population", "Everyone should avoid all outdoor exertion");
     
     private String healthEffectsStatements;
-    private String guidance;
+    private String cautionaryStatements;
     
     
-    AQILevelSpecificMessageForO3(String healthEffectsStatements, String guidance) {
+    AQILevelSpecificMessageForO3(String healthEffectsStatements, String cautionaryStatements) {
         this.healthEffectsStatements = healthEffectsStatements;
-        this.guidance = guidance;
+        this.cautionaryStatements = cautionaryStatements;
     }
     
     public String getHealthEffectsStatements() {
         return healthEffectsStatements;
     }
     
-    public String getGuidance() {
-        return guidance;
+    public String getCautionaryStatements() {
+        return cautionaryStatements;
     }
 }

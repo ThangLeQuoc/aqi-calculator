@@ -6,8 +6,8 @@
         "max": 50
       },
       "category": "Gut",
-      "healthEffectsStatement": "Keiner",
-      "guidance": "Keiner"
+      "healthEffectsStatements": "Keiner",
+      "cautionaryStatements": "Keiner"
     },
     {
       "index": {
@@ -15,40 +15,40 @@
         "max": 100
       },
       "category": "Mäßig",
-      "healthEffectsStatement": "Atmungssymptome bei ungewöhnlich empfindlichen Personen möglich; Mögliche Verschlimmerung von Herz- oder Lungenerkrankungen bei Personen mit kardiopulmonaler Erkrankung und älteren Erwachsenen",
-      "guidance": "Ungewöhnlich sensible Menschen sollten in Betracht ziehen, längere oder schwere Belastungen zu reduzieren"
+      "healthEffectsStatements": "Atmungssymptome bei ungewöhnlich empfindlichen Personen möglich; Mögliche Verschlimmerung von Herz- oder Lungenerkrankungen bei Personen mit kardiopulmonaler Erkrankung und älteren Erwachsenen",
+      "cautionaryStatements": "Ungewöhnlich sensible Menschen sollten in Betracht ziehen, längere oder schwere Belastungen zu reduzieren"
     }, {
       "index": {
         "min": 101,
         "max": 150
       },
       "category": "Ungesund für sensible Gruppen",
-      "healthEffectsStatement": "Erhöhung der Wahrscheinlichkeit von Atemwegsbeschwerden in sensiblen Gruppen, einschließlich älterer Erwachsener, Kinder und Personen mit niedrigerem sozioökonomischen Status; Verschlimmerung der Herz- oder Lungenkrankheit und vorzeitige Sterblichkeit bei Menschen mit Herz- oder Lungenkrankheit",
-      "guidance": "Menschen mit Herz- oder Lungenerkrankungen, ältere Erwachsene, Kinder und Menschen mit einem niedrigeren sozioökonomischen Status sollten eine längere oder schwere Anstrengung reduzieren"
+      "healthEffectsStatements": "Erhöhung der Wahrscheinlichkeit von Atemwegsbeschwerden in sensiblen Gruppen, einschließlich älterer Erwachsener, Kinder und Personen mit niedrigerem sozioökonomischen Status; Verschlimmerung der Herz- oder Lungenkrankheit und vorzeitige Sterblichkeit bei Menschen mit Herz- oder Lungenkrankheit",
+      "cautionaryStatements": "Menschen mit Herz- oder Lungenerkrankungen, ältere Erwachsene, Kinder und Menschen mit einem niedrigeren sozioökonomischen Status sollten eine längere oder schwere Anstrengung reduzieren"
     }, {
       "index": {
         "min": 151,
         "max": 200
       },
       "category": "Ungesund",
-      "healthEffectsStatement": "Erhöhte Verschlechterung der Atemwegsbeschwerden in sensiblen Gruppen, einschließlich älterer Erwachsener, Kinder und Personen mit niedrigerem sozioökonomischen Status; erhöhte Verschlimmerung von Herz- oder Lungenerkrankungen und vorzeitige Sterblichkeit bei Menschen mit Herz- oder Lungenerkrankungen; erhöhte respiratorische Effekte in der Allgemeinbevölkerung",
-      "guidance": "Menschen mit Herz- oder Lungenerkrankungen, ältere Erwachsene, Kinder und Menschen mit einem niedrigeren sozioökonomischen Status sollten eine längere oder schwere Anstrengung vermeiden. Alle anderen sollten längere oder schwere Anstrengung reduzieren"
+      "healthEffectsStatements": "Erhöhte Verschlechterung der Atemwegsbeschwerden in sensiblen Gruppen, einschließlich älterer Erwachsener, Kinder und Personen mit niedrigerem sozioökonomischen Status; erhöhte Verschlimmerung von Herz- oder Lungenerkrankungen und vorzeitige Sterblichkeit bei Menschen mit Herz- oder Lungenerkrankungen; erhöhte respiratorische Effekte in der Allgemeinbevölkerung",
+      "cautionaryStatements": "Menschen mit Herz- oder Lungenerkrankungen, ältere Erwachsene, Kinder und Menschen mit einem niedrigeren sozioökonomischen Status sollten eine längere oder schwere Anstrengung vermeiden. Alle anderen sollten längere oder schwere Anstrengung reduzieren"
     }, {
       "index": {
         "min": 201,
         "max": 300
       },
       "category": "Sehr ungesund",
-      "healthEffectsStatement": "Signifikante Verschlechterung der Atemwegsbeschwerden in sensiblen Gruppen, einschließlich älterer Erwachsener, Kinder und Personen mit niedrigerem sozioökonomischen Status; signifikante Verschlechterung der Herz- oder Lungenerkrankung und vorzeitige Sterblichkeit bei Menschen mit Herz- oder Lungenerkrankung; signifikante Zunahme der Atemwegserkrankungen in der Allgemeinbevölkerung",
-      "guidance": "Menschen mit Herz- oder Lungenerkrankungen, ältere Erwachsene, Kinder und Menschen mit einem niedrigeren sozioökonomischen Status sollten jegliche körperliche Aktivität im Freien vermeiden. Alle anderen sollten eine längere oder schwere Anstrengung vermeiden"
+      "healthEffectsStatements": "Signifikante Verschlechterung der Atemwegsbeschwerden in sensiblen Gruppen, einschließlich älterer Erwachsener, Kinder und Personen mit niedrigerem sozioökonomischen Status; signifikante Verschlechterung der Herz- oder Lungenerkrankung und vorzeitige Sterblichkeit bei Menschen mit Herz- oder Lungenerkrankung; signifikante Zunahme der Atemwegserkrankungen in der Allgemeinbevölkerung",
+      "cautionaryStatements": "Menschen mit Herz- oder Lungenerkrankungen, ältere Erwachsene, Kinder und Menschen mit einem niedrigeren sozioökonomischen Status sollten jegliche körperliche Aktivität im Freien vermeiden. Alle anderen sollten eine längere oder schwere Anstrengung vermeiden"
     }, {
       "index": {
         "min": 301,
         "max": 500
       },
       "category": "Gefährlich",
-      "healthEffectsStatement": "Schwerwiegende Verschlechterung der Atemwegsbeschwerden in sensiblen Gruppen, einschließlich älterer Erwachsener, Kinder und Personen mit niedrigerem sozioökonomischen Status; schwere Verschlimmerung der Herz- oder Lungenkrankheit und vorzeitige Sterblichkeit bei Menschen mit Herz- oder Lungenkrankheit; ernsthaftes Risiko von Atemwegserkrankungen in der Allgemeinbevölkerung",
-      "guidance": "Jeder sollte jegliche körperliche Aktivität im Freien vermeiden. Menschen mit Herz- oder Lungenerkrankungen, ältere Erwachsene, Kinder und Menschen mit einem niedrigeren sozioökonomischen Status sollten im Haus bleiben und die Aktivität niedrig halten"
+      "healthEffectsStatements": "Schwerwiegende Verschlechterung der Atemwegsbeschwerden in sensiblen Gruppen, einschließlich älterer Erwachsener, Kinder und Personen mit niedrigerem sozioökonomischen Status; schwere Verschlimmerung der Herz- oder Lungenkrankheit und vorzeitige Sterblichkeit bei Menschen mit Herz- oder Lungenkrankheit; ernsthaftes Risiko von Atemwegserkrankungen in der Allgemeinbevölkerung",
+      "cautionaryStatements": "Jeder sollte jegliche körperliche Aktivität im Freien vermeiden. Menschen mit Herz- oder Lungenerkrankungen, ältere Erwachsene, Kinder und Menschen mit einem niedrigeren sozioökonomischen Status sollten im Haus bleiben und die Aktivität niedrig halten"
     }
   ]
 }, {
@@ -59,8 +59,8 @@
         "max": 50
       },
       "category": "Gut",
-      "healthEffectsStatement": "Keiner",
-      "guidance": "Keiner"
+      "healthEffectsStatements": "Keiner",
+      "cautionaryStatements": "Keiner"
     },
     {
       "index": {
@@ -68,40 +68,40 @@
         "max": 100
       },
       "category": "Mäßig",
-      "healthEffectsStatement": "Atmungssymptome bei ungewöhnlich empfindlichen Personen möglich; Mögliche Verschlimmerung von Herz- oder Lungenerkrankungen bei Personen mit kardiopulmonaler Erkrankung und älteren Erwachsenen",
-      "guidance": "Ungewöhnlich sensible Menschen sollten in Betracht ziehen, längere oder schwere Belastungen zu reduzieren"
+      "healthEffectsStatements": "Atmungssymptome bei ungewöhnlich empfindlichen Personen möglich; Mögliche Verschlimmerung von Herz- oder Lungenerkrankungen bei Personen mit kardiopulmonaler Erkrankung und älteren Erwachsenen",
+      "cautionaryStatements": "Ungewöhnlich sensible Menschen sollten in Betracht ziehen, längere oder schwere Belastungen zu reduzieren"
     }, {
       "index": {
         "min": 101,
         "max": 150
       },
       "category": "Ungesund für sensible Gruppen",
-      "healthEffectsStatement": "Erhöhung der Wahrscheinlichkeit von Atemwegsbeschwerden in sensiblen Gruppen, einschließlich älterer Erwachsener, Kinder und Personen mit niedrigerem sozioökonomischen Status; Verschlimmerung der Herz- oder Lungenkrankheit und vorzeitige Sterblichkeit bei Menschen mit Herz- oder Lungenkrankheit",
-      "guidance": "Menschen mit Herz- oder Lungenerkrankungen, ältere Erwachsene, Kinder und Menschen mit einem niedrigeren sozioökonomischen Status sollten eine längere oder schwere Anstrengung reduzieren"
+      "healthEffectsStatements": "Erhöhung der Wahrscheinlichkeit von Atemwegsbeschwerden in sensiblen Gruppen, einschließlich älterer Erwachsener, Kinder und Personen mit niedrigerem sozioökonomischen Status; Verschlimmerung der Herz- oder Lungenkrankheit und vorzeitige Sterblichkeit bei Menschen mit Herz- oder Lungenkrankheit",
+      "cautionaryStatements": "Menschen mit Herz- oder Lungenerkrankungen, ältere Erwachsene, Kinder und Menschen mit einem niedrigeren sozioökonomischen Status sollten eine längere oder schwere Anstrengung reduzieren"
     }, {
       "index": {
         "min": 151,
         "max": 200
       },
       "category": "Ungesund",
-      "healthEffectsStatement": "Erhöhte Verschlechterung der Atemwegsbeschwerden in sensiblen Gruppen, einschließlich älterer Erwachsener, Kinder und Personen mit niedrigerem sozioökonomischen Status; erhöhte Verschlimmerung von Herz- oder Lungenerkrankungen und vorzeitige Sterblichkeit bei Menschen mit Herz- oder Lungenerkrankungen; erhöhte respiratorische Effekte in der allgemeinen Bevölkerung",
-      "guidance": "Menschen mit Herz- oder Lungenerkrankungen, ältere Erwachsene, Kinder und Menschen mit einem niedrigeren sozioökonomischen Status sollten eine längere oder schwere Anstrengung vermeiden. Alle anderen sollten längere oder schwere Anstrengung reduzieren"
+      "healthEffectsStatements": "Erhöhte Verschlechterung der Atemwegsbeschwerden in sensiblen Gruppen, einschließlich älterer Erwachsener, Kinder und Personen mit niedrigerem sozioökonomischen Status; erhöhte Verschlimmerung von Herz- oder Lungenerkrankungen und vorzeitige Sterblichkeit bei Menschen mit Herz- oder Lungenerkrankungen; erhöhte respiratorische Effekte in der allgemeinen Bevölkerung",
+      "cautionaryStatements": "Menschen mit Herz- oder Lungenerkrankungen, ältere Erwachsene, Kinder und Menschen mit einem niedrigeren sozioökonomischen Status sollten eine längere oder schwere Anstrengung vermeiden. Alle anderen sollten längere oder schwere Anstrengung reduzieren"
     }, {
       "index": {
         "min": 201,
         "max": 300
       },
       "category": "Sehr ungesund",
-      "healthEffectsStatement": "Signifikante Verschlechterung der Atemwegsbeschwerden in sensiblen Gruppen, einschließlich älterer Erwachsener, Kinder und Personen mit niedrigerem sozioökonomischen Status; signifikante Verschlechterung der Herz- oder Lungenerkrankung und vorzeitige Sterblichkeit bei Menschen mit Herz- oder Lungenerkrankung; signifikante Zunahme der Atemwegserkrankungen in der Allgemeinbevölkerung",
-      "guidance": "Menschen mit Herz- oder Lungenerkrankungen, ältere Erwachsene, Kinder und Menschen mit einem niedrigeren sozioökonomischen Status sollten jegliche körperliche Aktivität im Freien vermeiden. Alle anderen sollten eine längere oder schwere Anstrengung vermeiden"
+      "healthEffectsStatements": "Signifikante Verschlechterung der Atemwegsbeschwerden in sensiblen Gruppen, einschließlich älterer Erwachsener, Kinder und Personen mit niedrigerem sozioökonomischen Status; signifikante Verschlechterung der Herz- oder Lungenerkrankung und vorzeitige Sterblichkeit bei Menschen mit Herz- oder Lungenerkrankung; signifikante Zunahme der Atemwegserkrankungen in der Allgemeinbevölkerung",
+      "cautionaryStatements": "Menschen mit Herz- oder Lungenerkrankungen, ältere Erwachsene, Kinder und Menschen mit einem niedrigeren sozioökonomischen Status sollten jegliche körperliche Aktivität im Freien vermeiden. Alle anderen sollten eine längere oder schwere Anstrengung vermeiden"
     }, {
       "index": {
         "min": 301,
         "max": 500
       },
       "category": "Gefährlich",
-      "healthEffectsStatement": "Schwerwiegende Verschlechterung der Atemwegsbeschwerden in sensiblen Gruppen, einschließlich älterer Erwachsener, Kinder und Personen mit niedrigerem sozioökonomischen Status; schwere Verschlimmerung der Herz- oder Lungenkrankheit und vorzeitige Sterblichkeit bei Menschen mit Herz- oder Lungenkrankheit; ernsthaftes Risiko von Atemwegserkrankungen in der Allgemeinbevölkerung",
-      "guidance": "Jeder sollte jegliche körperliche Aktivität im Freien vermeiden. Menschen mit Herz- oder Lungenerkrankungen, ältere Erwachsene, Kinder und Menschen mit einem niedrigeren sozioökonomischen Status sollten im Haus bleiben und die Aktivität niedrig halten"
+      "healthEffectsStatements": "Schwerwiegende Verschlechterung der Atemwegsbeschwerden in sensiblen Gruppen, einschließlich älterer Erwachsener, Kinder und Personen mit niedrigerem sozioökonomischen Status; schwere Verschlimmerung der Herz- oder Lungenkrankheit und vorzeitige Sterblichkeit bei Menschen mit Herz- oder Lungenkrankheit; ernsthaftes Risiko von Atemwegserkrankungen in der Allgemeinbevölkerung",
+      "cautionaryStatements": "Jeder sollte jegliche körperliche Aktivität im Freien vermeiden. Menschen mit Herz- oder Lungenerkrankungen, ältere Erwachsene, Kinder und Menschen mit einem niedrigeren sozioökonomischen Status sollten im Haus bleiben und die Aktivität niedrig halten"
     }
   ]
 }, {
@@ -112,8 +112,8 @@
         "max": 50
       },
       "category": "Gut",
-      "healthEffectsStatement": "Keiner",
-      "guidance": "Keiner"
+      "healthEffectsStatements": "Keiner",
+      "cautionaryStatements": "Keiner"
     },
     {
       "index": {
@@ -121,40 +121,40 @@
         "max": 100
       },
       "category": "Mäßig",
-      "healthEffectsStatement": "Ungewöhnlich empfindliche Personen können Atemwegsbeschwerden bekommen",
-      "guidance": "Ungewöhnlich sensible Menschen sollten in Betracht ziehen, längere oder schwere Belastungen im Freien zu reduzieren"
+      "healthEffectsStatements": "Ungewöhnlich empfindliche Personen können Atemwegsbeschwerden bekommen",
+      "cautionaryStatements": "Ungewöhnlich sensible Menschen sollten in Betracht ziehen, längere oder schwere Belastungen im Freien zu reduzieren"
     }, {
       "index": {
         "min": 101,
         "max": 150
       },
       "category": "Ungesund für sensible Gruppen",
-      "healthEffectsStatement": "Zunehmende Wahrscheinlichkeit von Atembeschwerden und Atembeschwerden bei Menschen mit Lungenerkrankungen (wie Asthma), Kindern, älteren Erwachsenen, im Freien tätigen Menschen (einschließlich Arbeitnehmern im Freien), Menschen mit bestimmten genetischen Varianten und Menschen mit einer auf bestimmte Nährstoffe beschränkten Ernährung",
-      "guidance": "Menschen mit Lungenerkrankungen (wie Asthma), Kinder, ältere Erwachsene, im Freien tätige Menschen (einschließlich Beschäftigte im Freien), Menschen mit bestimmten genetischen Varianten und Menschen mit einer auf bestimmte Nährstoffe beschränkten Ernährung sollten eine längere oder schwere Belastung im Freien reduzieren"
+      "healthEffectsStatements": "Zunehmende Wahrscheinlichkeit von Atembeschwerden und Atembeschwerden bei Menschen mit Lungenerkrankungen (wie Asthma), Kindern, älteren Erwachsenen, im Freien tätigen Menschen (einschließlich Arbeitnehmern im Freien), Menschen mit bestimmten genetischen Varianten und Menschen mit einer auf bestimmte Nährstoffe beschränkten Ernährung",
+      "cautionaryStatements": "Menschen mit Lungenerkrankungen (wie Asthma), Kinder, ältere Erwachsene, im Freien tätige Menschen (einschließlich Beschäftigte im Freien), Menschen mit bestimmten genetischen Varianten und Menschen mit einer auf bestimmte Nährstoffe beschränkten Ernährung sollten eine längere oder schwere Belastung im Freien reduzieren"
     }, {
       "index": {
         "min": 151,
         "max": 200
       },
       "category": "Ungesund",
-      "healthEffectsStatement": "Höhere Wahrscheinlichkeit von Atembeschwerden und Atembeschwerden bei Menschen mit Lungenerkrankungen (wie Asthma), Kindern, älteren Erwachsenen, im Freien tätigen Menschen (einschließlich Beschäftigten im Freien), Menschen mit bestimmten genetischen Varianten und Menschen mit einer auf bestimmte Nährstoffe beschränkten Ernährung; Mögliche Auswirkungen auf die Atemwege in der Allgemeinbevölkerung",
-      "guidance": "Menschen mit Lungenerkrankungen (wie Asthma), Kinder, ältere Erwachsene, im Freien tätige Menschen (einschließlich Beschäftigte im Freien), Menschen mit bestimmten genetischen Varianten und Menschen mit einer auf bestimmte Nährstoffe beschränkten Ernährung sollten eine längere oder schwere Belastung im Freien vermeiden. Alle anderen Personen sollten längere oder schwere Belastungen im Freien reduzieren"
+      "healthEffectsStatements": "Höhere Wahrscheinlichkeit von Atembeschwerden und Atembeschwerden bei Menschen mit Lungenerkrankungen (wie Asthma), Kindern, älteren Erwachsenen, im Freien tätigen Menschen (einschließlich Beschäftigten im Freien), Menschen mit bestimmten genetischen Varianten und Menschen mit einer auf bestimmte Nährstoffe beschränkten Ernährung; Mögliche Auswirkungen auf die Atemwege in der Allgemeinbevölkerung",
+      "cautionaryStatements": "Menschen mit Lungenerkrankungen (wie Asthma), Kinder, ältere Erwachsene, im Freien tätige Menschen (einschließlich Beschäftigte im Freien), Menschen mit bestimmten genetischen Varianten und Menschen mit einer auf bestimmte Nährstoffe beschränkten Ernährung sollten eine längere oder schwere Belastung im Freien vermeiden. Alle anderen Personen sollten längere oder schwere Belastungen im Freien reduzieren"
     }, {
       "index": {
         "min": 201,
         "max": 300
       },
       "category": "Sehr ungesund",
-      "healthEffectsStatement": "Zunehmend schwerwiegende Symptome und Atmungsstörungen bei Menschen mit Lungenerkrankungen (wie Asthma), Kindern, älteren Erwachsenen, im Freien tätigen Menschen (einschließlich Beschäftigten im Freien), Menschen mit bestimmten genetischen Varianten und Menschen mit einer auf bestimmte Nährstoffe beschränkten Ernährung; zunehmende Wahrscheinlichkeit von Atemwegserkrankungen in der Allgemeinbevölkerung",
-      "guidance": "Menschen mit Lungenerkrankungen (wie Asthma), Kinder, ältere Erwachsene, Menschen, die im Freien tätig sind (einschließlich Beschäftigter im Freien), Menschen mit bestimmten genetischen Varianten und Menschen mit einer auf bestimmte Nährstoffe beschränkten Ernährung sollten jede Anstrengung im Freien vermeiden. Alle anderen sollten die Belastung im Freien reduzieren"
+      "healthEffectsStatements": "Zunehmend schwerwiegende Symptome und Atmungsstörungen bei Menschen mit Lungenerkrankungen (wie Asthma), Kindern, älteren Erwachsenen, im Freien tätigen Menschen (einschließlich Beschäftigten im Freien), Menschen mit bestimmten genetischen Varianten und Menschen mit einer auf bestimmte Nährstoffe beschränkten Ernährung; zunehmende Wahrscheinlichkeit von Atemwegserkrankungen in der Allgemeinbevölkerung",
+      "cautionaryStatements": "Menschen mit Lungenerkrankungen (wie Asthma), Kinder, ältere Erwachsene, Menschen, die im Freien tätig sind (einschließlich Beschäftigter im Freien), Menschen mit bestimmten genetischen Varianten und Menschen mit einer auf bestimmte Nährstoffe beschränkten Ernährung sollten jede Anstrengung im Freien vermeiden. Alle anderen sollten die Belastung im Freien reduzieren"
     }, {
       "index": {
         "min": 301,
         "max": 500
       },
       "category": "Gefährlich",
-      "healthEffectsStatement": "Schwerwiegende Auswirkungen auf die Atemwege und Atmungsstörungen, wahrscheinlich bei Menschen mit Lungenerkrankungen (wie Asthma), Kindern, älteren Erwachsenen, im Freien tätigen Menschen (einschließlich Beschäftigten im Freien), Menschen mit bestimmten genetischen Varianten und Menschen mit einer auf bestimmte Nährstoffe beschränkten Ernährung; zunehmend schwerwiegende Auswirkungen auf die Atemwege wahrscheinlich in der Allgemeinbevölkerung",
-      "guidance": "Jeder sollte jede Anstrengung im Freien vermeiden"
+      "healthEffectsStatements": "Schwerwiegende Auswirkungen auf die Atemwege und Atmungsstörungen, wahrscheinlich bei Menschen mit Lungenerkrankungen (wie Asthma), Kindern, älteren Erwachsenen, im Freien tätigen Menschen (einschließlich Beschäftigten im Freien), Menschen mit bestimmten genetischen Varianten und Menschen mit einer auf bestimmte Nährstoffe beschränkten Ernährung; zunehmend schwerwiegende Auswirkungen auf die Atemwege wahrscheinlich in der Allgemeinbevölkerung",
+      "cautionaryStatements": "Jeder sollte jede Anstrengung im Freien vermeiden"
     }
   ]
 }, {
@@ -165,8 +165,8 @@
         "max": 50
       },
       "category": "Gut",
-      "healthEffectsStatement": "Keiner",
-      "guidance": "Keiner"
+      "healthEffectsStatements": "Keiner",
+      "cautionaryStatements": "Keiner"
     },
     {
       "index": {
@@ -174,40 +174,40 @@
         "max": 100
       },
       "category": "Mäßig",
-      "healthEffectsStatement": "Keiner",
-      "guidance": "Keiner"
+      "healthEffectsStatements": "Keiner",
+      "cautionaryStatements": "Keiner"
     }, {
       "index": {
         "min": 101,
         "max": 150
       },
       "category": "Ungesund für sensible Gruppen",
-      "healthEffectsStatement": "Zunehmende Wahrscheinlichkeit einer verminderten Belastungstoleranz aufgrund erhöhter kardiovaskulärer Symptome wie Brustschmerzen bei Menschen mit Herzerkrankungen",
-      "guidance": "Menschen mit Herzkrankheiten wie Angina sollten eine starke Belastung begrenzen und CO-Quellen wie starken Verkehr vermeiden"
+      "healthEffectsStatements": "Zunehmende Wahrscheinlichkeit einer verminderten Belastungstoleranz aufgrund erhöhter kardiovaskulärer Symptome wie Brustschmerzen bei Menschen mit Herzerkrankungen",
+      "cautionaryStatements": "Menschen mit Herzkrankheiten wie Angina sollten eine starke Belastung begrenzen und CO-Quellen wie starken Verkehr vermeiden"
     }, {
       "index": {
         "min": 151,
         "max": 200
       },
       "category": "Ungesund",
-      "healthEffectsStatement": "Reduzierte Belastungstoleranz aufgrund erhöhter kardiovaskulärer Symptome wie Brustschmerzen bei Menschen mit Herzerkrankungen",
-      "guidance": "Menschen mit Herzkrankheiten wie Angina sollten eine moderate Belastung begrenzen und CO-Quellen wie starken Verkehr vermeiden"
+      "healthEffectsStatements": "Reduzierte Belastungstoleranz aufgrund erhöhter kardiovaskulärer Symptome wie Brustschmerzen bei Menschen mit Herzerkrankungen",
+      "cautionaryStatements": "Menschen mit Herzkrankheiten wie Angina sollten eine moderate Belastung begrenzen und CO-Quellen wie starken Verkehr vermeiden"
     }, {
       "index": {
         "min": 201,
         "max": 300
       },
       "category": "Sehr ungesund",
-      "healthEffectsStatement": "Erhebliche Verschlimmerung von kardiovaskulären Symptomen wie Brustschmerzen bei Menschen mit Herzerkrankungen",
-      "guidance": "Menschen mit Herzkrankheiten wie Angina sollten Belastungen und CO-Quellen wie starken Verkehr vermeiden"
+      "healthEffectsStatements": "Erhebliche Verschlimmerung von kardiovaskulären Symptomen wie Brustschmerzen bei Menschen mit Herzerkrankungen",
+      "cautionaryStatements": "Menschen mit Herzkrankheiten wie Angina sollten Belastungen und CO-Quellen wie starken Verkehr vermeiden"
     }, {
       "index": {
         "min": 301,
         "max": 500
       },
       "category": "Gefährlich",
-      "healthEffectsStatement": "Schwerwiegende Verschlimmerung von kardiovaskulären Symptomen wie Brustschmerzen bei Menschen mit Herzerkrankungen; Beeinträchtigung anstrengender Tätigkeiten in der Allgemeinbevölkerung",
-      "guidance": "Menschen mit Herzkrankheiten wie Angina sollten Belastungen und CO-Quellen wie starken Verkehr vermeiden. Alle anderen sollten die Anstrengung begrenzen"
+      "healthEffectsStatements": "Schwerwiegende Verschlimmerung von kardiovaskulären Symptomen wie Brustschmerzen bei Menschen mit Herzerkrankungen; Beeinträchtigung anstrengender Tätigkeiten in der Allgemeinbevölkerung",
+      "cautionaryStatements": "Menschen mit Herzkrankheiten wie Angina sollten Belastungen und CO-Quellen wie starken Verkehr vermeiden. Alle anderen sollten die Anstrengung begrenzen"
     }
   ]
 }, {
@@ -218,8 +218,8 @@
         "max": 50
       },
       "category": "Gut",
-      "healthEffectsStatement": "Keiner",
-      "guidance": "Keiner"
+      "healthEffectsStatements": "Keiner",
+      "cautionaryStatements": "Keiner"
     },
     {
       "index": {
@@ -227,40 +227,40 @@
         "max": 100
       },
       "category": "Mäßig",
-      "healthEffectsStatement": "Keiner",
-      "guidance": "Keiner"
+      "healthEffectsStatements": "Keiner",
+      "cautionaryStatements": "Keiner"
     }, {
       "index": {
         "min": 101,
         "max": 150
       },
       "category": "Ungesund für sensible Gruppen",
-      "healthEffectsStatement": "Zunehmende Wahrscheinlichkeit von Atemwegsbeschwerden wie Engegefühl in der Brust und Atembeschwerden bei Menschen mit Asthma",
-      "guidance": "Menschen mit Asthma sollten in Betracht ziehen, die Belastung im Freien zu begrenzen"
+      "healthEffectsStatements": "Zunehmende Wahrscheinlichkeit von Atemwegsbeschwerden wie Engegefühl in der Brust und Atembeschwerden bei Menschen mit Asthma",
+      "cautionaryStatements": "Menschen mit Asthma sollten in Betracht ziehen, die Belastung im Freien zu begrenzen"
     }, {
       "index": {
         "min": 151,
         "max": 200
       },
       "category": "Ungesund",
-      "healthEffectsStatement": "Erhöhte respiratorische Symptome wie Engegefühl in der Brust und Keuchen bei Menschen mit Asthma; mögliche Verschlimmerung anderer Lungenerkrankungen",
-      "guidance": "Kinder, Menschen mit Asthma oder anderen Lungenerkrankungen sollten die Belastung im Freien begrenzen"
+      "healthEffectsStatements": "Erhöhte respiratorische Symptome wie Engegefühl in der Brust und Keuchen bei Menschen mit Asthma; mögliche Verschlimmerung anderer Lungenerkrankungen",
+      "cautionaryStatements": "Kinder, Menschen mit Asthma oder anderen Lungenerkrankungen sollten die Belastung im Freien begrenzen"
     }, {
       "index": {
         "min": 201,
         "max": 300
       },
       "category": "Sehr ungesund",
-      "healthEffectsStatement": "Erhebliche Zunahme von Atemwegsbeschwerden wie Atemnot und Atemnot bei Asthmatikern; Verschlimmerung anderer Lungenerkrankungen",
-      "guidance": "Kinder, Menschen mit Asthma oder anderen Lungenerkrankungen sollten eine Belastung im Freien vermeiden. Alle anderen sollten die Belastung im Freien reduzieren"
+      "healthEffectsStatements": "Erhebliche Zunahme von Atemwegsbeschwerden wie Atemnot und Atemnot bei Asthmatikern; Verschlimmerung anderer Lungenerkrankungen",
+      "cautionaryStatements": "Kinder, Menschen mit Asthma oder anderen Lungenerkrankungen sollten eine Belastung im Freien vermeiden. Alle anderen sollten die Belastung im Freien reduzieren"
     }, {
       "index": {
         "min": 301,
         "max": 500
       },
       "category": "Gefährlich",
-      "healthEffectsStatement": "Schwerwiegende Atemwegsbeschwerden wie Keuchen und Atemnot bei Asthmatikern; erhöhte Verschlimmerung anderer Lungenerkrankungen; Mögliche Auswirkungen auf die Atemwege in der Allgemeinbevölkerung",
-      "guidance": "Kinder, Menschen mit Asthma oder anderen Lungenerkrankungen sollten im Haus bleiben. Alle anderen sollten eine Belastung im Freien vermeiden"
+      "healthEffectsStatements": "Schwerwiegende Atemwegsbeschwerden wie Keuchen und Atemnot bei Asthmatikern; erhöhte Verschlimmerung anderer Lungenerkrankungen; Mögliche Auswirkungen auf die Atemwege in der Allgemeinbevölkerung",
+      "cautionaryStatements": "Kinder, Menschen mit Asthma oder anderen Lungenerkrankungen sollten im Haus bleiben. Alle anderen sollten eine Belastung im Freien vermeiden"
     }
   ]
 }, {
@@ -271,8 +271,8 @@
         "max": 50
       },
       "category": "Gut",
-      "healthEffectsStatement": "Keiner",
-      "guidance": "Keiner"
+      "healthEffectsStatements": "Keiner",
+      "cautionaryStatements": "Keiner"
     },
     {
       "index": {
@@ -280,40 +280,40 @@
         "max": 100
       },
       "category": "Mäßig",
-      "healthEffectsStatement": "Moderate",
-      "guidance": "Ungewöhnlich empfindliche Personen sollten in Betracht ziehen, längere Belastungen zu begrenzen, insbesondere in der Nähe von stark befahrenen Straßen"
+      "healthEffectsStatements": "Moderate",
+      "cautionaryStatements": "Ungewöhnlich empfindliche Personen sollten in Betracht ziehen, längere Belastungen zu begrenzen, insbesondere in der Nähe von stark befahrenen Straßen"
     }, {
       "index": {
         "min": 101,
         "max": 150
       },
       "category": "Ungesund für sensible Gruppen",
-      "healthEffectsStatement": "Zunehmende Wahrscheinlichkeit von Atemwegsbeschwerden wie Engegefühl in der Brust und Atembeschwerden bei Menschen mit Asthma",
-      "guidance": "Menschen mit Asthma, Kindern und älteren Erwachsenen sollten eine längere Belastung einschränken, insbesondere in der Nähe von stark befahrenen Straßen"
+      "healthEffectsStatements": "Zunehmende Wahrscheinlichkeit von Atemwegsbeschwerden wie Engegefühl in der Brust und Atembeschwerden bei Menschen mit Asthma",
+      "cautionaryStatements": "Menschen mit Asthma, Kindern und älteren Erwachsenen sollten eine längere Belastung einschränken, insbesondere in der Nähe von stark befahrenen Straßen"
     }, {
       "index": {
         "min": 151,
         "max": 200
       },
       "category": "Ungesund",
-      "healthEffectsStatement": "Erhöhte respiratorische Symptome wie Engegefühl in der Brust und Keuchen bei Menschen mit Asthma; mögliche Verschlimmerung anderer Lungenerkrankungen",
-      "guidance": "Menschen mit Asthma, Kindern und älteren Erwachsenen sollten längere Belastungen in der Nähe von Straßen vermeiden. Alle anderen Personen sollten längere Belastungen einschränken, insbesondere in der Nähe von stark befahrenen Straßen"
+      "healthEffectsStatements": "Erhöhte respiratorische Symptome wie Engegefühl in der Brust und Keuchen bei Menschen mit Asthma; mögliche Verschlimmerung anderer Lungenerkrankungen",
+      "cautionaryStatements": "Menschen mit Asthma, Kindern und älteren Erwachsenen sollten längere Belastungen in der Nähe von Straßen vermeiden. Alle anderen Personen sollten längere Belastungen einschränken, insbesondere in der Nähe von stark befahrenen Straßen"
     }, {
       "index": {
         "min": 201,
         "max": 300
       },
       "category": "Sehr ungesund",
-      "healthEffectsStatement": "Erhebliche Zunahme von Atemwegsbeschwerden wie Atemnot und Atemnot bei Asthmatikern; Verschlimmerung anderer Lungenerkrankungen",
-      "guidance": "Menschen mit Asthma, Kindern und älteren Erwachsenen sollten jede Anstrengung im Freien vermeiden. alle anderen sollten längere anstrengungen vermeiden, insbesondere in der nähe von stark befahrenen straßen"
+      "healthEffectsStatements": "Erhebliche Zunahme von Atemwegsbeschwerden wie Atemnot und Atemnot bei Asthmatikern; Verschlimmerung anderer Lungenerkrankungen",
+      "cautionaryStatements": "Menschen mit Asthma, Kindern und älteren Erwachsenen sollten jede Anstrengung im Freien vermeiden. alle anderen sollten längere anstrengungen vermeiden, insbesondere in der nähe von stark befahrenen straßen"
     }, {
       "index": {
         "min": 301,
         "max": 500
       },
       "category": "Gefährlich",
-      "healthEffectsStatement": "Schwerwiegende Atemwegsbeschwerden wie Keuchen und Atemnot bei Asthmatikern; erhöhte Verschlimmerung anderer Lungenerkrankungen; Mögliche Auswirkungen auf die Atemwege in der Allgemeinbevölkerung",
-      "guidance": "Menschen mit Asthma, Kindern und älteren Erwachsenen sollten im Haus bleiben. Alle anderen sollten jede Anstrengung im Freien vermeiden"
+      "healthEffectsStatements": "Schwerwiegende Atemwegsbeschwerden wie Keuchen und Atemnot bei Asthmatikern; erhöhte Verschlimmerung anderer Lungenerkrankungen; Mögliche Auswirkungen auf die Atemwege in der Allgemeinbevölkerung",
+      "cautionaryStatements": "Menschen mit Asthma, Kindern und älteren Erwachsenen sollten im Haus bleiben. Alle anderen sollten jede Anstrengung im Freien vermeiden"
     }
   ]
 }]

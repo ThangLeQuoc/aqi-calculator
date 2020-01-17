@@ -3,7 +3,7 @@ package com.thanglequoc.aqicalculator;
 /**
  * An object which store all necessary AQI result information, include
  * the<b>index</b> value, <b>category</b>, <b>health effects statements</b> and
- * <b>guidance message</b>,
+ * <b>cautionary statements</b>,
  *
  * @author ThangLeQuoc
  */
@@ -15,20 +15,20 @@ public class AQIResult {
     private String category;
     private String color;
     private String meaning;
-    private String healthEffectsStatement;
-    private String guidanceStatement;
+    private String healthEffectsStatements;
+    private String cautionaryStatements;
     private String sensitiveGroups;
     
     AQIResult(Pollutant pollutant, double concentration, int AQI, String category, String meaning, String color,
-              String healthEffectStatement, String guidanceStatement, String sensitiveGroups) {
+              String healthEffectStatements, String cautionaryStatements, String sensitiveGroups) {
         this.pollutant = pollutant;
         this.concentration = concentration;
         this.AQI = AQI;
         this.category = category;
         this.meaning = meaning;
         this.color = color;
-        this.healthEffectsStatement = healthEffectStatement;
-        this.guidanceStatement = guidanceStatement;
+        this.healthEffectsStatements = healthEffectStatements;
+        this.cautionaryStatements = cautionaryStatements;
         this.sensitiveGroups = sensitiveGroups;
     }
     
@@ -51,17 +51,17 @@ public class AQIResult {
     }
 
     /**
-     * Get the Health Effects Statement
+     * Get the Health Effects Statements
      * */
-    public String getHealthEffectsStatement() {
-        return healthEffectsStatement;
+    public String getHealthEffectsStatements() {
+        return healthEffectsStatements;
     }
 
     /**
-     * Get the Guidance Statement for this pollutant at this category level
+     * Get the Cautionary Statements for this pollutant at this category level
      * */
-    public String getGuidanceStatement() {
-        return guidanceStatement;
+    public String getCautionaryStatements() {
+        return cautionaryStatements;
     }
 
     /**
