@@ -1,6 +1,6 @@
 package com.thanglequoc.aqicalculator.aqi;
 
-public enum AQILevelSpecificMessageForSO2 {
+enum AQILevelSpecificMessageForSO2 {
     GOOD("None", "None"),
     MODERATE("None", "None"),
     UNHEALTHY_FOR_SENSITIVE_GROUPS("Increasing likelihood of respiratory symptoms, such as chest tightness and breathing discomfort, in people with asthma", "People with asthma should consider limiting outdoor exertion"),

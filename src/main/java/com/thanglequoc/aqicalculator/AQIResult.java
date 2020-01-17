@@ -17,9 +17,10 @@ public class AQIResult {
     private String meaning;
     private String healthEffectsStatement;
     private String guidanceStatement;
+    private String sensitiveGroups;
     
     AQIResult(Pollutant pollutant, double concentration, int AQI, String category, String meaning, String color,
-              String healthEffectStatement, String guidanceStatement) {
+              String healthEffectStatement, String guidanceStatement, String sensitiveGroups) {
         this.pollutant = pollutant;
         this.concentration = concentration;
         this.AQI = AQI;
@@ -28,6 +29,7 @@ public class AQIResult {
         this.color = color;
         this.healthEffectsStatement = healthEffectStatement;
         this.guidanceStatement = guidanceStatement;
+        this.sensitiveGroups = sensitiveGroups;
     }
     
     public Pollutant getPollutant() {
@@ -81,5 +83,12 @@ public class AQIResult {
      * */
     public String getColor() {
         return color;
+    }
+
+    /**
+     * Get people that are sensitive to this pollutant
+     * */
+    public String getSensitiveGroups() {
+       return sensitiveGroups;
     }
 }

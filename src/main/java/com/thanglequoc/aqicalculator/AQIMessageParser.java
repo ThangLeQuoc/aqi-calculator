@@ -26,6 +26,13 @@ class AQIMessageParser {
         }
         return new SpecificAQIInformation(pollutant, specificAQILevelMessages);
     }
+
+    SensitiveGroups parseSensitiveGroupInformationNode(JsonNode sensitiveGroupsNode) {
+        String pollutantCode = sensitiveGroupsNode.path(AQICalculatorConstants.CODE).asText();
+        Pollutant pollutant = Pollutant.parseFromString(pollutantCode);
+        String sensitiveGroups = sensitiveGroupsNode.path(AQICalculatorConstants.SENSITIVE_GROUPS).asText();
+        return new SensitiveGroups(pollutant, sensitiveGroups);
+    }
     
     private SpecificAQILevelMessage parseLevelMessageFromNode(JsonNode levelMessageNode) {
         String category = levelMessageNode.path(AQICalculatorConstants.CATEGORY).asText();

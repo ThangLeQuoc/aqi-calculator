@@ -1,6 +1,6 @@
 package com.thanglequoc.aqicalculator.aqi;
 
-public enum AQILevelSpecificMessageForNO2 {
+enum AQILevelSpecificMessageForNO2 {
     GOOD("None", "None"),
     MODERATE("None", "Unusually sensitive individuals should consider limiting prolonged exertion especially near busy roads"),
     UNHEALTHY_FOR_SENSITIVE_GROUPS("Increasing likelihood of respiratory symptoms, such as chest tightness and breathing discomfort, in people with asthma", "People with asthma, children and older adults should limit prolonged exertion especially near busy roads"),

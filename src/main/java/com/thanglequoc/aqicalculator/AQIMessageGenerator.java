@@ -12,6 +12,7 @@ class AQIMessageGenerator {
     
     private List<GenericAQIInformation> genericAQIsInformation;
     private List<SpecificAQIInformation> specificAQIsInformation;
+    private List<SensitiveGroups> sensitiveGroupsInformation;
     
     AQIMessageGenerator() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
@@ -19,7 +20,7 @@ class AQIMessageGenerator {
         genericAQIsInformation = new ArrayList<>();
         specificAQIsInformation = new ArrayList<>();
         AQIMessageParser msgParser = new AQIMessageParser();
-        
+        sensitiveGroupsInformation = new ArrayList<>();
         initializeMessageResources(mapper, classLoader, msgParser, null);
     }
 
@@ -28,24 +29,29 @@ class AQIMessageGenerator {
         ClassLoader classLoader = AQIMessageGenerator.class.getClassLoader();
         genericAQIsInformation = new ArrayList<>();
         specificAQIsInformation = new ArrayList<>();
+        sensitiveGroupsInformation = new ArrayList<>();
         AQIMessageParser msgParser = new AQIMessageParser();
 
         initializeMessageResources(mapper, classLoader, msgParser, userSettings);
     }
 
+
     private void initializeMessageResources(ObjectMapper mapper, ClassLoader classLoader, AQIMessageParser msgParser, AQICustomSettings userSettings) throws IOException {
 
         String specificMessagePath = AQICalculatorConstants.AQI_SPECIFIC_MESSAGES_RESOURCE_PATH;
         String generalMessagePath = AQICalculatorConstants.AQI_GENERAL_MESSAGES_RESOURCE_PATH;
+        String sensitiveGroupsPath = AQICalculatorConstants.AQI_SENSITIVE_GROUP_RESOURCE_PATH;
+
         if (userSettings != null && userSettings.isInOverrideSettingMode()) {
             specificMessagePath = userSettings.getSpecificMessageResourcePath();
             generalMessagePath = userSettings.getGeneralMessagesResourcePath();
+            // enable override mode for sensitive group also
         }
 
-        try (InputStream specificAQIMessagesStream = classLoader
-                .getResourceAsStream(specificMessagePath);
-             InputStream generalAQIMessageStream = classLoader
-                     .getResourceAsStream(generalMessagePath)) {
+        try (InputStream specificAQIMessagesStream = classLoader.getResourceAsStream(specificMessagePath);
+             InputStream generalAQIMessageStream = classLoader.getResourceAsStream(generalMessagePath);
+             InputStream sensitiveGroupsInfoStream = classLoader.getResourceAsStream(sensitiveGroupsPath)
+             ) {
 
             /* Parse General Message Node */
             JsonNode generalMessageNodeRoot = mapper.readTree(generalAQIMessageStream);
@@ -58,6 +64,13 @@ class AQIMessageGenerator {
             for (JsonNode specificMessageNode : specificMessageNodeRoot) {
                 SpecificAQIInformation specificAQIInformation = msgParser.parseSpecificAQIMessageNode(specificMessageNode);
                 this.specificAQIsInformation.add(specificAQIInformation);
+            }
+
+            /* Parse Sensitive Group  */
+            JsonNode sensitiveGroupNodeRoot = mapper.readTree(sensitiveGroupsInfoStream);
+            for (JsonNode sensitiveGroupsNode: sensitiveGroupNodeRoot) {
+                SensitiveGroups sensitiveGroups = msgParser.parseSensitiveGroupInformationNode(sensitiveGroupsNode);
+                this.sensitiveGroupsInformation.add(sensitiveGroups);
             }
         }
     }
@@ -82,6 +95,15 @@ class AQIMessageGenerator {
             }
         }
         
+        return null;
+    }
+
+    SensitiveGroups getSensitiveGroupsOfPollutant(Pollutant pollutant) {
+        for (SensitiveGroups sensitiveGroups: sensitiveGroupsInformation) {
+            if (sensitiveGroups.getPollutant().equals(pollutant)) {
+                return sensitiveGroups;
+            }
+        }
         return null;
     }
     

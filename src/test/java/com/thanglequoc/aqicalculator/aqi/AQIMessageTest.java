@@ -46,6 +46,7 @@ public class AQIMessageTest {
         assertEquals(AQILevelGenericMessages.GOOD.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForPM10.GOOD.getGuidance(), result.getGuidanceStatement());
         assertEquals(AQILevelSpecificMessageForPM10.GOOD.getHealthEffectsStatements(), result.getHealthEffectsStatement());
+        assertEquals(SensitiveGroups.getSensitiveGroups(pollutant), result.getSensitiveGroups());
     }
     
     @Test
