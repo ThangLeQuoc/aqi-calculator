@@ -1,0 +1,26 @@
+[
+  {
+    "code": "PM2.5",
+    "sensitiveGroups": "Am stärksten gefährdet sind Menschen mit Atemwegs- oder Herzerkrankungen, ältere Menschen und Kinder"
+  },
+  {
+    "code": "PM10",
+    "sensitiveGroups": "Am stärksten gefährdet sind Menschen mit Atemwegserkrankungen"
+  },
+  {
+    "code": "O3",
+    "sensitiveGroups": "Kinder und Menschen mit Asthma sind die am stärksten gefährdeten Gruppen"
+  },
+  {
+    "code": "CO",
+    "sensitiveGroups": "Menschen mit Herzerkrankungen sind die am stärksten gefährdete Gruppe"
+  },
+  {
+    "code": "SO2",
+    "sensitiveGroups": "Menschen mit Asthma sind die am stärksten gefährdete Gruppe"
+  },
+  {
+    "code": "NO2",
+    "sensitiveGroups": "Am stärksten gefährdet sind Menschen mit Asthma oder anderen Atemwegserkrankungen, ältere Menschen und Kinder"
+  }
+]

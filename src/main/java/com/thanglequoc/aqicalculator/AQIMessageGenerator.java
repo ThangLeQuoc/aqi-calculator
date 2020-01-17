@@ -45,7 +45,7 @@ class AQIMessageGenerator {
         if (userSettings != null && userSettings.isInOverrideSettingMode()) {
             specificMessagePath = userSettings.getSpecificMessageResourcePath();
             generalMessagePath = userSettings.getGeneralMessagesResourcePath();
-            // enable override mode for sensitive group also
+            sensitiveGroupsPath = userSettings.getSensitiveGroupsResourcePath();
         }
 
         try (InputStream specificAQIMessagesStream = classLoader.getResourceAsStream(specificMessagePath);

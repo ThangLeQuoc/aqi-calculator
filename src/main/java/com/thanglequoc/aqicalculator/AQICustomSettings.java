@@ -10,6 +10,7 @@ public class AQICustomSettings {
     private boolean useCustomMessagesFiles = false;
     private String generalMessagesResourcePath = AQICalculatorConstants.AQI_GENERAL_MESSAGES_RESOURCE_PATH;
     private String specificMessageResourcePath = AQICalculatorConstants.AQI_SPECIFIC_MESSAGES_RESOURCE_PATH;
+    private String sensitiveGroupsResourcePath = AQICalculatorConstants.AQI_SENSITIVE_GROUP_RESOURCE_PATH;
 
     /**
      * Set the flag to indicate if the settings should use the custom messages from the path that user supply
@@ -39,6 +40,15 @@ public class AQICustomSettings {
         return this;
     }
 
+    /**
+     * Set the path of the Sensitive Group resource file (in the classpath)
+     * @param sensitiveGroupsResourcePath : path to the sensitive groups resource JSON file
+     * */
+    public AQICustomSettings withSensitiveGroupsResourcePath(String sensitiveGroupsResourcePath) {
+        this.sensitiveGroupsResourcePath = sensitiveGroupsResourcePath;
+        return this;
+    }
+
     boolean isInOverrideSettingMode() {
         return useCustomMessagesFiles;
     }
@@ -51,12 +61,17 @@ public class AQICustomSettings {
         return specificMessageResourcePath;
     }
 
+    String getSensitiveGroupsResourcePath() {
+        return sensitiveGroupsResourcePath;
+    }
+
     @Override
     public String toString() {
         return "AQICustomSettings{" +
                 "useCustomMessagesFiles=" + useCustomMessagesFiles +
                 ", generalMessagesResourcePath='" + generalMessagesResourcePath + '\'' +
                 ", specificMessageResourcePath='" + specificMessageResourcePath + '\'' +
+                ", sensitiveGroupsResourcePath='" + sensitiveGroupsResourcePath + '\'' +
                 '}';
     }
 }
