@@ -1,6 +1,6 @@
 package com.thanglequoc.aqicalculator.aqi;
 
-public enum AQILevelSpecificMessageForCO {
+enum AQILevelSpecificMessageForCO {
     GOOD("None", "None"),
     MODERATE("None", "None"),
     UNHEALTHY_FOR_SENSITIVE_GROUPS("Increasing likelihood of reduced exercise tolerance due to increased cardiovascular symptoms, such as chest pain, in people with heart disease", "People with heart disease, such as angina, should limit heavy exertion and avoid sources of CO, such as heavy traffic"),

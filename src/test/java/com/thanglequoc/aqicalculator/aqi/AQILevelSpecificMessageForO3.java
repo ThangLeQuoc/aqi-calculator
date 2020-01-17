@@ -1,6 +1,6 @@
 package com.thanglequoc.aqicalculator.aqi;
 
-public enum AQILevelSpecificMessageForO3 {
+enum AQILevelSpecificMessageForO3 {
     
     GOOD("None", "None"),
     MODERATE("Unusually sensitive individuals may experience respiratory symptoms", "Unusually sensitive people should consider reducing prolonged or heavy outdoor exertion"),

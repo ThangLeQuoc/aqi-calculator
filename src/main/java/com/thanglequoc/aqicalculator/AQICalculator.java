@@ -106,22 +106,24 @@ public class AQICalculator {
         String healthEffectsStatement = AQICalculatorConstants.NOT_APPLICABLE;
         String guidanceStatement = AQICalculatorConstants.NOT_APPLICABLE;
         String color = AQICalculatorConstants.NOT_APPLICABLE;
-        
+        String sensitiveGroups = AQICalculatorConstants.NOT_APPLICABLE;
+
         if (targetPollutantConcentration.isPresent()) {
             aqi = calculateAQI(pollutant, avgConcentration);
             GenericAQIInformation generalMessage = messageGenerator.getGeneralAQIMessageObjectOnAQILevel(aqi);
             SpecificAQILevelMessage specificAQILevelMessage = messageGenerator
                     .getSpecificAQILevelMessageOnAQILevelOfPollutant(pollutant, aqi);
-            
+            SensitiveGroups sensitiveGroupsInfo = messageGenerator.getSensitiveGroupsOfPollutant(pollutant);
+
             category = generalMessage.getCategory();
             meaning = generalMessage.getMeaning();
             color = generalMessage.getColor();
             healthEffectsStatement = specificAQILevelMessage.getHealthEffectsStatements();
             guidanceStatement = specificAQILevelMessage.getGuidance();
-            
+            sensitiveGroups = sensitiveGroupsInfo.getSensitiveGroups();
         }
         return new AQIResult(pollutant, avgConcentration, aqi, category, meaning, color, healthEffectsStatement,
-                guidanceStatement);
+                guidanceStatement, sensitiveGroups);
     }
     
     /**
@@ -142,6 +144,7 @@ public class AQICalculator {
         String healthEffectsStatement = AQICalculatorConstants.NOT_APPLICABLE;
         String guidanceStatement = AQICalculatorConstants.NOT_APPLICABLE;
         String color = AQICalculatorConstants.NOT_APPLICABLE;
+        String sensitiveGroups = AQICalculatorConstants.NOT_APPLICABLE;
 
         if (nowCastConcentration >= 0) {
             // find the target Concentration with it corresponding Index level
@@ -153,16 +156,18 @@ public class AQICalculator {
                 GenericAQIInformation generalMessage = messageGenerator.getGeneralAQIMessageObjectOnAQILevel(aqi);
                 SpecificAQILevelMessage specificAQILevelMessage = messageGenerator
                         .getSpecificAQILevelMessageOnAQILevelOfPollutant(pollutant, aqi);
-                
+                SensitiveGroups sensitiveGroupsInfo = messageGenerator.getSensitiveGroupsOfPollutant(pollutant);
+
                 category = generalMessage.getCategory();
                 meaning = generalMessage.getMeaning();
                 color = generalMessage.getColor();
                 healthEffectsStatement = specificAQILevelMessage.getHealthEffectsStatements();
                 guidanceStatement = specificAQILevelMessage.getGuidance();
+                sensitiveGroups = sensitiveGroupsInfo.getSensitiveGroups();
             }
         }
         return new AQIResult(pollutant, nowCastConcentration, aqi, category, meaning, color, healthEffectsStatement,
-                guidanceStatement);
+                guidanceStatement, sensitiveGroups);
         
     }
     

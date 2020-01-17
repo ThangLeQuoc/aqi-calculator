@@ -1,6 +1,6 @@
 package com.thanglequoc.aqicalculator.aqi;
 
-public enum AQILevelSpecificMessageForPM25 {
+enum AQILevelSpecificMessageForPM25 {
     GOOD("None", "None"),
     MODERATE("Respiratory symptoms possible in unusually sensitive individuals; possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults", "Unusually sensitive people should consider reducing prolonged or heavy exertion"),
     UNHEALTHY_FOR_SENSITIVE_GROUPS("Increasing likelihood of respiratory symptoms in sensitive groups including older adults, children, and people of lower socioeconomic status; aggravation of heart or lung disease and premature mortality in people with heart or lung disease", "People with heart or lung disease, older adults, children, and people of lower socioeconomic status should reduce prolonged or heavy exertion"),

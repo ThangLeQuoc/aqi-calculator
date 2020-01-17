@@ -1,6 +1,6 @@
 [{
     "code": "PM2.5",
-    "unit": "ug/m3",
+    "unit": "µg/m3",
     "period": "24h",
     "concentrations": [{
       "min": 0.0,
@@ -55,7 +55,7 @@
   },
   {
     "code": "PM10",
-    "unit": "ug/m3",
+    "unit": "µg/m3",
     "period": "24h",
     "concentrations": [{
       "min": 0,

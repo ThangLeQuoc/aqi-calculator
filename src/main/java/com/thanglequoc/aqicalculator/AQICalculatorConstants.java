@@ -16,6 +16,7 @@ class AQICalculatorConstants {
     static final String AQI_LEVEL = "aqiLevel";
     static final String HEALTH_EFFECTS_STATEMENT = "healthEffectsStatement";
     static final String CONCENTRATIONS = "concentrations";
+    static final String SENSITIVE_GROUPS = "sensitiveGroups";
     
     /* Text for invalid AQI Stuffs */
     static final String UNCATEGORIZED = "Uncategorized";
@@ -26,7 +27,8 @@ class AQICalculatorConstants {
     static final String AQI_BREAKPOINT_RESOURCE_PATH = "AQIresource/aqi-breakpoint.json";
     static final String AQI_GENERAL_MESSAGES_RESOURCE_PATH = "AQIresource/aqi-generic-messages.json";
     static final String AQI_SPECIFIC_MESSAGES_RESOURCE_PATH = "AQIresource/aqi-specific-messages.json";
-    
+    static final String AQI_SENSITIVE_GROUP_RESOURCE_PATH = "AQIresource/aqi-sensitive-groups.json";
+
     private AQICalculatorConstants() {
     
     }

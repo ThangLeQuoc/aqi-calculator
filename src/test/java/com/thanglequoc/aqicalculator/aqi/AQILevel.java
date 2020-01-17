@@ -1,6 +1,6 @@
 package com.thanglequoc.aqicalculator.aqi;
 
-public enum AQILevel {
+enum AQILevel {
     
     INVALID("Uncategorized", "N/A"),
     
