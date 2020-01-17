@@ -542,17 +542,17 @@ public class AQIMessageTest {
 
         double avgConcentration = 197.9;
         AQIResult result = calculator.getAQI(Pollutant.PM25, avgConcentration);
-        
+
         String expectedCategory = "Sehr ungesund";
-        String expectedMeaning = "Aktive Kinder und Erwachsene sowie Menschen mit Atemwegserkrankungen wie Asthma sollten jede Anstrengung im Freien vermeiden. Alle anderen, insbesondere Kinder, sollten die Belastung im Freien begrenzen";
-        String expectedSpecificGuidanceMessage = "Menschen mit Herz- oder Lungenerkrankungen, ältere Erwachsene, Kinder und Menschen mit einem niedrigeren sozioökonomischen Status sollten jegliche körperliche Aktivität im Freien vermeiden. Alle anderen sollten eine längere oder schwere Anstrengung vermeiden";
+        String expectedMeaning = "Gesundheitswarnung: Jeder kann schwerwiegendere gesundheitliche Auswirkungen haben";
+        String expectedCautionaryStatements = "Menschen mit Herz- oder Lungenerkrankungen, ältere Erwachsene, Kinder und Menschen mit einem niedrigeren sozioökonomischen Status sollten jegliche körperliche Aktivität im Freien vermeiden. Alle anderen sollten eine längere oder schwere Anstrengung vermeiden";
         String expectedHealthEffectsStatements = "Signifikante Verschlechterung der Atemwegsbeschwerden in sensiblen Gruppen, einschließlich älterer Erwachsener, Kinder und Personen mit niedrigerem sozioökonomischen Status; signifikante Verschlechterung der Herz- oder Lungenerkrankung und vorzeitige Sterblichkeit bei Menschen mit Herz- oder Lungenerkrankung; signifikante Zunahme der Atemwegserkrankungen in der Allgemeinbevölkerung";
         String expectedSensitiveGroups = "Am stärksten gefährdet sind Menschen mit Atemwegs- oder Herzerkrankungen, ältere Menschen und Kinder";
 
         assertEquals(expectedCategory, result.getCategory());
         assertEquals(expectedMeaning, result.getMeaning());
         assertEquals(expectedHealthEffectsStatements, result.getHealthEffectsStatements());
-        assertEquals(expectedSpecificGuidanceMessage, result.getCautionaryStatements());
+        assertEquals(expectedCautionaryStatements, result.getCautionaryStatements());
         assertEquals(expectedSensitiveGroups, result.getSensitiveGroups());
 
         calculator.resetDefaultSettings();
