@@ -141,7 +141,9 @@ Allowed customized messages resources:
 - Sensitive Groups 
 - Specific Messages
 
-Example
+Example: Override with custom AQI message in German language. Simply done by enable custom message mode, and provide any of the override files path from your project classpath.
+![Sample Settings](https://i.imgur.com/Q9GnIUQ.png)
+
 ~~~~
 AQICalculator calculator = AQICalculator.getAQICalculatorInstance();
 
