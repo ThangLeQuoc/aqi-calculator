@@ -13,7 +13,7 @@
 
 Are you also looking for Node version ? [![npm version](https://badge.fury.io/js/aqi-bot.svg)](https://badge.fury.io/js/aqi-bot)
 ### Foreword
-All methods, constraints use in this project follows **US EPA AQI Calculation Method** (which includes breakpoint table and calculation formulas) . Since each country issues different AQI calculation methods, using this package might be inappropriate, consider your usage.
+All formulas, constraints, and messages use in this project follows **US EPA AQI Calculation Guideline and Regulations** (which includes breakpoint table and calculation formulas) . Since each country issues different AQI calculation methods, using this package might be inappropriate, consider your usage.
 
 This project is intended to community target for free use. The author is not associated with USA government, nor United States Environmental Protection Agency (a.k.a **US EPA**)
 
@@ -37,9 +37,9 @@ This project is intended to community target for free use. The author is not ass
 ```
 <!-- https://mvnrepository.com/artifact/com.github.thanglequoc/aqi-calculator -->
 <dependency>
-    <groupId>com.github.thanglequoc</groupId>
-    <artifactId>aqi-calculator</artifactId>
-    <version>1.2.3</version>
+  <groupId>com.github.thanglequoc</groupId>
+  <artifactId>aqi-calculator</artifactId>
+  <version>1.3.0</version>
 </dependency>
 ```
 Or for other stuff like Gradle, SBT, Ivy,.. you may find it on [Maven Central Repository](https://mvnrepository.com/artifact/com.github.thanglequoc/aqi-calculator/1.2.1)
