@@ -19,30 +19,32 @@ This project is intended to community target for free use. The author is not ass
 
 ## Highlights
 - Calculate AQI from raw concentration
-- The result from calculation includes Air Quality Index, AQI Category, General Message, Specific Health Effects Statements for the pollutant and the corresponding guidance message.
+- The result from calculation includes Air Quality Index, Category, Color, Sensitive Groups of the pollutant and the corresponding Health Effects Statements and Cautionary Statements messages.
 - Support NowCast Concentration
+- You need to get messages in another language ? AQI Calculator now allows customizable messages at your own need.
 
-### Support the following pollutants
+### Support The Following Pollutants
 
-| Pollutant  | Scientific name| Unit of Measurement |Input Code Usage |Regular Calculation Support |NowCast Support | Health Effects Statements | Guidance Message|
+| Pollutant  | Scientific name| Unit of Measurement |Sensitive Groups |Regular Calculation Support |NowCast Support | Health Effects Statements | Cautionary Statements|
 | ---- |:-------------:|:-------------:|:-------------:|:-------------:|-------------:|-------------:|-------------:|
-| PM10      |  10 μm Particle Pollutant  | μg/m3| PM10 | :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
-| PM2.5      |  2.5 μm Particle Pollutant  | μg/m3| PM2.5 |  :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
-| O3     |  Ozone  | ppb| O3 | :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
-| CO     |  Carbon Monoxide  | ppb| CO | :heavy_check_mark:|:x:|:heavy_check_mark:|:heavy_check_mark:|
-| SO2     |  Sulfur Dioxide  | ppb| SO2 | :heavy_check_mark:| :x:|:heavy_check_mark:|:heavy_check_mark:|
-| NO2     |  Nitrogen Dioxide  | ppb| NO2 | :heavy_check_mark:| :x:|:heavy_check_mark:|:heavy_check_mark:|
+| PM10      |  10 μm Particle Pollutant  | μg/m3| :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
+| PM2.5      |  2.5 μm Particle Pollutant  | μg/m3| :heavy_check_mark: |  :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
+| O3     |  Ozone  | ppb| :heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
+| CO     |  Carbon Monoxide  | ppb| :heavy_check_mark: | :heavy_check_mark:|:x:|:heavy_check_mark:|:heavy_check_mark:|
+| SO2     |  Sulfur Dioxide  | ppb| :heavy_check_mark: | :heavy_check_mark:| :x:|:heavy_check_mark:|:heavy_check_mark:|
+| NO2     |  Nitrogen Dioxide  | ppb| :heavy_check_mark: | :heavy_check_mark:| :x:|:heavy_check_mark:|:heavy_check_mark:|
+
 ## Installation
 ### Using Maven Dependency
 ```
-<!-- https://mvnrepository.com/artifact/com.github.thanglequoc/aqi-calculator -->
-<dependency>
-  <groupId>com.github.thanglequoc</groupId>
-  <artifactId>aqi-calculator</artifactId>
-  <version>1.3.0</version>
-</dependency>
+    <!-- https://mvnrepository.com/artifact/com.github.thanglequoc/aqi-calculator -->
+    <dependency>
+        <groupId>com.github.thanglequoc</groupId>
+        <artifactId>aqi-calculator</artifactId>
+        <version>1.3.0</version>
+    </dependency>
 ```
-Or for other stuff like Gradle, SBT, Ivy,.. you may find it on [Maven Central Repository](https://mvnrepository.com/artifact/com.github.thanglequoc/aqi-calculator/1.2.1)
+Or for other build tools like Gradle, SBT, Ivy,.. you may find it on [Maven Central Repository](https://mvnrepository.com/artifact/com.github.thanglequoc/aqi-calculator/1.3.0)
 ### Using Plug-n-play jar file:
 Grab the target jar in `target-jar` folder and add the jar to your project.
 
@@ -59,35 +61,41 @@ AQIResult result = calculator.getAQI(Pollutant.PM10, 99);
 ```
 
 Now `AQIResult` store all the related information that you might need, query them by the following methods
-* Get the Air Quality Index (AQI)
+* The Air Quality Index (AQI)
 
 ```result.getAqi();```
 >73
 
+* The Concentration
 ```result.getConcentration();```
 
 For _NowCast_ calculation, this will be the **NowCast Concentration**
->99.0
+> 99.0
 
-* Get the AQI Category
-
+* The AQI Category
 ```result.getCategory();```
->Moderate
+> Moderate
 
-* Get the general message of the AQI Category
+* The color of this index
+```result.getColor()```
+> Yellow
 
-`result.getGeneralMessage();`
+* The meaning of of this index
+```result.getMeaning()```
+> Air quality is acceptable; however, for some pollutants there may be a moderate health concern for a very small number of people who are unusually sensitive to air pollution
 
->Unusually sensitive people should consider reducing prolonged or heavy outdoor exertion
-* Get the health effects statement for the pollutant with that level
+* The sensitive groups of this pollutant
+```result.getSensitiveGroups()```
+> People with respiratory disease are the group most at risk
 
-`result.getHealthEffectsStatement();`
->Respiratory symptoms possible in unusually sensitive individuals; possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults
+* The health effects statements
+`result.getHealthEffectsStatements();`
+> Respiratory symptoms possible in unusually sensitive individuals; possible aggravation of heart or lung disease in people with cardiopulmonary disease and older adults
 
-* Get the guidance message for the pollutant with that level
+* The cautionary statements
 
-`result.getGuidanceStatement();`
->Unusually sensitive people should consider reducing prolonged or heavy exertion
+`result.getCautionaryStatements();`
+> Unusually sensitive people should consider reducing prolonged or heavy exertion
 
 
 #### For NowCast AQI Calculation
@@ -96,14 +104,13 @@ For _NowCast_ calculation, this will be the **NowCast Concentration**
 /* Example Data for NowCast PM10 12h period - 64, 63, 72, 77, 65, 61, 70, 71, 64, 57, 58, 64 */
 AQICalculator calculator = AQICalculator.getAQICalculatorInstance();
 
-double[] data = { 64, 63, 72, 77, 65, 61, 70, 71, 64, 57, 58, 64 };`
-AQIResult result = calculator.getNowCastAQI("PM10", data);
-
-result.getAqi();
+double[] data = { 64, 63, 72, 77, 65, 61, 70, 71, 64, 57, 58, 64 };
+AQIResult result = calculator.getNowCastAQI(Pollutant.PM10, data);
+System.out.println(result.getAQI());
 ~~~~
 >57
 
-The first value in the array is the avg value in the current hour, and the upcoming element in the array represent one step hour before current hour.
+The first value in the array is the avg value in the current hour, and each next element in the array represent the previous data of the hour before current hour.
 
 If the hour doesn't have data, replace missing data in the hour with **-1**
 ##### Example NowCast Dataset for PM10: (have some missing data in hour)
@@ -133,7 +140,7 @@ result.getAqi();
 
 
 
-# AQI Calculation Turtorial
+# AQI Calculation Tutorial
 ## US EPA AQI Breakpoint
 <img src="https://image.ibb.co/gvrFc5/2017_07_20_15_22_21.png" alt="2017_07_20_15_22_21" border="0">
 
