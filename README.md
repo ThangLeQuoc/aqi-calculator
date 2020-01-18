@@ -63,7 +63,7 @@ AQIResult result = calculator.getAQI(Pollutant.PM10, 99);
 Now `AQIResult` store all the related information that you might need, query them by the following methods
 * The Air Quality Index (AQI)
 
-```result.getAqi();```
+```result.getAQI();```
 >73
 
 * The Concentration
