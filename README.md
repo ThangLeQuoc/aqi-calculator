@@ -49,10 +49,6 @@ Or for other build tools like Gradle, SBT, Ivy,.. you may find it on [Maven Cent
 Grab the target jar in `target-jar` folder and add the jar to your project.
 
 ## Quick Usage
-### Note
-From version _1.2.3_, the input string as pollutant is replaced by _Pollutant_ enum class for strong
-consistence.
-
 #### For Regular AQI Calculation
 ##### Using AQIResult Object:
 ```
@@ -133,10 +129,50 @@ Presume that you want to calculate NowCast AQI for PM10 at **14**, the data arra
 
 ~~~~
 double[] data = { 64, 63, -1, 77, 65, -1, 70, 71, -1, 57, 58, 64 };`
-AQIResult result = calculator.getNowCastAQI("PM10", data);
-result.getAqi();
+AQIResult result = calculator.getNowCastAQI(Pollutant.PM10, data);
+result.getAQI();
 ~~~~
 >56
+
+### Customize AQI Messages
+The default text from AQI result is in **English**. However, you can easily override these messages in your own language.
+Allowed customized messages resources:
+- Generic Messages 
+- Sensitive Groups 
+- Specific Messages
+
+Example
+~~~~
+AQICalculator calculator = AQICalculator.getAQICalculatorInstance();
+
+AQICustomSettings mySettings = new AQICustomSettings()
+	.withCustomMessagesMode(true)
+	.withGeneralMessageResourcePath("AQIResource/custom-aqi-generic-messages_de.json")
+	.withSensitiveGroupsResourcePath("AQIResource/custom-aqi-sensitive-groups_de.json")
+	.withSpecificMessageResourcePath("AQIResource/custom-aqi-specific-messages_de.json");
+calculator.applyCustomSettings(mySettings);
+
+AQIResult aqiResult = calculator.getAQI(Pollutant.PM10, 99);
+System.out.println(aqiResult.getCategory());
+System.out.println(aqiResult.getMeaning());
+System.out.println(aqiResult.getSensitiveGroups());
+System.out.println(aqiResult.getHealthEffectsStatements());
+System.out.println(aqiResult.getCautionaryStatements());
+~~~~
+
+Outcome
+```
+Mäßig
+Luftqualität ist akzeptabel; Bei einigen Schadstoffen kann es jedoch zu einer mäßigen Gesundheitsgefährdung für eine sehr kleine Anzahl von Personen kommen, die ungewöhnlich empfindlich auf Luftverschmutzung reagieren
+Am stärksten gefährdet sind Menschen mit Atemwegserkrankungen
+Atmungssymptome bei ungewöhnlich empfindlichen Personen möglich; Mögliche Verschlimmerung von Herz- oder Lungenerkrankungen bei Personen mit kardiopulmonaler Erkrankung und älteren Erwachsenen
+Ungewöhnlich sensible Menschen sollten in Betracht ziehen, längere oder schwere Belastungen zu reduzieren
+```
+
+#### Generic Messages
+
+#### Sensitive Groups
+#### Specific Messages
 
 
 
