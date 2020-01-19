@@ -7,14 +7,14 @@ package com.thanglequoc.aqicalculator;
  * @author ThangLeQuoc
  */
 
-class GenericAQIInformation {
+class GeneralAQIInformation {
     
     private Index index;
     private String category;
     private String meaning;
     private String color;
     
-    GenericAQIInformation(Index index, String category, String message, String color) {
+    GeneralAQIInformation(Index index, String category, String message, String color) {
         this.index = index;
         this.category = category;
         this.meaning = message;

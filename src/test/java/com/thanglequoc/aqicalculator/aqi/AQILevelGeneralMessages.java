@@ -1,6 +1,6 @@
 package com.thanglequoc.aqicalculator.aqi;
 
-enum AQILevelGenericMessages {
+enum AQILevelGeneralMessages {
     INVALID("Invalid pollutant concentration range for calculation"),
     GOOD("Air quality is considered satisfactory, and air pollution poses little or no risk"),
     MODERATE("Air quality is acceptable; however, for some pollutants there may be a moderate health concern for a very small number of people who are unusually sensitive to air pollution"),
@@ -12,7 +12,7 @@ enum AQILevelGenericMessages {
     
     private String meaning;
     
-    AQILevelGenericMessages(String meaning) {
+    AQILevelGeneralMessages(String meaning) {
         this.meaning = meaning;
     }
     
