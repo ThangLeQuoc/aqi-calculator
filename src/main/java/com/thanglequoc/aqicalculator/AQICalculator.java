@@ -110,7 +110,7 @@ public class AQICalculator {
 
         if (targetPollutantConcentration.isPresent()) {
             aqi = calculateAQI(pollutant, avgConcentration);
-            GenericAQIInformation generalMessage = messageGenerator.getGeneralAQIMessageObjectOnAQILevel(aqi);
+            GeneralAQIInformation generalMessage = messageGenerator.getGeneralAQIMessageObjectOnAQILevel(aqi);
             SpecificAQILevelMessage specificAQILevelMessage = messageGenerator
                     .getSpecificAQILevelMessageOnAQILevelOfPollutant(pollutant, aqi);
             SensitiveGroups sensitiveGroupsInfo = messageGenerator.getSensitiveGroupsOfPollutant(pollutant);
@@ -153,7 +153,7 @@ public class AQICalculator {
             if (targetPollutantConcentration.isPresent()) {
                 aqi = calculateAQIWithIndexAndConcentrationRange(nowCastConcentration,
                         targetPollutantConcentration.get());
-                GenericAQIInformation generalMessage = messageGenerator.getGeneralAQIMessageObjectOnAQILevel(aqi);
+                GeneralAQIInformation generalMessage = messageGenerator.getGeneralAQIMessageObjectOnAQILevel(aqi);
                 SpecificAQILevelMessage specificAQILevelMessage = messageGenerator
                         .getSpecificAQILevelMessageOnAQILevelOfPollutant(pollutant, aqi);
                 SensitiveGroups sensitiveGroupsInfo = messageGenerator.getSensitiveGroupsOfPollutant(pollutant);

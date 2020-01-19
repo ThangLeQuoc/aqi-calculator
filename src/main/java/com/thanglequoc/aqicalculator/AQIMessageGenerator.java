@@ -10,14 +10,14 @@ import java.util.List;
 
 class AQIMessageGenerator {
     
-    private List<GenericAQIInformation> genericAQIsInformation;
+    private List<GeneralAQIInformation> generalAQIsInformation;
     private List<SpecificAQIInformation> specificAQIsInformation;
     private List<SensitiveGroups> sensitiveGroupsInformation;
     
     AQIMessageGenerator() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         ClassLoader classLoader = AQIMessageGenerator.class.getClassLoader();
-        genericAQIsInformation = new ArrayList<>();
+        generalAQIsInformation = new ArrayList<>();
         specificAQIsInformation = new ArrayList<>();
         AQIMessageParser msgParser = new AQIMessageParser();
         sensitiveGroupsInformation = new ArrayList<>();
@@ -27,7 +27,7 @@ class AQIMessageGenerator {
     AQIMessageGenerator(AQICustomSettings userSettings) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         ClassLoader classLoader = AQIMessageGenerator.class.getClassLoader();
-        genericAQIsInformation = new ArrayList<>();
+        generalAQIsInformation = new ArrayList<>();
         specificAQIsInformation = new ArrayList<>();
         sensitiveGroupsInformation = new ArrayList<>();
         AQIMessageParser msgParser = new AQIMessageParser();
@@ -56,8 +56,8 @@ class AQIMessageGenerator {
             /* Parse General Message Node */
             JsonNode generalMessageNodeRoot = mapper.readTree(generalAQIMessageStream);
             for (JsonNode generalMessageNode : generalMessageNodeRoot) {
-                GenericAQIInformation genericAQIInformation = msgParser.parseGenericAQIInformationNode(generalMessageNode);
-                this.genericAQIsInformation.add(genericAQIInformation);
+                GeneralAQIInformation generalAQIInformation = msgParser.parseGeneralAQIInformationNode(generalMessageNode);
+                this.generalAQIsInformation.add(generalAQIInformation);
             }
             /* Parse Specific Message Node */
             JsonNode specificMessageNodeRoot = mapper.readTree(specificAQIMessagesStream);
@@ -75,10 +75,10 @@ class AQIMessageGenerator {
         }
     }
     
-    GenericAQIInformation getGeneralAQIMessageObjectOnAQILevel(int AQI) {
-        for (GenericAQIInformation genericAQIInformation : genericAQIsInformation) {
-            if (genericAQIInformation.getIndex().getMinIndex() <= AQI && genericAQIInformation.getIndex().getMaxIndex() >= AQI)
-                return genericAQIInformation;
+    GeneralAQIInformation getGeneralAQIMessageObjectOnAQILevel(int AQI) {
+        for (GeneralAQIInformation generalAQIInformation : generalAQIsInformation) {
+            if (generalAQIInformation.getIndex().getMinIndex() <= AQI && generalAQIInformation.getIndex().getMaxIndex() >= AQI)
+                return generalAQIInformation;
         }
         return null;
     }

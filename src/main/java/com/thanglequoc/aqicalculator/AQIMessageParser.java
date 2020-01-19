@@ -7,12 +7,12 @@ import java.util.List;
 
 class AQIMessageParser {
     
-    GenericAQIInformation parseGenericAQIInformationNode(JsonNode genericInfoNode) {
-        String category = genericInfoNode.path(AQICalculatorConstants.CATEGORY).asText();
-        String meaning = genericInfoNode.path(AQICalculatorConstants.MEANING).asText();
-        String color = genericInfoNode.path(AQICalculatorConstants.COLOR).asText();
-        Index index = Index.fromIndexNode(genericInfoNode.path(AQICalculatorConstants.INDEX));
-        return new GenericAQIInformation(index, category, meaning, color);
+    GeneralAQIInformation parseGeneralAQIInformationNode(JsonNode generalInfoNode) {
+        String category = generalInfoNode.path(AQICalculatorConstants.CATEGORY).asText();
+        String meaning = generalInfoNode.path(AQICalculatorConstants.MEANING).asText();
+        String color = generalInfoNode.path(AQICalculatorConstants.COLOR).asText();
+        Index index = Index.fromIndexNode(generalInfoNode.path(AQICalculatorConstants.INDEX));
+        return new GeneralAQIInformation(index, category, meaning, color);
     }
     
     SpecificAQIInformation parseSpecificAQIMessageNode(JsonNode specificInfoNode) {

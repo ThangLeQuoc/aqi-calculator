@@ -36,7 +36,7 @@ public class AQIMessageTest {
 
         assertEquals(AQILevel.GOOD.getLiteral(), result.getCategory());
         assertEquals(AQILevel.GOOD.getColor(), result.getColor());
-        assertEquals(AQILevelGenericMessages.GOOD.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.GOOD.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForPM10.GOOD.getCautionaryStatements(), result.getCautionaryStatements());
         assertEquals(AQILevelSpecificMessageForPM10.GOOD.getHealthEffectsStatements(), result.getHealthEffectsStatements());
         assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(Pollutant.PM10), result.getSensitiveGroups());
@@ -48,7 +48,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.PM25, avgConcentration);
 
         assertEquals(AQILevel.GOOD.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.GOOD.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.GOOD.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForPM25.GOOD.getCautionaryStatements(), result.getCautionaryStatements());
         assertEquals(AQILevelSpecificMessageForPM25.GOOD.getHealthEffectsStatements(), result.getHealthEffectsStatements());
         assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(Pollutant.PM25), result.getSensitiveGroups());
@@ -61,7 +61,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.O3, avgConcentration);
 
         assertEquals(AQILevel.GOOD.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.GOOD.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.GOOD.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForO3.GOOD.getCautionaryStatements(), result.getCautionaryStatements());
         assertEquals(AQILevelSpecificMessageForO3.GOOD.getHealthEffectsStatements(), result.getHealthEffectsStatements());
         assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(Pollutant.O3), result.getSensitiveGroups());
@@ -74,7 +74,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.CO, avgConcentration);
         
         assertEquals(AQILevel.GOOD.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.GOOD.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.GOOD.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForCO.GOOD.getCautionaryStatements(), result.getCautionaryStatements());
         assertEquals(AQILevelSpecificMessageForCO.GOOD.getHealthEffectsStatements(), result.getHealthEffectsStatements());
         assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(Pollutant.CO), result.getSensitiveGroups());
@@ -87,7 +87,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.SO2, avgConcentration);
 
         assertEquals(AQILevel.GOOD.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.GOOD.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.GOOD.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForSO2.GOOD.getCautionaryStatements(), result.getCautionaryStatements());
         assertEquals(AQILevelSpecificMessageForSO2.GOOD.getHealthEffectsStatements(), result.getHealthEffectsStatements());
         assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(Pollutant.SO2), result.getSensitiveGroups());
@@ -100,7 +100,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.NO2, avgConcentration);
 
         assertEquals(AQILevel.GOOD.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.GOOD.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.GOOD.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForNO2.GOOD.getCautionaryStatements(), result.getCautionaryStatements());
         assertEquals(AQILevelSpecificMessageForNO2.GOOD.getHealthEffectsStatements(), result.getHealthEffectsStatements());
         assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(Pollutant.NO2), result.getSensitiveGroups());
@@ -118,7 +118,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.PM10, avgConcentration);
 
         assertEquals(AQILevel.MODERATE.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.MODERATE.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.MODERATE.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForPM10.MODERATE.getCautionaryStatements(), result.getCautionaryStatements());
         assertEquals(AQILevelSpecificMessageForPM10.MODERATE.getHealthEffectsStatements(), result.getHealthEffectsStatements());
         assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(Pollutant.PM10), result.getSensitiveGroups());
@@ -131,7 +131,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.PM25, avgConcentration);
 
         assertEquals(AQILevel.MODERATE.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.MODERATE.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.MODERATE.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForPM25.MODERATE.getCautionaryStatements(), result.getCautionaryStatements());
         assertEquals(AQILevelSpecificMessageForPM25.MODERATE.getHealthEffectsStatements(), result.getHealthEffectsStatements());
         assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(Pollutant.PM25), result.getSensitiveGroups());
@@ -144,7 +144,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.O3, avgConcentration);
 
         assertEquals(AQILevel.MODERATE.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.MODERATE.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.MODERATE.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForO3.MODERATE.getCautionaryStatements(), result.getCautionaryStatements());
         assertEquals(AQILevelSpecificMessageForO3.MODERATE.getHealthEffectsStatements(), result.getHealthEffectsStatements());
         assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(Pollutant.O3), result.getSensitiveGroups());
@@ -157,7 +157,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.CO, avgConcentration);
 
         assertEquals(AQILevel.MODERATE.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.MODERATE.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.MODERATE.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForCO.MODERATE.getCautionaryStatements(), result.getCautionaryStatements());
         assertEquals(AQILevelSpecificMessageForCO.MODERATE.getHealthEffectsStatements(), result.getHealthEffectsStatements());
         assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(Pollutant.CO), result.getSensitiveGroups());
@@ -170,7 +170,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.SO2, avgConcentration);
 
         assertEquals(AQILevel.MODERATE.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.MODERATE.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.MODERATE.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForSO2.MODERATE.getCautionaryStatements(), result.getCautionaryStatements());
         assertEquals(AQILevelSpecificMessageForSO2.MODERATE.getHealthEffectsStatements(), result.getHealthEffectsStatements());
         assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(Pollutant.SO2), result.getSensitiveGroups());
@@ -183,7 +183,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.NO2, avgConcentration);
 
         assertEquals(AQILevel.MODERATE.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.MODERATE.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.MODERATE.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForNO2.MODERATE.getCautionaryStatements(), result.getCautionaryStatements());
         assertEquals(AQILevelSpecificMessageForNO2.MODERATE.getHealthEffectsStatements(), result.getHealthEffectsStatements());
         assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(Pollutant.NO2), result.getSensitiveGroups());
@@ -201,7 +201,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.PM10, avgConcentration);
 
         assertEquals(AQILevel.UNHEALTHY_FOR_SENSITIVE_GROUPS.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.UNHEALTHY_FOR_SENSITIVE_GROUPS.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.UNHEALTHY_FOR_SENSITIVE_GROUPS.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForPM10.UNHEALTHY_FOR_SENSITIVE_GROUPS
                 .getCautionaryStatements(), result.getCautionaryStatements());
         assertEquals(AQILevelSpecificMessageForPM10.UNHEALTHY_FOR_SENSITIVE_GROUPS
@@ -216,7 +216,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.PM25, avgConcentration);
 
         assertEquals(AQILevel.UNHEALTHY_FOR_SENSITIVE_GROUPS.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.UNHEALTHY_FOR_SENSITIVE_GROUPS
+        assertEquals(AQILevelGeneralMessages.UNHEALTHY_FOR_SENSITIVE_GROUPS
                 .getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForPM25.UNHEALTHY_FOR_SENSITIVE_GROUPS
                 .getCautionaryStatements(), result.getCautionaryStatements());
@@ -232,7 +232,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.O3, avgConcentration);
 
         assertEquals(AQILevel.UNHEALTHY_FOR_SENSITIVE_GROUPS.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.UNHEALTHY_FOR_SENSITIVE_GROUPS
+        assertEquals(AQILevelGeneralMessages.UNHEALTHY_FOR_SENSITIVE_GROUPS
                 .getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForO3.UNHEALTHY_FOR_SENSITIVE_GROUPS
                 .getCautionaryStatements(), result.getCautionaryStatements());
@@ -248,7 +248,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.CO, avgConcentration);
 
         assertEquals(AQILevel.UNHEALTHY_FOR_SENSITIVE_GROUPS.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.UNHEALTHY_FOR_SENSITIVE_GROUPS
+        assertEquals(AQILevelGeneralMessages.UNHEALTHY_FOR_SENSITIVE_GROUPS
                 .getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForCO.UNHEALTHY_FOR_SENSITIVE_GROUPS
                 .getCautionaryStatements(), result.getCautionaryStatements());
@@ -264,7 +264,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.SO2, avgConcentration);
         
         assertEquals(AQILevel.UNHEALTHY_FOR_SENSITIVE_GROUPS.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.UNHEALTHY_FOR_SENSITIVE_GROUPS
+        assertEquals(AQILevelGeneralMessages.UNHEALTHY_FOR_SENSITIVE_GROUPS
                 .getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForSO2.UNHEALTHY_FOR_SENSITIVE_GROUPS
                 .getCautionaryStatements(), result.getCautionaryStatements());
@@ -280,7 +280,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.NO2, avgConcentration);
 
         assertEquals(AQILevel.UNHEALTHY_FOR_SENSITIVE_GROUPS.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.UNHEALTHY_FOR_SENSITIVE_GROUPS
+        assertEquals(AQILevelGeneralMessages.UNHEALTHY_FOR_SENSITIVE_GROUPS
                 .getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForNO2.UNHEALTHY_FOR_SENSITIVE_GROUPS
                 .getCautionaryStatements(), result.getCautionaryStatements());
@@ -301,7 +301,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.PM10, avgConcentration);
 
         assertEquals(AQILevel.UNHEALTHY.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.UNHEALTHY.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.UNHEALTHY.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForPM10.UNHEALTHY.getCautionaryStatements(), result.getCautionaryStatements());
         assertEquals(AQILevelSpecificMessageForPM10.UNHEALTHY.getHealthEffectsStatements(), result.getHealthEffectsStatements());
         assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(Pollutant.PM10), result.getSensitiveGroups());
@@ -314,7 +314,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.PM25, avgConcentration);
 
         assertEquals(AQILevel.UNHEALTHY.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.UNHEALTHY.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.UNHEALTHY.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForPM25.UNHEALTHY.getCautionaryStatements(), result.getCautionaryStatements());
         assertEquals(AQILevelSpecificMessageForPM25.UNHEALTHY.getHealthEffectsStatements(), result.getHealthEffectsStatements());
         assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(Pollutant.PM25), result.getSensitiveGroups());
@@ -327,7 +327,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.O3, avgConcentration);
 
         assertEquals(AQILevel.UNHEALTHY.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.UNHEALTHY.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.UNHEALTHY.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForO3.UNHEALTHY.getCautionaryStatements(), result.getCautionaryStatements());
         assertEquals(AQILevelSpecificMessageForO3.UNHEALTHY.getHealthEffectsStatements(), result.getHealthEffectsStatements());
         assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(Pollutant.O3), result.getSensitiveGroups());
@@ -340,7 +340,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.CO, avgConcentration);
 
         assertEquals(AQILevel.UNHEALTHY.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.UNHEALTHY.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.UNHEALTHY.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForCO.UNHEALTHY.getCautionaryStatements(), result.getCautionaryStatements());
         assertEquals(AQILevelSpecificMessageForCO.UNHEALTHY.getHealthEffectsStatements(), result.getHealthEffectsStatements());
         assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(Pollutant.CO), result.getSensitiveGroups());
@@ -353,7 +353,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.SO2, avgConcentration);
 
         assertEquals(AQILevel.UNHEALTHY.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.UNHEALTHY.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.UNHEALTHY.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForSO2.UNHEALTHY.getCautionaryStatements(), result.getCautionaryStatements());
         assertEquals(AQILevelSpecificMessageForSO2.UNHEALTHY.getHealthEffectsStatements(), result.getHealthEffectsStatements());
         assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(Pollutant.SO2), result.getSensitiveGroups());
@@ -366,7 +366,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.NO2, avgConcentration);
 
         assertEquals(AQILevel.UNHEALTHY.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.UNHEALTHY.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.UNHEALTHY.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForNO2.UNHEALTHY.getCautionaryStatements(), result.getCautionaryStatements());
         assertEquals(AQILevelSpecificMessageForNO2.UNHEALTHY.getHealthEffectsStatements(), result.getHealthEffectsStatements());
         assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(Pollutant.NO2), result.getSensitiveGroups());
@@ -384,7 +384,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.PM10, avgConcentration);
         
         assertEquals(AQILevel.VERY_UNHEALTHY.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.VERY_UNHEALTHY.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.VERY_UNHEALTHY.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForPM10.VERY_UNHEALTHY.getCautionaryStatements(), result.getCautionaryStatements());
         assertEquals(AQILevelSpecificMessageForPM10.VERY_UNHEALTHY
                 .getHealthEffectsStatements(), result.getHealthEffectsStatements());
@@ -398,7 +398,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.PM25, avgConcentration);
         
         assertEquals(AQILevel.VERY_UNHEALTHY.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.VERY_UNHEALTHY.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.VERY_UNHEALTHY.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForPM25.VERY_UNHEALTHY.getCautionaryStatements(), result.getCautionaryStatements());
         assertEquals(AQILevelSpecificMessageForPM25.VERY_UNHEALTHY
                 .getHealthEffectsStatements(), result.getHealthEffectsStatements());
@@ -412,7 +412,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.O3, avgConcentration);
 
         assertEquals(AQILevel.VERY_UNHEALTHY.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.VERY_UNHEALTHY.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.VERY_UNHEALTHY.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForO3.VERY_UNHEALTHY.getCautionaryStatements(), result.getCautionaryStatements());
         assertEquals(AQILevelSpecificMessageForO3.VERY_UNHEALTHY
                 .getHealthEffectsStatements(), result.getHealthEffectsStatements());
@@ -426,7 +426,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.CO, avgConcentration);
         
         assertEquals(AQILevel.VERY_UNHEALTHY.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.VERY_UNHEALTHY.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.VERY_UNHEALTHY.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForCO.VERY_UNHEALTHY.getCautionaryStatements(), result.getCautionaryStatements());
         assertEquals(AQILevelSpecificMessageForCO.VERY_UNHEALTHY
                 .getHealthEffectsStatements(), result.getHealthEffectsStatements());
@@ -440,7 +440,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.NO2, avgConcentration);
 
         assertEquals(AQILevel.VERY_UNHEALTHY.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.VERY_UNHEALTHY.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.VERY_UNHEALTHY.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForNO2.VERY_UNHEALTHY.getCautionaryStatements(), result.getCautionaryStatements());
         assertEquals(AQILevelSpecificMessageForNO2.VERY_UNHEALTHY
                 .getHealthEffectsStatements(), result.getHealthEffectsStatements());
@@ -459,7 +459,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.PM10, avgConcentration);
 
         assertEquals(AQILevel.HAZARDOUS.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.HAZARDOUS.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.HAZARDOUS.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForPM10.HAZARDOUS.getCautionaryStatements(), result.getCautionaryStatements());
         assertEquals(AQILevelSpecificMessageForPM10.HAZARDOUS.getHealthEffectsStatements(), result.getHealthEffectsStatements());
         assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(Pollutant.PM10), result.getSensitiveGroups());
@@ -472,7 +472,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.PM25, avgConcentration);
 
         assertEquals(AQILevel.HAZARDOUS.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.HAZARDOUS.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.HAZARDOUS.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForPM25.HAZARDOUS.getCautionaryStatements(), result.getCautionaryStatements());
         assertEquals(AQILevelSpecificMessageForPM25.HAZARDOUS.getHealthEffectsStatements(), result.getHealthEffectsStatements());
         assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(Pollutant.PM25), result.getSensitiveGroups());
@@ -485,7 +485,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.CO, avgConcentration);
 
         assertEquals(AQILevel.HAZARDOUS.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.HAZARDOUS.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.HAZARDOUS.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForCO.HAZARDOUS.getCautionaryStatements(), result.getCautionaryStatements());
         assertEquals(AQILevelSpecificMessageForCO.HAZARDOUS.getHealthEffectsStatements(), result.getHealthEffectsStatements());
         assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(Pollutant.CO), result.getSensitiveGroups());
@@ -498,7 +498,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.NO2, avgConcentration);
         
         assertEquals(AQILevel.HAZARDOUS.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.HAZARDOUS.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.HAZARDOUS.getMeaning(), result.getMeaning());
         assertEquals(AQILevelSpecificMessageForNO2.HAZARDOUS.getCautionaryStatements(), result.getCautionaryStatements());
         assertEquals(AQILevelSpecificMessageForNO2.HAZARDOUS.getHealthEffectsStatements(), result.getHealthEffectsStatements());
         assertEquals(SensitiveGroups.resolveSensitiveGroupsFromPollutant(Pollutant.NO2), result.getSensitiveGroups());
@@ -515,7 +515,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.PM10, -10);
 
         assertEquals(AQILevel.INVALID.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.INVALID.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.INVALID.getMeaning(), result.getMeaning());
         assertEquals(NOT_APPLICABLE, result.getCautionaryStatements());
         assertEquals(NOT_APPLICABLE, result.getHealthEffectsStatements());
         assertEquals(NOT_APPLICABLE, result.getSensitiveGroups());
@@ -526,7 +526,7 @@ public class AQIMessageTest {
         AQIResult result = calculator.getAQI(Pollutant.PM25, -1000000);
         
         assertEquals(AQILevel.INVALID.getLiteral(), result.getCategory());
-        assertEquals(AQILevelGenericMessages.INVALID.getMeaning(), result.getMeaning());
+        assertEquals(AQILevelGeneralMessages.INVALID.getMeaning(), result.getMeaning());
         assertEquals(NOT_APPLICABLE, result.getCautionaryStatements());
         assertEquals(NOT_APPLICABLE, result.getHealthEffectsStatements());
         assertEquals(NOT_APPLICABLE, result.getSensitiveGroups());
