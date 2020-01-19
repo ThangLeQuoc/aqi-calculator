@@ -135,13 +135,14 @@ result.getAQI();
 >56
 
 ### Customize AQI Messages
-The default text from AQI result is in **English**. However, you can easily override these messages in your own language.
+The default text from AQI result is in **English**. However, you can easily override these messages in your own language. Just download the [template files](https://github.com/ThangLeQuoc/aqi-calculator/tree/master/src/main/resources/AQIresource) and make change on your own
+
 Allowed customized messages resources:
 - General Messages 
 - Sensitive Groups 
 - Specific Messages
 
-Example: Override with custom AQI message in German language. Simply done by enable custom message mode, and provide any of the override files path from your project classpath.
+**Example**: Override with custom AQI message in German language. Simply done by enable custom message mode, and provide any of the override files path from your project classpath.
 ![Sample Settings](https://i.imgur.com/Q9GnIUQ.png)
 
 ~~~~
@@ -170,13 +171,69 @@ Am stärksten gefährdet sind Menschen mit Atemwegserkrankungen
 Atmungssymptome bei ungewöhnlich empfindlichen Personen möglich; Mögliche Verschlimmerung von Herz- oder Lungenerkrankungen bei Personen mit kardiopulmonaler Erkrankung und älteren Erwachsenen
 Ungewöhnlich sensible Menschen sollten in Betracht ziehen, längere oder schwere Belastungen zu reduzieren
 ```
+I'm not familiar with German, these messages is just the copy-paste result from Google Translate :sheep:
 
 #### General Messages
-
+General Messages contains the category, meaning and color
+```
+[{
+  "index": {
+    "min": 0,
+    "max": 50
+  },
+  "category": "<<Text in your language>>",
+  "meaning": "<<Text in your language>>",
+  "color": "<<Text in your language>>"
+}] 
+```
+Download [General Messages Resource File](https://github.com/ThangLeQuoc/aqi-calculator/blob/master/src/main/resources/AQIresource/aqi-general-messages.json) and custom it on your own. Then set this file path with  `withGeneralMessageResourcePath(<path_to_your_file>)`
+```
+AQICustomSettings mySettings = new AQICustomSettings()
+	.withCustomMessagesMode(true)
+	.withGeneralMessageResourcePath("AQIResource/custom-aqi-general-messages_de.json");
+calculator.applyCustomSettings(mySettings);
+```
 #### Sensitive Groups
+Sensitive Groups File contains list of pollutant's sensitive groups
+```
+[{
+    "code": "PM2.5",
+    "sensitiveGroups": "<<Text in your language>>"
+}]
+```
+Download [Sensitive Groups Resource File](https://github.com/ThangLeQuoc/aqi-calculator/blob/master/src/main/resources/AQIresource/aqi-sensitive-groups.json) and custom it on your own. Then set this file path with `withSensitiveGroupsResourcePath(<path_to_your_file>)`
+```
+AQICustomSettings mySettings = new AQICustomSettings()
+	.withCustomMessagesMode(true)
+	.withSensitiveGroupsResourcePath("AQIResource/custom-aqi-sensitive-groups_de.json");
+calculator.applyCustomSettings(mySettings);
+```
 #### Specific Messages
+Specific Messages contains Health Effects Statements and Cautionary Statements for each pollutant and each specific quality level
+```
+[{
+    "code": "PM2.5",
+    "aqiLevel": [{
+        "index": {
+            "min": 0,
+            "max": 50
+        },
+        "category": "<<Text in your own language>>",
+        "healthEffectsStatements": "<<Text in your own language>>",
+        "cautionaryStatements": "<<Text in your own language>>"
+    }]
+}]
+```
 
-
+Download [Specific Messages Resource File](https://github.com/ThangLeQuoc/aqi-calculator/blob/master/src/main/resources/AQIresource/aqi-specific-messages.json) and custom it on your own. Then set this file path with `withSpecificMessageResourcePath(<path_to_your_file>)`
+```
+AQICustomSettings mySettings = new AQICustomSettings()
+	.withCustomMessagesMode(true)
+	.withSpecificMessageResourcePath("AQIResource/custom-aqi-specific-messages_de.json");
+calculator.applyCustomSettings(mySettings);
+```
+#### Reset To Default Settings
+Reset the calculator to default messages path settings with `calculator.resetDefaultSettings();`
 
 # AQI Calculation Tutorial
 ## US EPA AQI Breakpoint
