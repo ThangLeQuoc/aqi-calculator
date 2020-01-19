@@ -286,7 +286,8 @@ To compute a valid NowCast, you must have at least two of the most recent 3 hour
 
 [US EPA AQI Brochure](https://www3.epa.gov/airnow/aqi_brochure_02_14.pdf)
 
-[US EPA AQI Technical Assistance Document](https://www3.epa.gov/airnow/aqi-technical-assistance-document-may2016.pdf)
+[US EPA AQI Technical Assistance Document](https://www3.epa.gov/airnow/aqi-technical-assistance-document-may2016.pdf).
+I am have no idea why the section **Health Effects Statements** section is not presented in their latest document guideline. I managed to kept (the one that have this section)[https://drive.google.com/file/d/10Vb0pjxgaK2U5nhrHEXe5zGDsmN9wC0n/view?usp=sharing]
 
 [US EPA NowCast Overview](https://www3.epa.gov/airnow/ani/pm25_aqi_reporting_nowcast_overview.pdf)
 
