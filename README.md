@@ -41,10 +41,10 @@ This project is intended to community target for free use. The author is not ass
     <dependency>
         <groupId>com.github.thanglequoc</groupId>
         <artifactId>aqi-calculator</artifactId>
-        <version>1.3.0</version>
+        <version>1.3.1</version>
     </dependency>
 ```
-Or for other build tools like Gradle, SBT, Ivy,.. you may find it on [Maven Central Repository](https://mvnrepository.com/artifact/com.github.thanglequoc/aqi-calculator/1.3.0)
+Or for other build tools like Gradle, SBT, Ivy,.. you may find it on [Maven Central Repository](https://mvnrepository.com/artifact/com.github.thanglequoc/aqi-calculator/1.3.1)
 ### Using Plug-n-play jar file:
 Grab the target jar in `target-jar` folder and add the jar to your project.
 
