@@ -137,7 +137,7 @@ result.getAQI();
 ### Customize AQI Messages
 The default text from AQI result is in **English**. However, you can easily override these messages in your own language.
 Allowed customized messages resources:
-- Generic Messages 
+- General Messages 
 - Sensitive Groups 
 - Specific Messages
 
@@ -149,7 +149,7 @@ AQICalculator calculator = AQICalculator.getAQICalculatorInstance();
 
 AQICustomSettings mySettings = new AQICustomSettings()
 	.withCustomMessagesMode(true)
-	.withGeneralMessageResourcePath("AQIResource/custom-aqi-generic-messages_de.json")
+	.withGeneralMessageResourcePath("AQIResource/custom-aqi-general-messages_de.json")
 	.withSensitiveGroupsResourcePath("AQIResource/custom-aqi-sensitive-groups_de.json")
 	.withSpecificMessageResourcePath("AQIResource/custom-aqi-specific-messages_de.json");
 calculator.applyCustomSettings(mySettings);
@@ -171,7 +171,7 @@ Atmungssymptome bei ungewöhnlich empfindlichen Personen möglich; Mögliche Ver
 Ungewöhnlich sensible Menschen sollten in Betracht ziehen, längere oder schwere Belastungen zu reduzieren
 ```
 
-#### Generic Messages
+#### General Messages
 
 #### Sensitive Groups
 #### Specific Messages
