@@ -301,4 +301,9 @@ Marcus Hylton - US EPA Airnow Specialist
 [Code Contributors](https://github.com/ThangLeQuoc/aqi-calculator/graphs/contributors)
 
 Backed by IntelliJ IDEA from [JetBrains]( https://www.jetbrains.com/?from=aqi-calculator)
-[Imgur](https://i.imgur.com/IEREk5g.png)
+<h1 align="center">
+	<br>
+	<img width="320" src="https://i.imgur.com/IEREk5g.png">
+	<br>
+  <br>
+</h1>
