@@ -292,3 +292,13 @@ I am have no idea why the section **Health Effects Statements** section is not p
 [US EPA NowCast Overview](https://www3.epa.gov/airnow/ani/pm25_aqi_reporting_nowcast_overview.pdf)
 
 ###### Demonstration images for NowCast in this tutorial are from [US EPA NowCast Overview](https://www3.epa.gov/airnow/ani/pm25_aqi_reporting_nowcast_overview.pdf) document
+
+
+###### Contributors & Support
+Without these great contribution from these guys, this repository might not be as it is today. I would like to express my gratitude to
+
+Marcus Hylton - US EPA Airnow Specialist
+[Code Contributors](https://github.com/ThangLeQuoc/aqi-calculator/graphs/contributors)
+
+Backed by IntelliJ IDEA from [JetBrains]( https://www.jetbrains.com/?from=aqi-calculator)
+[Imgur](https://i.imgur.com/IEREk5g.png)
