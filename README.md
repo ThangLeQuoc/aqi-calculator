@@ -5,7 +5,7 @@
   <br>
 </h1>
 
-# Maven AQI Calculator
+# Java AQI Calculator
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.thanglequoc/aqi-calculator/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.thanglequoc/aqi-calculator)
 [![Build Status](https://travis-ci.org/ThangLeQuoc/aqi-calculator.svg?branch=master)](https://travis-ci.org/ThangLeQuoc/aqi-calculator)
 [![CodeFactor](https://www.codefactor.io/repository/github/thanglequoc/aqi-calculator/badge)](https://www.codefactor.io/repository/github/thanglequoc/aqi-calculator)
@@ -35,7 +35,7 @@ This project is intended to community target for free use. The author is not ass
 | NO2     |  Nitrogen Dioxide  | ppb| :heavy_check_mark: | :heavy_check_mark:| :x:|:heavy_check_mark:|:heavy_check_mark:|
 
 ## Installation
-### Using Maven Dependency
+### With Maven
 ```
 <!-- https://mvnrepository.com/artifact/com.github.thanglequoc/aqi-calculator -->
 <dependency>
@@ -44,7 +44,12 @@ This project is intended to community target for free use. The author is not ass
     <version>1.3.1</version>
 </dependency>
 ```
-Or for other build tools like Gradle, SBT, Ivy,.. you may find it on [Maven Central Repository](https://mvnrepository.com/artifact/com.github.thanglequoc/aqi-calculator/1.3.1)
+### With Gradle
+```
+// https://mvnrepository.com/artifact/com.github.thanglequoc/aqi-calculator
+implementation group: 'com.github.thanglequoc', name: 'aqi-calculator', version: '1.3.1'
+```
+Or for other build tools like SBT, Ivy,.. you may find it on [Maven Central Repository](https://mvnrepository.com/artifact/com.github.thanglequoc/aqi-calculator/1.3.1)
 ### Using Plug-n-play jar file:
 Grab the target jar in `target-jar` folder and add the jar to your project.
 
