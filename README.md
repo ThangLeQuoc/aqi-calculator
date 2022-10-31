@@ -34,6 +34,7 @@ This project is intended to community target for free use. The author is not ass
 | SO2     |  Sulfur Dioxide  | ppb| :heavy_check_mark: | :heavy_check_mark:| :x:|:heavy_check_mark:|:heavy_check_mark:|
 | NO2     |  Nitrogen Dioxide  | ppb| :heavy_check_mark: | :heavy_check_mark:| :x:|:heavy_check_mark:|:heavy_check_mark:|
 
+
 ## Installation
 ### With Maven
 ```
@@ -239,6 +240,26 @@ calculator.applyCustomSettings(mySettings);
 ```
 #### Reset To Default Settings
 Reset the calculator to default messages path settings with `calculator.resetDefaultSettings();`
+
+
+## AQI Calculator as a standalone app
+There is a [AQI Calculator Spring Boot project](https://github.com/ThangLeQuoc/aqi-calculator-spring) built upon this library to make it easy to get it up and running
+### As Docker container
+Fear of Java, Spring Boot, or maybe you're just too lazy to install them.  
+With [Docker](https://www.docker.com/), it's super easy to get the container up and running without installing Java on your local machine. You don't need to know Java or Spring  
+Give it a go:  
+> docker pull thanglequoc/aqi-calculator-spring-boot:latest
+
+The container application port is *8080*, you will need to [map your host port to the port](https://docs.docker.com/config/containers/container-networking/) *8080* of the container
+
+Run the container with a specified port on your machine (e.g: 8080) to the application port **8080**
+> docker run --name=aqi-calculator -p 8080:8080 thanglequoc/aqi-calculator-spring-boot
+
+### As Spring Boot project
+Checkout this [AQI Calculator Spring Boot repository](https://github.com/ThangLeQuoc/aqi-calculator-spring) and run it
+
+See the document of [AQI Calculator Spring Boot repo](https://github.com/ThangLeQuoc/aqi-calculator-spring) for API usage
+
 
 # AQI Calculation Tutorial
 ## US EPA AQI Breakpoint
