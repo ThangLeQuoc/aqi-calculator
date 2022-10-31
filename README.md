@@ -36,6 +36,9 @@ This project is intended to community target for free use. The author is not ass
 
 
 ## Installation
+## AQI Calculator as a standalone app
+If you prefer to use this library as a standalone REST API app, see [AQI Calculator as a standalone app](https://github.com/ThangLeQuoc/aqi-calculator/blob/master/README.md#aqi-calculator-as-a-standalone-app)
+
 ### With Maven
 ```
 <!-- https://mvnrepository.com/artifact/com.github.thanglequoc/aqi-calculator -->
