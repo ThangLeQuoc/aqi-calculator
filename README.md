@@ -45,15 +45,15 @@ If you prefer to use this library as a standalone REST API app, see [AQI Calcula
 <dependency>
     <groupId>com.github.thanglequoc</groupId>
     <artifactId>aqi-calculator</artifactId>
-    <version>1.3.1</version>
+    <version>1.3.2</version>
 </dependency>
 ```
 ### With Gradle
 ```
 // https://mvnrepository.com/artifact/com.github.thanglequoc/aqi-calculator
-implementation group: 'com.github.thanglequoc', name: 'aqi-calculator', version: '1.3.1'
+implementation group: 'com.github.thanglequoc', name: 'aqi-calculator', version: '1.3.2'
 ```
-Or for other build tools like SBT, Ivy,.. you may find it on [Maven Central Repository](https://mvnrepository.com/artifact/com.github.thanglequoc/aqi-calculator/1.3.1)
+Or for other build tools like SBT, Ivy,.. you may find it on [Maven Central Repository](https://mvnrepository.com/artifact/com.github.thanglequoc/aqi-calculator/1.3.2)
 ### Using Plug-n-play jar file:
 Grab the target jar in `target-jar` folder and add the jar to your project.
 
