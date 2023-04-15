@@ -8,7 +8,7 @@ import java.util.Optional;
  * <b>regular AQI</b> calculation and <b>NowCast AQI</b> calculation.
  * <p>
  * To use the <i>AQICalculator</i> object, get its instance by calling
- * <tt>getAQICalculatorInstance() </tt> method directly
+ * <code>getAQICalculatorInstance() </code> method directly
  *
  * @author ThangLeQuoc
  * @see <a href="https://github.com/ThangLeQuoc/aqi-calculator"> AQI Calculator Documentation</a>
