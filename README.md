@@ -7,9 +7,7 @@
 
 # Java AQI Calculator
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.thanglequoc/aqi-calculator/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.thanglequoc/aqi-calculator)
-[![Build Status](https://travis-ci.org/ThangLeQuoc/aqi-calculator.svg?branch=master)](https://travis-ci.org/ThangLeQuoc/aqi-calculator)
 [![CodeFactor](https://www.codefactor.io/repository/github/thanglequoc/aqi-calculator/badge)](https://www.codefactor.io/repository/github/thanglequoc/aqi-calculator)
-[![BCH compliance](https://bettercodehub.com/edge/badge/ThangLeQuoc/aqi-calculator?branch=master)](https://bettercodehub.com/)
 
 Are you also looking for Node version ? [![npm version](https://badge.fury.io/js/aqi-bot.svg)](https://badge.fury.io/js/aqi-bot)
 ### Foreword
